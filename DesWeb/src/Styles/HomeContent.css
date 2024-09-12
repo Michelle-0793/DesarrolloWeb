@@ -1,0 +1,46 @@
+/* HomeContent.css */
+.home-content {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ajusta la altura según sea necesario */
+  }
+  
+  .hero-image {
+    background-image: url('./ruta/a/tu/imagen.jpg'); /* Ruta a tu imagen de portada */
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 50vh; /* Ajusta la altura de la imagen de portada según sea necesario */
+    width: 100%;
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido del texto */
+    justify-content: center; /* Centra horizontalmente el contenido del texto */
+    color: white; /* Color del texto */
+    text-align: center; /* Alinea el texto al centro */
+    position: relative; /* Asegura que el texto se posicione correctamente */
+  }
+  
+  .hero-text {
+    position: absolute; /* Posiciona el texto sobre la imagen */
+    z-index: 1; /* Asegura que el texto esté por encima de la imagen */
+    max-width: 80%; /* Ajusta el ancho máximo del contenedor del texto */
+    padding: 20px; /* Espaciado alrededor del texto */
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejorar la legibilidad del texto */
+    border-radius: 10px; /* Borde redondeado */
+  }
+  
+  .hero-text h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Tamaño del título */
+  }
+  
+  .hero-text p {
+    margin: 10px 0 0;
+    font-size: 1.25rem; /* Tamaño del párrafo */
+  }
+  
+  /* Opcional: Estilos para el contenido adicional */
+  .content {
+    /* Estilos adicionales para el contenido que va debajo de la imagen de portada */
+  }
+  

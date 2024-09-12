@@ -3,8 +3,8 @@
 }
 /* ESTILO GENERAL DEL HEADER */
 header {
-  background-color: black;
-  width: 100%;
+  background-color: #020003;
+  width: auto;
   height: 130px;
   display: grid;
   grid-template-columns: auto 1fr; /* Logo y menú */

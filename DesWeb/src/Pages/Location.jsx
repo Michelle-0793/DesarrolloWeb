@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Header from "../Components/Header";
 
 function Location() {
   return (
-    <div>Location</div>
+    <div>Location
+<Header />
+
+
+    </div>
   )
 }
 

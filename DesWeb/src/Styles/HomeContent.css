@@ -43,8 +43,8 @@
  
   .divCarrucel {
     background-color: black;
-    width: auto;
-    height: 180px;
+    width: 100%;
+    height: 300px;
     margin: 0 auto; /* Centra el carrusel en la página */
     overflow: hidden; /* Oculta cualquier contenido que se desborde */
     display: flex;
@@ -99,4 +99,14 @@
   /* Oculta los indicadores del carrusel */
   .alice-carousel__dots {
     display: none !important;
+  }
+
+  .divDestacarServicios{
+    background-color: white;
+    width: auto;
+    height: 500px;
+  }
+  .LinesDivisora {
+  background-color: #F5B041;
+    height: 2px;
   }

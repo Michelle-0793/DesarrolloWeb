@@ -44,12 +44,14 @@ function HomeContent() {
       <div className="ImgPortada">
         <div className="TextoPortada">
           <h1>Transformando ideas en <br />diseños extraordinarios</h1>
+  
         </div>
       </div>
 
       {/* Carrusel de logos */}
 	
       <div className="divCarrucel">
+	  <h2>Marcas que han confiado en mi trabajo</h2><br />
         <AliceCarousel
           mouseTracking
           items={items}
@@ -62,9 +64,24 @@ function HomeContent() {
           renderPrevButton={({ onClick }) => <CustomLeftArrow onClick={onClick} />}
           renderNextButton={({ onClick }) => <CustomRightArrow onClick={onClick} />}
         />
-
       </div>
+<br /><br /> <br />
+      <div className='divDestacarServicios'>
+        <h1>Demos forma a la identidad visual de su marca</h1>
+        <p>Una identidad gráfica bien construida, que refleje la esencia y valores de su negocio, <br />
+        es fundamental para atraer a sus clientes y lograr resultados. <br />
+        ¡Estoy aquí para ayudarle a crear una Identidad Visual sólida <br />que haga destacar a su negocio!</p>
+
+<div className='LineaDivisora'></div>
+
+<div className='ProyectosDestacados'>
+
+</div>
+
+</div>
+
     </div>
+    
   );
 }
 

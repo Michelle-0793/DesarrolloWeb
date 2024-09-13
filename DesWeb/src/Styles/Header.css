@@ -23,7 +23,7 @@ body{
 /* Contenedor del Navbar */
 .navbar {
     display: grid;
-    grid-template-columns: repeat(6, auto); 
+    grid-template-columns: repeat(5, auto); 
     gap: 10px;
     justify-content: flex-end; 
     padding: 0 5rem; /* Espacio a los lados */

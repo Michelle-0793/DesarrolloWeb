@@ -10,7 +10,7 @@
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
-    height: 430px; 
+    height: 470px; 
     width: 100%;
     display: flex;
     align-items: center; /* Vertical */
@@ -44,7 +44,7 @@
   .divCarrucel {
     background-color: black;
     width: 100%;
-    height: 300px;
+    height: 200px;
     margin: 0 auto; /* Centra el carrusel en la página */
     overflow: hidden; /* Oculta cualquier contenido que se desborde */
     display: flex;

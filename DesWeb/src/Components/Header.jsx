@@ -34,7 +34,7 @@ const IniciarSesión = () => {
           </div>
           
           <Link to="/Contact" className="nav-link">CONTÁCTAME</Link>
-          <Link to="/Location" className="nav-link">UBICACIÓN</Link>
+
           <button onClick={IniciarSesión} className="BtnLogin">Iniciar sesión</button>
         </nav>
         {/* Ícono de menú hamburguesa */}

@@ -5,10 +5,18 @@ import Logo from '../Img/Header_Logo.png'; // Ajusta la ruta según corresponda
 import "../Styles/Header.css";
 
 function Header() {
+// Estado para manejar la visibilidad del menú en dispositivos móviles
+const [menuAbierto, setMenuAbierto] = useState(false);
+
+// Función para alternar la visibilidad del menú
+const alternarMenu = () => {
+  setMenuAbierto(!menuAbierto);
+};
+
     return (
       <header>
         <img src={Logo} alt="Logo" className="logo" />
-        <nav className="navbar">
+        <nav className={`navbar ${menuAbierto ? "activo" : ""}`}>
           <Link to="/home" className="nav-link">INICIO</Link>
           <Link to="/login" className="nav-link">SOBRE MÍ</Link>
           
@@ -23,6 +31,12 @@ function Header() {
           <Link to="/contact" className="nav-link">CONTÁCTAME</Link>
           <Link to="/contact" className="nav-link">UBICACIÓN</Link>
         </nav>
+        {/* Ícono de menú hamburguesa */}
+      <div className="icono-hamburguesa" onClick={alternarMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       </header>
     );
   }

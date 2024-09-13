@@ -40,15 +40,17 @@
     margin: 10px 0 0;
     font-size: 30px;
   }
+ 
   .divCarrucel {
     background-color: black;
     width: auto;
-    height: 300px;
+    height: 180px;
     margin: 0 auto; /* Centra el carrusel en la página */
     overflow: hidden; /* Oculta cualquier contenido que se desborde */
     display: flex;
     justify-content: center;
   }
+  
   
   .alice-carousel__stage {
     display: flex;
@@ -56,9 +58,9 @@
   }
   
   .alice-carousel img {
-    height: 120px; /* Ajusta la altura de las imágenes */
+    height: 110px; /* Ajusta la altura de las imágenes */
     object-fit: contain; /* Mantiene la proporción de la imagen dentro del contenedor */
-    padding: 0 90px; /* Espacio horizontal consistente entre cada imagen */
+    padding: 0 70px; /* Espacio horizontal consistente entre cada imagen */
   }
   
   .alice-carousel {
@@ -71,5 +73,30 @@
     align-items: center;
     padding: 0 10px; /* Añade un espaciado horizontal uniforme entre los elementos */
   }
+  .custom-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    background-color: rgba(189, 178, 178, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    border: 2px solid red; /* Para verificar la visibilidad del botón */
+  }
   
+  .custom-arrow-left {
+    left: 10px;
+  }
   
+  .custom-arrow-right {
+    right: 10px;
+  }
+  
+  /* Oculta los indicadores del carrusel */
+  .alice-carousel__dots {
+    display: none !important;
+  }

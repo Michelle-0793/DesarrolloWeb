@@ -143,10 +143,10 @@ const ClickImagen = () => {
 <div className='ContenedorProductos'>
   <div>
     <ul>
-  {/* INCIO DE EDICIÓN */}
 {Productos.map((producto) => (
 <li key={producto.id}>
   {EditarProductoId === producto.id ? ( /*Abre operador ternario*/
+  /* INCIO DE EDICIÓN */
     <>
       <input className='InputNombreProductoEditado' type="text"
         value={ProductoEditado}
@@ -172,20 +172,21 @@ const ClickImagen = () => {
       <br />
       <button className='btnGuardarProducto' onClick={() => GuardarEdicion(producto.id)}>Guardar</button>
     </>
+
 ) : ( /*Cierra operador ternario*/
   
-        <>
-          <div className='divListaProductos'>
-            <h2>{producto.nombre}</h2>
-            <img src={producto.imagen} alt={producto.nombre} width="100" />
-            <p>{producto.descripcion}</p>
-            <button className='btnEditarProducto' onClick={() => EditarProducto(producto)}>Editar</button>
-            <button className='btnEliminarProducto' onClick={() => EliminarProducto(producto.id)}>Eliminar</button>
-          </div>
-        </>
-      )}
-    </li>
-  ))}
+    <>
+      <div className='divListaProductos'>
+        <h2>{producto.nombre}</h2>
+        <img src={producto.imagen} alt={producto.nombre} width="100" />
+        <p>{producto.descripcion}</p>
+        <button className='btnEditarProducto' onClick={() => EditarProducto(producto)}>Editar</button>
+        <button className='btnEliminarProducto' onClick={() => EliminarProducto(producto.id)}>Eliminar</button>
+      </div>
+    </>
+    )}
+</li>
+))}
 </ul>
 
   </div>

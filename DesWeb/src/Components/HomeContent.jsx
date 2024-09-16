@@ -26,6 +26,7 @@ const responsive = {
   1300: { items: 5 }
 };
 
+/*
 const CustomLeftArrow = ({ onClick }) => (
   <button onClick={onClick} className="custom-arrow custom-arrow-left">
     &#10094;
@@ -37,6 +38,7 @@ const CustomRightArrow = ({ onClick }) => (
     &#10095;
   </button>
 );
+*/
 
 function HomeContent() {
   return (

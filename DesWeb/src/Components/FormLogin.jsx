@@ -28,8 +28,7 @@ function FormLogin() {
     event.preventDefault();
 
  // Verificar si el usuario y contraseña coinciden usuario del db.json
- const usuarioValido = Users.find(
-  (user) => user.username === username && user.password === password);
+ const usuarioValido = Users.find((user) => user.username === username && user.password === password);
 
 if (usuarioValido) {
   localStorage.setItem("Autenticado", "true");

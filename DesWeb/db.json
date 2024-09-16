@@ -1,7 +1,9 @@
-{"Users":[
+{
+  "Users": [
     {
-        "username": "lcrear",
-        "password": "0710"
-      }
-]
+      "username": "lcrear",
+      "password": "0710"
+    }
+  ],
+  "Productos": []
 }

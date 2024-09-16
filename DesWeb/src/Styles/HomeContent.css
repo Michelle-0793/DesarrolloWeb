@@ -45,10 +45,11 @@
     background-color: black;
     width: 100%;
     height: 200px;
-    margin: 0 auto; /* Centra el carrusel en la página */
-    overflow: hidden; /* Oculta cualquier contenido que se desborde */
+    margin: 0 auto;
+    overflow: hidden; 
     display: flex;
     justify-content: center;
+    position: relative; /* Asegura que las flechas se posicionen correctamente */
   }
   
   
@@ -58,43 +59,45 @@
   }
   
   .alice-carousel img {
-    height: 110px; /* Ajusta la altura de las imágenes */
-    object-fit: contain; /* Mantiene la proporción de la imagen dentro del contenedor */
-    padding: 0 70px; /* Espacio horizontal consistente entre cada imagen */
+    height: 110px;
+    object-fit: contain;
+    margin: 0; /* Asegura que no haya margen que cause desbordamiento */
+    padding: 0 30px; /* Ajusta el padding horizontal para evitar el corte */
   }
   
   .alice-carousel {
-    width: 100%; /* Asegura que el carrusel ocupe todo el ancho disponible */
+    width: 100%;
+    padding: 0; /* Elimina cualquier padding que pueda desbordar el carrusel */
   }
   
   .alice-carousel__stage-item {
+    padding: 0 10px; /* Ajusta el padding de los elementos para que no se desborden */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 10px; /* Añade un espaciado horizontal uniforme entre los elementos */
   }
   .custom-arrow {
     position: absolute;
     top: 50%;
-    z-index: 10;
-    background-color: rgba(189, 178, 178, 0.5);
-    color: white;
+    z-index: 999; /* Asegúrate de que las flechas estén por encima de todo */
+    background-color: transparent;
+    color: #F5B041; /* Color dorado */
     border: none;
     font-size: 2rem;
     cursor: pointer;
     padding: 10px;
     border-radius: 50%;
     transform: translateY(-50%);
-    border: 2px solid red; /* Para verificar la visibilidad del botón */
   }
   
   .custom-arrow-left {
-    left: 10px;
+    left: 10px; /* Ajuste de la posición de la flecha izquierda */
   }
   
   .custom-arrow-right {
-    right: 10px;
+    right: 10px; /* Ajuste de la posición de la flecha derecha */
   }
+  
   
   /* Oculta los indicadores del carrusel */
   .alice-carousel__dots {

@@ -52,18 +52,19 @@ function HomeContent() {
 	
       <div className="divCarrucel">
 	  <h2>Marcas que han confiado en mi trabajo</h2><br />
-        <AliceCarousel
-          mouseTracking
-          items={items}
-          responsive={responsive}
-          infinite
-          autoPlay
-          autoPlayInterval={3000}
-          disableButtonsControls // Desactiva los botones de navegación predeterminados
-          dotsDisabled // Desactiva los puntos indicadores
-          renderPrevButton={({ onClick }) => <CustomLeftArrow onClick={onClick} />}
-          renderNextButton={({ onClick }) => <CustomRightArrow onClick={onClick} />}
-        />
+    <AliceCarousel
+    mouseTracking
+    items={items}
+    responsive={responsive}
+    infinite
+    autoPlay
+    autoPlayInterval={3000}
+    disableDotsControls
+    disableButtonsControls
+    renderPrevButton={() => <button className="custom-arrow custom-arrow-left">‹</button>}
+    renderNextButton={() => <button className="custom-arrow custom-arrow-right">›</button>}
+  />
+
       </div>
 <br /><br /> <br />
       <div className='divDestacarServicios'>

@@ -29,31 +29,28 @@ export const ContactUs = () => {
 
       <form ref={form} onSubmit={sendEmail}>
         <label>Nombre completo (obligatorio):</label><br />
-        <input type="text" name="user_name" required /><br /><br />
+        <input type="text" name="Username" required /><br /><br />
 
         <label>Correo electrónico (obligatorio):</label><br />
-        <input type="email" name="user_email" required /><br /><br />
+        <input type="email" name="UserEmail" required /><br /><br />
 
         <label>Teléfono (opcional):</label><br />
-        <textarea name="phone" placeholder="Detalles sobre lo que necesitas" required /><br /><br />
-
-        <label>Tipo de proyecto:</label><br />
-        <input type="text" name="project_type" placeholder="Ej: branding, diseño web, etc." /><br /><br />
+        <textarea name="Phone" placeholder="Detalles sobre lo que necesitas" required /><br /><br />
 
         <label>Descripción del proyecto:</label><br />
 
-        <textarea name="message" placeholder="Detalles sobre lo que necesitas" required /><br /><br />
+        <textarea name="DescripcionProyecto" placeholder="Detalles sobre lo que necesitas" required /><br /><br />
 
         <label>Presupuesto estimado (opcional):</label><br />
-        <input type="text" name="estimated_budget" /><br /><br />
+        <input type="text" name="PrecioEstimado" /><br /><br />
 
         <label>Fecha de entrega deseada (opcional):</label><br />
-        <input type="date" name="delivery_date" /><br /><br />
+        <input type="date" name="FechaEntregaDeseada" /><br /><br />
 
         <label>Comentarios adicionales:</label><br />
-        <textarea name="additional_comments" /><br /><br />
+        <textarea name="ComentariosAdicionales" /><br /><br />
 
-        <input type="submit" value="Send" />
+        <input type="submit" value="Enviar" />
       </form><br /><br />
     </div>
   );

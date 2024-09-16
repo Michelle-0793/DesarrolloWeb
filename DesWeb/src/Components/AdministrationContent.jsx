@@ -21,12 +21,12 @@ function AdministrationContent() {
 const fileInputRef = useRef(null);
 
 // Actualizar el valor del input de nombre de producto
-const CambiarValorInput = (event) => {
+const NombreProducto = (event) => {
   setNuevoProducto(event.target.value);
 };
 
 // Actualizar el valor de la descripción del producto
-const CambiarDescripcion = (event) => {
+const Descripcion = (event) => {
   setDescripcionProducto(event.target.value);
 };
 
@@ -41,9 +41,9 @@ const CambiarDescripcionEditada = (event) => {
 };
 
 // Imagen a base64
-const ManejarImagen = (e) => {
+const CargarImagen = (event) => {
   // Se selecciona imagen
-  const archivo = e.target.files[0]; //(e.target.files[0] obtiene el primer archivo).
+  const archivo = event.target.files[0]; //(event.target.files[0] obtiene el primer archivo).
   const lector = new FileReader(); //FileReader, permite leer el contenido de la imagen
   // Se define qué hacer cuando el proceso de lectura del archivo termine.
   lector.onloadend = () => {
@@ -57,8 +57,8 @@ const ManejarImagen = (e) => {
 };
 
 // Imagen editada
-const ManejarImagenEditada = (e) => {
-  const archivo = e.target.files[0];
+const CargarImagenEditada = (event) => {
+  const archivo = event.target.files[0];
   const lector = new FileReader();
   lector.onloadend = () => {
     setImagenEditada(lector.result);
@@ -124,17 +124,17 @@ const ClickImagen = () => {
   <div className='InputsDatos'>
     <input className='InputNombreProducto' type="text"
       value={NuevoProducto}
-      onChange={CambiarValorInput}
+      onChange={NombreProducto}
       placeholder='Ingrese el nombre del producto'
     /><br />
 
     <textarea className='InputDescripcionProducto'
       value={DescripcionProducto}
-      onChange={CambiarDescripcion}
+      onChange={Descripcion}
       placeholder='Ingrese una descripción'
     /><br /><br />
 
-    <input type="file" accept="image/*" onChange={ManejarImagen} /><br /><br />
+    <input type="file" accept="image/*" onChange={CargarImagen} /><br /><br />
     <button className='btnAñadirProducto' onClick={AñadirProducto}>Añadir producto</button>
   </div>
   <br /><br /><br />
@@ -166,7 +166,7 @@ const ClickImagen = () => {
 
       <input ref={fileInputRef} id={`fileUpload-${producto.id}`} type="file"
         accept="image/*"
-        onChange={ManejarImagenEditada}
+        onChange={CargarImagenEditada}
         style={{ display: "none" }} //Se oculta el input de seleccionar archivo
       />
       <br />

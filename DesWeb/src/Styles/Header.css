@@ -34,11 +34,10 @@ body{
     margin: 0 10px; 
     font-family: "Century Gothic", Arial, sans-serif;
     font-weight: bold;
-   transition: background-color 0.3s ease, color 0.3s ease; 
-   text-decoration: none;
-   background-color: transparent; 
-   border-radius: 20px; 
-  
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    text-decoration: none;
+    background-color: transparent; 
+    border-radius: 20px; 
   }
   
   .nav-link:hover {

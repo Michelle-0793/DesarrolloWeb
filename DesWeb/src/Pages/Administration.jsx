@@ -16,7 +16,7 @@ function Administration() {
     <div>
       <Header />
       <AdministrationContent />
-       <button className="BtnCerrarSesion" onClick={cerrarSesion}>Cerrar Sesión</button>
+      <button className="BtnCerrarSesion" onClick={cerrarSesion}>Cerrar Sesión</button>
 
 
     </div>

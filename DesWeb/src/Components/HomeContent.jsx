@@ -1,8 +1,9 @@
 import React from 'react';
-import '../Styles/HomeContent.css';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css'; 
+import '../Styles/HomeContent.css';
 import { Card, Image } from 'antd'; // Importación de Card e Image de Ant Design
+import { useNavigate } from 'react-router-dom';
 
 // Importación de las imágenes de los logos
 import Logo1 from '../Img/Logo_1.png';
@@ -42,18 +43,26 @@ const CustomRightArrow = ({ onClick }) => (
 */
 
 function HomeContent() {
-  return (
-    <div className="divContenido">
-      <div className="ImgPortada">
-        <div className="TextoPortada">
-          <h1>Transformando ideas en <br />diseños extraordinarios</h1>
-  
-        </div>
-      </div>
 
-      {/* Carrusel de logos */}
-	
-      <div className="divCarrucel">
+  const navigate = useNavigate();
+
+  const Cotizar = () => {
+    navigate('/Contact');
+  };
+
+
+return (
+
+<div className="divContenido">
+
+    <div className="ImgPortada">
+      <div className="TextoPortada">
+        <h1>Transformando ideas en <br />diseños extraordinarios</h1>
+      </div>
+    </div> {/* Cierra divImgPortada */}
+
+    {/* Carrusel de logos */}
+    <div className="divCarrucel">
 	  <h2>Marcas que han confiado en mi trabajo</h2><br />
     <AliceCarousel
     mouseTracking
@@ -66,15 +75,28 @@ function HomeContent() {
     disableButtonsControls
     renderPrevButton={() => <button className="custom-arrow custom-arrow-left">‹</button>}
     renderNextButton={() => <button className="custom-arrow custom-arrow-right">›</button>}
-  />
+    />
+   </div>
 
-      </div>
-<br /><br /> <br />
+<div className="Plasta1">
+      <div className="divBtn">
+      <button className="BtnSolicitarCotización" onClick={Cotizar}>SOLICITAR COTIZACIÓN
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      </button>
+  </div>
+
+</div>
+
 <div className='divDestacarServicios'>
         <h1>Demos forma a la identidad visual de su marca</h1>
         <p>Una identidad gráfica bien construida, que refleje la esencia y valores de su negocio, <br />
         es fundamental para atraer a sus clientes y lograr resultados. <br />
         ¡Estoy aquí para ayudarle a crear una Identidad Visual sólida <br />que haga destacar a su negocio!</p>
+</div> {/*Cierra divDestacarServicios*/}
+
 
 <div className='ProyectosDestacados'>
 
@@ -112,9 +134,8 @@ function HomeContent() {
       <Card.Meta title="Proyecto 3" description="Descripción del proyecto 3" />
     </Card>
 
-    </div> {/*Cierra divCar*/}
+    </div> {/*Cierra divCard*/}
   </div> {/*Cierra divProyectosDestacados*/}
-</div> {/*Cierra divDestacarServicios*/}
 
 </div> /*cierra divContenido*/
   );

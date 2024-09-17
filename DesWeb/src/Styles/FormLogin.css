@@ -1,0 +1,9 @@
+/* Aplica estilos personalizados al mensaje */
+.custom-class {
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-family: "Century Gothic", Arial, sans-serif;
+    border-radius: 8px; 
+    padding: 60px; /* Espaciado interno */
+  }
+  

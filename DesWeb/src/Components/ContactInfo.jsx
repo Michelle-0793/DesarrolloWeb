@@ -1,33 +1,42 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import Swal from "sweetalert2";
+import { message } from 'antd'; 
 
 const ContactInfo = () => {
   const form = useRef();
+  const [messageApi, contextHolder] = message.useMessage(); // Hook de Ant Design para mensajes
 
   const sendEmail = (event) => {
     event.preventDefault();
+
+    const key = 'updatable';  // Clave para los mensajes actualizables
+
+    // Muestra un mensaje de carga mientras se envía el correo
+    messageApi.open({
+      key,
+      type: 'loading',
+      content: 'Enviando cotización...',
+    });
 
     emailjs
       .sendForm('service_9of4zxx', 'template_iwcqswu', form.current, 'ymYtdvW4jhBm2ACDK')
       .then(
         () => {
-          Swal.fire({
-            position: "top-center",
-            icon: "success",
-            title: "Cotización enviada con éxito",
-            confirmButtonText: 'OK',
-        });
+          // Cambia el mensaje a éxito cuando el correo se envía
+          messageApi.open({
+            key,
+            type: 'success',
+            content: 'Cotización enviada con éxito',
+            duration: 2,  // Duración del mensaje
+          });
           console.log('ENVIADO');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
         }
       );
   };
 
   return (
     <div>
+      {contextHolder} {/* Renderiza el contenedor para los mensajes */}
       <h1>¡Hablemos sobre su próximo proyecto!</h1>
       <p>
         Estoy aquí para ayudarle a dar vida a sus ideas a través del diseño gráfico. <br />

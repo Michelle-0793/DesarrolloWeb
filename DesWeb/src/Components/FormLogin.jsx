@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from 'react';
 import GetUsers from "../services/GetUsers";
 import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
+import { message } from 'antd'; 
 import "../styles/FormLogin.css";
 
 
@@ -14,6 +14,9 @@ function FormLogin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [Users, setUsers] = useState([]);
+
+  // Hook de mensajes de Ant Design
+  const [messageApi, contextHolder] = message.useMessage(); 
 
 
   function  cargaUsuario(event) {
@@ -31,16 +34,32 @@ function FormLogin() {
  // Verificar si el usuario y contraseña coinciden usuario del db.json
  const usuarioValido = Users.find((user) => user.username === username && user.password === password);
 
-if (usuarioValido) {
-  localStorage.setItem("Autenticado", "true");
-  // Redirigir a la página de administración
-  navigate("/Administration");
+ if (usuarioValido) {
+  // Mostrar el mensaje de éxito de Ant Design
+  messageApi.open({
+    type: 'success',
+    content: '¡Inicio de sesión exitoso!',
+    className: 'custom-class',
+    style: {
+      marginTop: '20vh',
+    },
+  });
 
+  // Guardar la autenticación en el localStorage
+  localStorage.setItem("Autenticado", "true");
+
+  // Redirigir a la página de administración después de un pequeño retraso
+  setTimeout(() => {
+    navigate("/Administration");
+  }, 1500);
 } else {
-  Swal.fire({
-    icon: "error",
-    title: "Oops...",
-    text: "Acceso denegado"
+  messageApi.open({
+    type: 'error',
+    content: 'Acceso denegado',
+    className: 'custom-class',
+    style: {
+      marginTop: '20vh',
+    },
   });
 }
 };
@@ -57,6 +76,7 @@ useEffect(() => {
 
   return (
 <div className="wrapper">
+{contextHolder}
         <form className="form">
 
         <div className="datosForm">

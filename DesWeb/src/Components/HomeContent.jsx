@@ -2,6 +2,7 @@ import React from 'react';
 import '../Styles/HomeContent.css';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css'; 
+import { Card, Image } from 'antd'; // Importación de Card e Image de Ant Design
 
 // Importación de las imágenes de los logos
 import Logo1 from '../Img/Logo_1.png';
@@ -69,22 +70,53 @@ function HomeContent() {
 
       </div>
 <br /><br /> <br />
-      <div className='divDestacarServicios'>
+<div className='divDestacarServicios'>
         <h1>Demos forma a la identidad visual de su marca</h1>
         <p>Una identidad gráfica bien construida, que refleje la esencia y valores de su negocio, <br />
         es fundamental para atraer a sus clientes y lograr resultados. <br />
         ¡Estoy aquí para ayudarle a crear una Identidad Visual sólida <br />que haga destacar a su negocio!</p>
 
-<div className='LineaDivisora'></div>
-
 <div className='ProyectosDestacados'>
 
-</div>
+{/* Cards de Ant Design */}
+    <div className="divCard">
+    <Card /*CARD 1*/
+      hoverable
+      style={{ width: 300 }}
+      cover={<Image alt="Proyecto 1" src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />}
+    >
+      <Card.Meta title="Proyecto 1" description="Descripción del proyecto 1" />
+    </Card>
+<br />
+    <Card /*CARD 2*/
+      hoverable
+      style={{ width: 300 }}
+      cover={<Image alt="Proyecto 2" src="https://example.com/proyecto2.png" />}
+    >
+      <Card.Meta title="Proyecto 2" description="Descripción del proyecto 2" />
+    </Card>
+<br />
+    <Card /*CARD 3*/
+      hoverable
+      style={{ width: 300 }}
+      cover={<Image alt="Proyecto 3" src="https://example.com/proyecto3.png" />}
+    >
+      <Card.Meta title="Proyecto 3" description="Descripción del proyecto 3" />
+    </Card>
+<br />
+    <Card /*CARD 4*/
+      hoverable
+      style={{ width: 300 }}
+      cover={<Image alt="Proyecto 3" src="https://example.com/proyecto3.png" />}
+    >
+      <Card.Meta title="Proyecto 3" description="Descripción del proyecto 3" />
+    </Card>
 
-</div>
+    </div> {/*Cierra divCar*/}
+  </div> {/*Cierra divProyectosDestacados*/}
+</div> {/*Cierra divDestacarServicios*/}
 
-    </div>
-    
+</div> /*cierra divContenido*/
   );
 }
 

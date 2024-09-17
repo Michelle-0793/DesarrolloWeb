@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import Swal from "sweetalert2";
 
-export const ContactUs = () => {
+const ContactInfo = () => {
   const form = useRef();
 
   const sendEmail = (event) => {
@@ -11,7 +12,13 @@ export const ContactUs = () => {
       .sendForm('service_9of4zxx', 'template_iwcqswu', form.current, 'ymYtdvW4jhBm2ACDK')
       .then(
         () => {
-          console.log('SUCCESS!');
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Cotización enviada con éxito",
+            confirmButtonText: 'OK',
+        });
+          console.log('ENVIADO');
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -35,10 +42,9 @@ export const ContactUs = () => {
         <input type="email" name="UserEmail" required /><br /><br />
 
         <label>Teléfono (opcional):</label><br />
-        <textarea name="Phone" placeholder="Detalles sobre lo que necesitas" required /><br /><br />
+        <input type='text' name="Phone" placeholder="Teléfono" required /><br /><br />
 
         <label>Descripción del proyecto:</label><br />
-
         <textarea name="DescripcionProyecto" placeholder="Detalles sobre lo que necesitas" required /><br /><br />
 
         <label>Presupuesto estimado (opcional):</label><br />
@@ -56,4 +62,4 @@ export const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default ContactInfo;

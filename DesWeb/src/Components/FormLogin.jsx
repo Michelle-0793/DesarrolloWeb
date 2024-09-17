@@ -8,6 +8,7 @@ import "../styles/FormLogin.css";
 
 
 function FormLogin() {
+
   const navigate = useNavigate();
 
   const [username, setUsername] = useState('');
@@ -48,22 +49,21 @@ if (usuarioValido) {
 useEffect(() => {
   const fetchUsers = async () => {
     const data = await GetUsers();    
-       
     setUsers(data);
   };
   fetchUsers();
 }, []);
-  
+
+
   return (
 <div className="wrapper">
         <form className="form">
 
         <div className="datosForm">
         <input className="inputDatos" type="text" id="username"  name="username" placeholder="Usuario"
-        
-          value={username}
-          onChange={cargaUsuario}
-          required
+        value={username}
+        onChange={cargaUsuario}
+        required
         />
         <i className="fa-solid fa-user"></i>
         </div>

@@ -4,11 +4,13 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 import '../Styles/HomeContent.css';
 import { Card, Image } from 'antd'; // Importación de Card e Image de Ant Design
 import { useNavigate } from 'react-router-dom';
+import EnlacesCarrusel from '../Components/EnlacesCarrusel'; // Importa el nuevo carrusel
+
 
 //Importación de imaganes para Cards
 import Proyecto1 from "../Img/ICP_LibroMarca.jpg";
-import Proyecto2 from "../Img/ICP_Presentaciones.jpg";
-import Proyecto3 from "../Img/ICP_Tarjetas.jpg";
+import Proyecto2 from "../Img/RRSS-01.jpg";
+import Proyecto3 from "../Img/Editorial-01.jpg";
 
 // Importación de las imágenes de los logos
 import Logo1 from '../Img/Logo_1.png';
@@ -96,7 +98,7 @@ return (
 </div>
 
 <div className='divDestacarServicios'>
-        <h1 className='DemosFormaText'>¡Demos forma a la identidad <br />visual de su marca!</h1><br />
+        <h1 className='DemosFormaText'>DEMOS FORMA A LA IDENTIDAD <br />VISUAL DE SU MARCA   <span className='punto'>.</span> </h1><br /><br />
         <p className='TextDestaServicios'>Una identidad gráfica bien construida, que refleje la esencia y valores de su negocio, <br />
         es fundamental para atraer a sus clientes y lograr resultados. </p><br />
         <p className='TextDestaServicios2'>¡Estoy aquí para ayudarle a crear una Identidad Visual sólida <br />que haga destacar a su negocio!</p>
@@ -111,10 +113,9 @@ return (
   cover={<Image alt="Proyecto 1" src={Proyecto1} />}
 >
   <Card.Meta 
-  title={<span className="card-title">Libro de Identidad Corporativa</span>} 
-  description={<span className="card-description">Define y regula cómo se debe usar visual 
-  y verbalmente la marca en todos los medios.
-  Establece el uso correcto de logotipos, tipografías, colores..., garantizando coherencia y uniformidad en todas las aplicaciones.  </span>} 
+  title={<span className="card-title">BRANDING</span>} 
+  description={<span className="card-description">Construyo identidades visuales coherentes, 
+  reflejando la esencia y valores de su marca para impactar a su público objetivo.</span>} 
   />
 </Card>
   </div>
@@ -122,14 +123,14 @@ return (
   <div className="Card">
   <Card 
       hoverable
-      style={{ width: 370 }}
+      className="Card EstilosCard"
       cover={<Image alt="Proyecto 2" src={Proyecto2}/>}
     >
       <Card.Meta   
-      title={<span className="card-title">Retícula para presentaciones</span>} 
-      description={<span className="card-description">Es esencial para una empresa porque garantiza 
-      consistencia visual, facilita la organización del contenido y refuerza la identidad de marca. 
-      Genera una impresión coherente y atractiva en todas las comunicaciones. </span>} 
+      title={<span className="card-title">DISEÑO PARA REDES SOCIALES</span>} 
+      description={<span className="card-description">Contenido visual que 
+      conecte y destaque en redes sociales, logrando más interacción 
+      y visibilidad para su negocio. </span>} 
   />
     </Card>
   </div>
@@ -137,18 +138,27 @@ return (
   <div className="Card">
   <Card 
       hoverable
-      style={{ width: 370 }}
+      className="Card EstilosCard"
       cover={<Image alt="Proyecto 3" src={Proyecto3} />}
     >
       <Card.Meta   
-      title={<span className="card-title">Tarjetas de presentación</span>} 
-      description={<span className="card-description">Facilitan el intercambio profesional, 
-      dejando una impresión tangible y duradera. Ofrecen una forma rápida de compartir información 
-      de contacto y proyectan profesionalismo en reuniones y eventos.</span>} 
+      title={<span className="card-title">DISEÑO EDITORIAL</span>} 
+      description={<span className="card-description">Transformo ideas en publicaciones 
+      visualmente atractivas y funcionales, como catálogos, libros, revistas, folletos, menús... </span>} 
   />
     </Card>
   </div>
+</div>{/*cierra divCard*/}
+<br /><br /><br /><br /><br />
+
+<div className="divEnlaces">
+      <EnlacesCarrusel />
 </div>
+
+
+
+
+
 
 
 </div> /*cierra divContenido*/

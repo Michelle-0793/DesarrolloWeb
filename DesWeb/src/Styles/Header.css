@@ -38,6 +38,7 @@ body{
     text-decoration: none;
     background-color: transparent; 
     border-radius: 20px; 
+    font-size: 20px;
   }
   
   .nav-link:hover {

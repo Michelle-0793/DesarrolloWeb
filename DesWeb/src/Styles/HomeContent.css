@@ -1,4 +1,10 @@
-/* HomeContent.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 .divContenido {
     position: relative;
     width: 100%;
@@ -27,133 +33,120 @@
     height: 355px; /* Ajusta la altura según tus necesidades */
     width: 100%;
   }
-  .BtnSolicitarCotización{
-    border: none;
-    outline: none;
-    width: 300px;
-    margin-top: -20px;
-    padding: 20px 0;
-    font-size: 20px;
-    border-radius: 40px;
-    cursor: pointer;
-    background: #F5B041;
-    color: rgb(0, 0, 0);
-    margin-top: 130px;
-    margin-left: 1100px;
-    font-weight: bold;
-  }
-  .BtnSolicitarCotización:hover {
-    background-color: rgba(167, 167, 167, 0.8);
-    border: none;
-    outline: none;
-}
-.BtnSolicitarCotización{
-  width:200px;
-  height:70px;
-  background: linear-gradient(to left top, #c32c71 50%, #b33771 50%);
+
+/*ESTILOS BTN SOLICITAR COTIZACIÓN*/
+.BtnSolicitarCotización {
+  font-family: "Century Gothic", Arial, sans-serif;
+  width: 300px;
+  height: 70px;
+  background-color: #F5B041;
   border-style: none;
-  color:#fff;
+  color: #000000;
   font-size: 23px;
-  letter-spacing: 3px;
-  font-family: 'Lato';
-  font-weight: 600;
+  font-weight: bolder;
   outline: none;
   cursor: pointer;
   position: relative;
-  padding: 0px;
+  padding: 0;
   overflow: hidden;
-  transition: all .5s;
-  box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+  transition: all 0.5s;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  margin-top: 130px;
+  margin-left: 1100px;
+  border-radius: 50px;
+ 
 }
-.BtnSolicitarCotización span{
+
+.BtnSolicitarCotización span {
   position: absolute;
   display: block;
 }
-.BtnSolicitarCotización span:nth-child(1){
-  height: 3px;
-  width:200px;
-  top:0px;
-  left:-200px;
-  background: linear-gradient(to right, rgba(0,0,0,0), #f6e58d);
-  border-top-right-radius: 1px;
-  border-bottom-right-radius: 1px;
+
+.BtnSolicitarCotización span:nth-child(1) {
+  height: 6px;
+  width: 100%;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #f6e58d);
+  border-radius: 50px;
   animation: span1 2s linear infinite;
+}
+
+@keyframes span1 {
+  0% {
+      left: -100%;
+  }
+  100% {
+      left: 100%;
+  }
+}
+
+.BtnSolicitarCotización span:nth-child(2) {
+  height: 100%;
+  width: 3px;
+  top: -100%;
+  right: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #f6e58d);
+  border-radius: 50px;
+  animation: span2 2s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes span2 {
+  0% {
+      top: -100%;
+  }
+  100% {
+      top: 100%;
+  }
+}
+
+.BtnSolicitarCotización span:nth-child(3) {
+  height: 6px;
+  width: 100%;
+  bottom: 0;
+  right: -100%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), #f6e58d);
+  border-radius: 50px;
+  animation: span3 2s linear infinite;
   animation-delay: 1s;
 }
 
-@keyframes span1{
-  0%{
-      left:-200px
+@keyframes span3 {
+  0% {
+      right: -100%;
   }
-  100%{
-      left:200px;
+  100% {
+      right: 100%;
   }
 }
-.BtnSolicitarCotización span:nth-child(2){
-  height: 70px;
+
+.BtnSolicitarCotización span:nth-child(4) {
+  height: 100%;
   width: 3px;
-  top:-70px;
-  right:0px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0), #f6e58d);
-  border-bottom-left-radius: 1px;
-  border-bottom-right-radius: 1px;
-  animation: span2 2s linear infinite;
-  animation-delay: 2s;
-}
-@keyframes span2{
-  0%{
-      top:-70px;
-  }
-  100%{
-      top:70px;
-  }
-}
-.BtnSolicitarCotización span:nth-child(3){
-  height:3px;
-  width:200px;
-  right:-200px;
-  bottom: 0px;
-  background: linear-gradient(to left, rgba(0,0,0,0), #f6e58d);
-  border-top-left-radius: 1px;
-  border-bottom-left-radius: 1px;
-  animation: span3 2s linear infinite;
-  animation-delay: 3s;
-}
-@keyframes span3{
-  0%{
-      right:-200px;
-  }
-  100%{
-      right: 200px;
-  }
-}
-
-.BtnSolicitarCotización span:nth-child(4){
-  height:70px;
-  width:3px;
-  bottom:-70px;
-  left:0px;
-  background: linear-gradient(to top, rgba(0,0,0,0), #f6e58d);
-  border-top-right-radius: 1px;
-  border-top-left-radius: 1px;
+  bottom: -100%;
+  left: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), #f6e58d);
+  border-radius: 50px;
   animation: span4 2s linear infinite;
-  animation-delay: 4s;
+  animation-delay: 1.5s;
 }
-@keyframes span4{
-  0%{
-      bottom: -70px;
+
+@keyframes span4 {
+  0% {
+      bottom: -100%;
   }
-  100%{
-      bottom:70px;
+  100% {
+      bottom: 100%;
   }
 }
 
-.BtnSolicitarCotización:hover{
-  transition: all .5s;
+.BtnSolicitarCotización:hover {
   transform: rotate(-3deg) scale(1.1);
-  box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
 }
-.BtnSolicitarCotización:hover span{
+
+.BtnSolicitarCotización:hover span {
   animation-play-state: paused;
 }
 
@@ -178,6 +171,8 @@
   font-size: 30px;
 }
 
+
+/*ESTILOS CARRUCEL*/
 .divCarrucel {
   background-color: black;
   width: 100%;
@@ -188,7 +183,6 @@
   justify-content: center;
   position: relative; /* Asegura que las flechas se posicionen correctamente */
 }
-
 
 .alice-carousel__stage {
   display: flex;
@@ -235,18 +229,91 @@
   right: 10px; /* Ajuste de la posición de la flecha derecha */
 }
 
-
 /* Oculta los indicadores del carrusel */
 .alice-carousel__dots {
   display: none !important;
 }
 
-.divDestacarServicios{
-  background-color: white;
-  width: auto;
-  height: 500px;
+.divDestacarServicios {
+  margin-top: -120px;
+  margin-bottom: 0;
+  padding-bottom: 20px;
 }
-.LinesDivisora {
-background-color: #F5B041;
-  height: 2px;
+
+.divCard {
+  margin-top: 20px; /* O ajustar según lo que prefieras */
+}
+@font-face {
+  font-family: 'AllerDisplay';
+  src: url('../fonts/AllerDisplay.ttf');
+}
+.DemosFormaText{
+  font-family: 'AllerDisplay';
+  justify-content: center;
+  font-size: 50px;
+  text-align: center;
+  margin-left: -550px;
+  color: rgb(34, 34, 34);
+}
+.TextDestaServicios{
+  text-align: center;
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 20px;
+  margin-left: -540px;
+  color: rgb(34, 34, 34);
+  line-height: 30px;
+}
+
+.TextDestaServicios2{
+  text-align: center;
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #C88594;
+  font-style: oblique;
+  margin-left: -500px;
+}
+
+/*ESTILOS DE LOS CARDS*/
+.divCard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;  /* Ajusta el espacio entre las tarjetas */
+  justify-content: center;  /* Centrar las columnas horizontalmente */
+  justify-items: center;  /* Centrar cada tarjeta dentro de su columna */
+  align-items: center;  /* Centrar las tarjetas verticalmente */
+}
+
+.Card {
+  width: 370px; 
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.EstilosCard{
+    border-radius: 30px;
+  overflow: hidden;
+}
+.Card img {
+  object-fit: cover;
+  height: 200px; /* Ajusta la altura de la imagen */
+  width: 100%; /* Asegúrate de que la imagen ocupe todo el ancho del card */
+}
+.Card .ant-card-meta-description {
+  font-size: 14px;
+  color: #757575;
+  padding: 10px; /* Añade espacio alrededor del texto */
+}
+.card-title {
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #F5B041;
+}
+
+.card-description {
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 16px;
+  color: #757575;
 }

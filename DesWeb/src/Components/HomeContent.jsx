@@ -5,6 +5,11 @@ import '../Styles/HomeContent.css';
 import { Card, Image } from 'antd'; // Importación de Card e Image de Ant Design
 import { useNavigate } from 'react-router-dom';
 
+//Importación de imaganes para Cards
+import Proyecto1 from "../Img/ICP_LibroMarca.jpg";
+import Proyecto2 from "../Img/ICP_Presentaciones.jpg";
+import Proyecto3 from "../Img/ICP_Tarjetas.jpg";
+
 // Importación de las imágenes de los logos
 import Logo1 from '../Img/Logo_1.png';
 import Logo2 from '../Img/Logo_2.png';
@@ -91,51 +96,60 @@ return (
 </div>
 
 <div className='divDestacarServicios'>
-        <h1>Demos forma a la identidad visual de su marca</h1>
-        <p>Una identidad gráfica bien construida, que refleje la esencia y valores de su negocio, <br />
-        es fundamental para atraer a sus clientes y lograr resultados. <br />
-        ¡Estoy aquí para ayudarle a crear una Identidad Visual sólida <br />que haga destacar a su negocio!</p>
+        <h1 className='DemosFormaText'>¡Demos forma a la identidad <br />visual de su marca!</h1><br />
+        <p className='TextDestaServicios'>Una identidad gráfica bien construida, que refleje la esencia y valores de su negocio, <br />
+        es fundamental para atraer a sus clientes y lograr resultados. </p><br />
+        <p className='TextDestaServicios2'>¡Estoy aquí para ayudarle a crear una Identidad Visual sólida <br />que haga destacar a su negocio!</p>
 </div> {/*Cierra divDestacarServicios*/}
-
-
-<div className='ProyectosDestacados'>
-
+<br /><br /><br />
 {/* Cards de Ant Design */}
-    <div className="divCard">
-    <Card /*CARD 1*/
-      hoverable
-      style={{ width: 300 }}
-      cover={<Image alt="Proyecto 1" src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />}
-    >
-      <Card.Meta title="Proyecto 1" description="Descripción del proyecto 1" />
-    </Card>
-<br />
-    <Card /*CARD 2*/
-      hoverable
-      style={{ width: 300 }}
-      cover={<Image alt="Proyecto 2" src="https://example.com/proyecto2.png" />}
-    >
-      <Card.Meta title="Proyecto 2" description="Descripción del proyecto 2" />
-    </Card>
-<br />
-    <Card /*CARD 3*/
-      hoverable
-      style={{ width: 300 }}
-      cover={<Image alt="Proyecto 3" src="https://example.com/proyecto3.png" />}
-    >
-      <Card.Meta title="Proyecto 3" description="Descripción del proyecto 3" />
-    </Card>
-<br />
-    <Card /*CARD 4*/
-      hoverable
-      style={{ width: 300 }}
-      cover={<Image alt="Proyecto 3" src="https://example.com/proyecto3.png" />}
-    >
-      <Card.Meta title="Proyecto 3" description="Descripción del proyecto 3" />
-    </Card>
+<div className="divCard">
+  <div className="Card">
+  <Card 
+  hoverable
+  className="Card EstilosCard"
+  cover={<Image alt="Proyecto 1" src={Proyecto1} />}
+>
+  <Card.Meta 
+  title={<span className="card-title">Libro de Identidad Corporativa</span>} 
+  description={<span className="card-description">Define y regula cómo se debe usar visual 
+  y verbalmente la marca en todos los medios.
+  Establece el uso correcto de logotipos, tipografías, colores..., garantizando coherencia y uniformidad en todas las aplicaciones.  </span>} 
+  />
+</Card>
+  </div>
 
-    </div> {/*Cierra divCard*/}
-  </div> {/*Cierra divProyectosDestacados*/}
+  <div className="Card">
+  <Card 
+      hoverable
+      style={{ width: 370 }}
+      cover={<Image alt="Proyecto 2" src={Proyecto2}/>}
+    >
+      <Card.Meta   
+      title={<span className="card-title">Retícula para presentaciones</span>} 
+      description={<span className="card-description">Es esencial para una empresa porque garantiza 
+      consistencia visual, facilita la organización del contenido y refuerza la identidad de marca. 
+      Genera una impresión coherente y atractiva en todas las comunicaciones. </span>} 
+  />
+    </Card>
+  </div>
+
+  <div className="Card">
+  <Card 
+      hoverable
+      style={{ width: 370 }}
+      cover={<Image alt="Proyecto 3" src={Proyecto3} />}
+    >
+      <Card.Meta   
+      title={<span className="card-title">Tarjetas de presentación</span>} 
+      description={<span className="card-description">Facilitan el intercambio profesional, 
+      dejando una impresión tangible y duradera. Ofrecen una forma rápida de compartir información 
+      de contacto y proyectan profesionalismo en reuniones y eventos.</span>} 
+  />
+    </Card>
+  </div>
+</div>
+
 
 </div> /*cierra divContenido*/
   );

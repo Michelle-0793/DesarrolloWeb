@@ -4,6 +4,7 @@ import PostProducto from "../services/PostProducto";
 import GetProducto from '../services/GetProducto';
 import UpdateProducto from "../services/UpdateProducto";
 import DeleteProducto from "../services/DeleteProducto";
+import "../Styles/AdministrationContent.css";
 
 function AdministrationContent() {
   const [Productos, setProductos] = useState([]); // Estado para la lista de productos
@@ -120,22 +121,27 @@ const ClickImagen = () => {
 
   return (
 <div className='Container'>
-  <h1 className='Gestion'>Administración de Productos</h1><br /><br />
+<h1 className='Administracion'>ADMINISTRACIÓN DE SERVICIOS<span className='punto'>.</span> </h1><br /><br />
   <div className='InputsDatos'>
-    <input className='InputNombreProducto' type="text"
+    <input className='InputNombreServicio' type="text"
       value={NuevoProducto}
       onChange={NombreProducto}
       placeholder='Ingrese el nombre del producto'
     /><br />
 
-    <textarea className='InputDescripcionProducto'
+    <textarea className='AreaDescripcionServicio'
       value={DescripcionProducto}
       onChange={Descripcion}
       placeholder='Ingrese una descripción'
     /><br /><br />
 
-    <input type="file" accept="image/*" onChange={CargarImagen} /><br /><br />
-    <button className='btnAñadirProducto' onClick={AñadirProducto}>Añadir producto</button>
+<div className="divCargarImagen">
+    <label htmlFor="file-upload" className="CargarImagen">
+    Seleccionar imagen
+    </label>
+    <input id="file-upload" type="file" accept="image/*" onChange={CargarImagen} />
+  </div> <br />
+  <button className='btnAñadirProducto' onClick={AñadirProducto}>Añadir producto</button>
   </div>
   <br /><br /><br />
 

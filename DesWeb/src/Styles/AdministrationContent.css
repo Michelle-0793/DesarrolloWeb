@@ -1,0 +1,175 @@
+
+.Administracion{
+    font-family: 'AllerDisplay';
+    justify-content: center;
+    font-size: 40px;
+    text-align: center;
+    color: rgb(34, 34, 34);
+    line-height: 20px;
+  }
+  .punto{
+    font-family: "Century Gothic", Arial, sans-serif;
+      color: #c88594; /* Cambia el color del punto aquí */
+      font-size: 120px; /* Ajusta el tamaño del punto según tus necesidades */    
+      vertical-align:baseline
+  
+  }
+  .InputsDatos{
+    text-align: center;
+  }
+  .InputNombreServicio{
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    font-family: "Century Gothic", Arial, sans-serif;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 600px;
+    background-color: #8b8b8b2a;
+    color: #000000;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
+    margin-bottom: 30px;
+    border-radius: 50px;
+  }
+  .AreaDescripcionServicio{
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    font-family: "Century Gothic", Arial, sans-serif;
+    height: 200px;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 600px;
+    background-color: #8b8b8b2a;
+    color: #000000;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
+    margin-bottom: 30px;
+    border-radius: 20px;
+  }
+.btnAñadirProducto{
+    border: none;
+    outline: none;
+    width: 200px;
+    height: 40px;
+    margin-top: -20px;
+    font-size: 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    background: #f5b041;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-weight: bold;
+}
+.custom-file-upload {
+    margin-bottom: 20px; /* Espacio entre el botón y los demás elementos */
+  }
+  
+  /* Oculta el input original */
+  #file-upload {
+    display: none;
+  }
+.divCargarImagen{
+    display: flex; /* Flexbox en el contenedor padre */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Opcional, si necesitas centrar verticalmente también */
+    height: 30px; /* Ajusta el tamaño de altura del contenedor según tu diseño */
+
+}
+  /* Estilos del botón cargar imagen */
+  .CargarImagen {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #adadad; /* Color del botón */
+    color: rgb(0, 0, 0);
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center; /* Asegura que el texto esté centrado */
+    border: none;
+    width: 200px;
+    height: 40px;    
+    display: flex;  /* Flexbox para centrar vertical y horizontal */
+    justify-content: center;  /* Centra el texto horizontalmente */
+    align-items: center; /* Centra el texto verticalmente */
+  }
+  
+  /* Estilo de hover para el botón */
+  .CargarImagen:hover {
+    background-color: #252525;
+  }
+  .ContenedorProductos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+    gap: 20px; 
+    padding: 20px;
+  }
+  .divListaProductos {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  
+  .divListaProductos img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Botones de editar y eliminar */
+  .btnEditarProducto,
+  .btnEliminarProducto,
+  .btnCambiarImagen,
+  .btnGuardarProducto {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .btnEditarProducto {
+    background-color: #17a2b8;
+    color: #fff;
+  }
+  
+  .btnEliminarProducto {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .btnCambiarImagen {
+    background-color: #ffc107;
+    color: #000;
+  }
+  
+  .btnGuardarProducto {
+    background-color: #28a745;
+    color: #fff;
+  }
+  ul {
+    list-style-type: none; /* Elimina los puntos de viñeta */
+    padding: 0; /* Elimina el padding predeterminado */
+    margin: 0; /* Elimina el margen predeterminado */
+  }
+  /* Responsividad */
+  @media (max-width: 1200px) {
+    .ContenedorProductos {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .ContenedorProductos {
+      grid-template-columns: 1fr;
+    }
+  }

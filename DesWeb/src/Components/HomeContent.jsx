@@ -5,7 +5,7 @@ import '../Styles/HomeContent.css';
 import { Card, Image } from 'antd'; // Importación de Card e Image de Ant Design
 import { useNavigate } from 'react-router-dom';
 import EnlacesCarrusel from '../Components/EnlacesCarrusel'; // Importa el nuevo carrusel
-import Footer from "../Components/Footer";
+import Footer from "../Components/Footer"
 
 
 //Importación de imaganes para Cards
@@ -105,69 +105,65 @@ return (
         <p className='TextDestaServicios2'>¡Estoy aquí para ayudarle a crear una Identidad Visual sólida <br />que haga destacar a su negocio!</p>
 </div> {/*Cierra divDestacarServicios*/}
 <br /><br /><br />
+
 {/* Cards de Ant Design */}
 <div className="divCard">
+
   <div className="Card">
   <Card 
   hoverable
-  className="Card EstilosCard"
+  className="EstilosCard"
   cover={<Image alt="Proyecto 1" src={Proyecto1} />}
->
+  >
   <Card.Meta 
   title={<span className="card-title">BRANDING</span>} 
   description={<span className="card-description">Construyo identidades visuales coherentes, 
   reflejando la esencia y valores de su marca para impactar a su público objetivo.</span>} 
   />
-</Card>
+  </Card>
   </div>
 
   <div className="Card">
   <Card 
-      hoverable
-      className="Card EstilosCard"
-      cover={<Image alt="Proyecto 2" src={Proyecto2}/>}
-    >
-      <Card.Meta   
-      title={<span className="card-title">DISEÑO PARA REDES SOCIALES</span>} 
-      description={<span className="card-description">Contenido visual que 
-      conecte y destaque en redes sociales, logrando más interacción 
-      y visibilidad para su negocio. </span>} 
+  hoverable
+  className="EstilosCard"
+  cover={<Image alt="Proyecto 2" src={Proyecto2}/>}
+  >
+  <Card.Meta   
+  title={<span className="card-title">DISEÑO PARA REDES SOCIALES</span>} 
+  description={<span className="card-description">Contenido visual que 
+  conecte y destaque en redes sociales, logrando más interacción 
+  y visibilidad para su negocio. </span>} 
   />
-    </Card>
+  </Card>
   </div>
 
   <div className="Card">
   <Card 
-      hoverable
-      className="Card EstilosCard"
-      cover={<Image alt="Proyecto 3" src={Proyecto3} />}
-    >
-      <Card.Meta   
-      title={<span className="card-title">DISEÑO EDITORIAL</span>} 
-      description={<span className="card-description">Transformo ideas en publicaciones 
-      visualmente atractivas y funcionales, como catálogos, libros, revistas, folletos, menús... </span>} 
+  hoverable
+  className="EstilosCard"
+  cover={<Image alt="Proyecto 3" src={Proyecto3} />}
+  >
+  <Card.Meta   
+  title={<span className="card-title">DISEÑO EDITORIAL</span>} 
+  description={<span className="card-description">Transformo ideas en publicaciones 
+  visualmente atractivas y funcionales, como catálogos, libros, revistas, folletos, menús... </span>} 
   />
-    </Card>
+  </Card>
   </div>
+
 </div>{/*cierra divCard*/}
 <br /><br /><br /><br /><br />
 
 <div className="divEnlaces">
 <h1 className='TituloEnlaces'>TODO LO QUE NECESITA SABER <br />SOBRE DISEÑO GRÁFICO   <span className='punto'>.</span> </h1><br /><br />
-      <EnlacesCarrusel />
+<EnlacesCarrusel />
 </div>
 <br /><br /><br /><br /><br /><br /><br />
-<div className='Plasta2'>
 
-</div>
 <div>
 <Footer />
 </div>
-
-
-
-
-
 
 </div> /*cierra divContenido*/
   );

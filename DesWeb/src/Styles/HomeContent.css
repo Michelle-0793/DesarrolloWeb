@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  height: 100%;
+  margin: 0;
+}
 
 
 .divContenido {
@@ -299,10 +303,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
 }
 .EstilosCard{
   border-radius: 20px;
   overflow: hidden;
+  
 }
 .Card img {
   object-fit: cover;
@@ -329,12 +335,4 @@
   text-align: center;
   color: rgb(34, 34, 34);
   line-height: 20px;
-}
-.Plasta2{
-  background-image: url('../Img/Inicio_Plasta2.png'); /* Ruta imagen de portada */
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  height: 355px; /* Ajusta la altura según tus necesidades */
-  width: 100%;
 }

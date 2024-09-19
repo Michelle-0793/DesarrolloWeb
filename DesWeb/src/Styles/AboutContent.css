@@ -1,0 +1,26 @@
+/* Estilos de reset para asegurar que todo se comporta correctamente */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Contenedor principal que ocupa toda la página */
+  .divAbout{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa al menos toda la ventana del navegador */
+  }
+  
+  /* Este es el contenido principal que empujará al footer hacia abajo */
+  .divAbout h1 {
+    text-align: center;
+    margin-top: 20px;
+    flex: 1; /* Empuja el footer hacia abajo */
+  }
+  
+  /* El footer se queda en la parte inferior */
+  footer {
+    margin-top: auto;
+  }
+  

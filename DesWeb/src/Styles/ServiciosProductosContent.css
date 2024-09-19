@@ -1,0 +1,60 @@
+/* Estilos de reset para asegurar que todo se comporta correctamente */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Contenedor principal que ocupa toda la página */
+  .divServicios{
+    display: flex;
+    flex-direction: column;
+    margin-top: 130px;
+  }
+  
+  /* Este es el contenido principal que empujará al footer hacia abajo */
+  .divServicios h1 {
+    text-align: center;
+    margin-top: 20px;
+    flex: 1; /* Empuja el footer hacia abajo */
+  }
+  
+  /* El footer se queda en la parte inferior */
+  footer {
+    margin-top: auto;
+  }
+  .PortadaServicios {
+    background-image: url('../Img/PortadaServicios.jpg'); /* Ruta de la imagen de portada */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 470px;
+    width: 100%;
+    display: flex;
+    align-items: center; /* Vertical */
+    justify-content: start; /* Horizontal */
+    position: relative;
+    text-align: left;
+    margin-top: 0; /* Asegura que no haya espacio extra arriba */
+    padding: 0;
+}
+  @font-face {
+    font-family: 'AllerDisplay';
+    src:url('../fonts/AllerDisplay.ttf') format('truetype');
+  }
+  .SuVision{
+    justify-content: center;
+    font-size: 40px;
+    text-align: center;
+    margin-left: -550px;
+    color: rgb(255, 255, 255);
+    line-height: 20px;
+    font-family: 'AllerDisplay';
+  }
+  .punto{
+    font-family: 'AllerDisplay';
+      color: #c88594; /* Cambia el color del punto aquí */
+      font-size: 120px; /* Ajusta el tamaño del punto según tus necesidades */    
+      vertical-align:baseline
+  
+  }

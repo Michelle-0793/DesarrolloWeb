@@ -1,12 +1,14 @@
 import React from 'react';
 import Header from "../Components/Header";
-import ServiciosProductosContent from '../Components/ServiciosProductosContent'; // Importa el componente que muestra los productos a los clientes
+import ServiciosProductosContent from '../Components/ServiciosProductosContent'; 
+import Footer from "../Components/Footer"
 
 function ServiciosProductos() {
   return (
     <div>
       <Header />
-      <ServiciosProductosContent /> 
+      <ServiciosProductosContent /> <br /><br />
+      <Footer /> 
     </div>
   );
 }

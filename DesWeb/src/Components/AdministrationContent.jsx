@@ -154,19 +154,20 @@ const ClickImagen = () => {
   {EditarProductoId === producto.id ? ( /*Abre operador ternario*/
   /* INCIO DE EDICIÓN */
     <>
-      <input className='InputNombreProductoEditado' type="text"
+      <input className='InputNombreServicioEditado' type="text"
         value={ProductoEditado}
         onChange={CambiarNombreEditado}
       />
-      <textarea className='InputDescripcionProductoEditada' /*Area de edición de descripción*/
+      <textarea className='AreaDescripcionServicioEditada' /*Area de edición de descripción*/
         value={DescripcionEditada}
         onChange={CambiarDescripcionEditada}
       />
 
       {/* Mostrar la imagen actual al editar*/}
-      {ImagenEditada && <img src={ImagenEditada} alt={ProductoEditado} width="100" />}
+      {ImagenEditada && <img src={ImagenEditada} alt={ProductoEditado} width="230" />}
 
       {/* Botón para seleccionar o cambiar la imagen */}
+      <div className='divBotonesEditar'>
       <button className='btnCambiarImagen' onClick={ClickImagen}>  {/* Simula un click en el input */}
         {ImagenEditada || producto.imagen ? "Cambiar imagen" : "Seleccionar archivo"} </button>
 
@@ -177,24 +178,26 @@ const ClickImagen = () => {
       />
       <br />
       <button className='btnGuardarProducto' onClick={() => GuardarEdicion(producto.id)}>Guardar</button>
+      </div>
     </>
 
 ) : ( /*Cierra operador ternario*/
   
     <>
       <div className='divListaProductos'>
-        <h2>{producto.nombre}</h2>
+        <h2 className='TituloServicio'>{producto.nombre}</h2>
         <img src={producto.imagen} alt={producto.nombre} width="100" />
-        <p>{producto.descripcion}</p>
+        <p className='TextoDescripcionServicio'>{producto.descripcion}</p>
+        <div className='btnBotonesEditElim'>
         <button className='btnEditarProducto' onClick={() => EditarProducto(producto)}>Editar</button>
         <button className='btnEliminarProducto' onClick={() => EliminarProducto(producto.id)}>Eliminar</button>
+        </div>
       </div>
     </>
     )}
 </li>
 ))}
 </ul>
-
   </div>
 </div> {/*Cierra div ContenedorProductos*/}
 </div>/*Cierra div Container*/

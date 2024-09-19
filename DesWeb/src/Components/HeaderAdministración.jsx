@@ -4,15 +4,19 @@ import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../Img/Header_Logo.png'; // Ajusta la ruta según corresponda
 import "../Styles/Header.css";
 
-function Header() { 
+function HeaderAdministracion() { 
 // Estado para manejar la visibilidad del menú en dispositivos móviles
 const [menuAbierto, setMenuAbierto] = useState(false);
 const navigate = useNavigate();
-
 // Función para alternar la visibilidad del menú
 const alternarMenu = () => {
-  setMenuAbierto(!menuAbierto);
-};
+    setMenuAbierto(!menuAbierto);
+  };
+
+function cerrarSesion() {
+   localStorage.removeItem("Autenticado");
+   navigate('/');
+ };
 
 const IniciarSesión = () => {
   navigate('/Login'); // Redirige a la página de login
@@ -22,11 +26,7 @@ const IniciarSesión = () => {
       <header>
         <img src={Logo} alt="Logo" className="logo" />
         <nav className={`navbar ${menuAbierto ? "activo" : ""}`}>
-          <Link to="/" className="nav-link">INICIO</Link>
-          <Link to="/About" className="nav-link">SOBRE MÍ</Link>
-          <Link to="/ServiciosProductos" className="nav-link">SERVICIOS</Link>
-          <Link to="/Contact" className="nav-link">CONTÁCTAME</Link>
-          <button onClick={IniciarSesión} className="BtnIniciarSesion">Iniciar sesión</button>
+        <button className="BtnCerrarSesion" onClick={cerrarSesion}>Cerrar Sesión</button><br /><br /><br /><br />
         </nav>
         {/* Ícono de menú hamburguesa */}
       <div className="icono-hamburguesa" onClick={alternarMenu}>
@@ -38,5 +38,5 @@ const IniciarSesión = () => {
     );
   }
   
-  export default Header;
+  export default HeaderAdministracion;
   

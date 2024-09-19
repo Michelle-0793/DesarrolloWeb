@@ -5,6 +5,7 @@ import '../Styles/HomeContent.css';
 import { Card, Image } from 'antd'; // Importación de Card e Image de Ant Design
 import { useNavigate } from 'react-router-dom';
 import EnlacesCarrusel from '../Components/EnlacesCarrusel'; // Importa el nuevo carrusel
+import Footer from "../Components/Footer";
 
 
 //Importación de imaganes para Cards
@@ -152,9 +153,16 @@ return (
 <br /><br /><br /><br /><br />
 
 <div className="divEnlaces">
+<h1 className='TituloEnlaces'>TODO LO QUE NECESITA SABER <br />SOBRE DISEÑO GRÁFICO   <span className='punto'>.</span> </h1><br /><br />
       <EnlacesCarrusel />
 </div>
+<br /><br /><br /><br /><br /><br /><br />
+<div className='Plasta2'>
 
+</div>
+<div>
+<Footer />
+</div>
 
 
 

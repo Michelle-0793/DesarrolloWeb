@@ -1,0 +1,54 @@
+.divCarrusel {
+    width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  .TituloEnlace{
+    font-family: "Century Gothic", Arial, sans-serif;
+    justify-content: center;
+    font-size: 35px;
+    text-align: center;
+    color:#d4af37;
+    line-height: 20px;
+  }
+  .TextoEnlace{
+    font-family: "Century Gothic", Arial, sans-serif;
+    justify-content: center;
+    font-size: 20px;
+    text-align: center;
+    color:#ffffff;
+    line-height: 30px;
+  }
+  .Leer{
+    font-family: "Century Gothic", Arial, sans-serif;
+    justify-content: center;
+    font-size: 20px;
+    text-align: center;
+    color:#ffffff;
+    line-height: 30px;
+    text-decoration: none;
+  }
+
+  .Mas{
+    font-family: "Century Gothic", Arial, sans-serif;
+    justify-content: center;
+    font-size: 20px;
+    text-align: center;
+    color:#d4af37;
+    line-height: 30px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .CarouselItem {
+    border-radius: 20px;
+    overflow: hidden; /* Asegúrate de que el contenido de la imagen no se desborde */
+  }
+.Enlace{
+  border-radius: 20px; /* Asegúrate de que la imagen tenga bordes redondeados */
+}
+
+/* Opcional: Puedes agregar sombra alrededor de los slides */
+.divCarrusel {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

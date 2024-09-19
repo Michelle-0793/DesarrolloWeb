@@ -255,13 +255,11 @@
   margin-left: -550px;
   color: rgb(34, 34, 34);
   line-height: 20px;
-
 }
 .punto{
   font-family: "Century Gothic", Arial, sans-serif;
     color: #c88594; /* Cambia el color del punto aquí */
-    font-size: 120px; /* Ajusta el tamaño del punto según tus necesidades */
-    
+    font-size: 120px; /* Ajusta el tamaño del punto según tus necesidades */    
     vertical-align:baseline
 
 }
@@ -331,4 +329,12 @@
   text-align: center;
   color: rgb(34, 34, 34);
   line-height: 20px;
+}
+.Plasta2{
+  background-image: url('../Img/Inicio_Plasta2.png'); /* Ruta imagen de portada */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  height: 355px; /* Ajusta la altura según tus necesidades */
+  width: 100%;
 }

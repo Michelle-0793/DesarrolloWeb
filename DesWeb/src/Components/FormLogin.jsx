@@ -41,7 +41,7 @@ function FormLogin() {
     content: '¡Inicio de sesión exitoso!',
     className: 'custom-class',
     style: {
-      marginTop: '20vh',
+      marginTop: '5vh',
     },
   });
 
@@ -58,7 +58,7 @@ function FormLogin() {
     content: 'Acceso denegado',
     className: 'custom-class',
     style: {
-      marginTop: '20vh',
+      marginTop: '5vh',
     },
   });
 }
@@ -75,7 +75,7 @@ useEffect(() => {
 
 
   return (
-<div className="wrapper">
+<div className="divLogin">
 {contextHolder}
         <form className="form">
 

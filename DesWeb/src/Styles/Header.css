@@ -1,6 +1,4 @@
-*{
-    margin: 0;
-}
+
 /* ESTILO GENERAL DEL HEADER */
 header {
   background-color: #020003;
@@ -117,9 +115,10 @@ body{
   font-weight: bold;
 }
 .BtnIniciarSesion:hover{
-  color: rgba(255, 255, 255, 1) !important;
-  box-shadow: 0 4px 16px rgba(122, 31, 55, 1);
-  transition: all 0.2s ease;
+  background: black; /* Efecto hover en el botón */
+    color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 4px 16px rgba(245, 176, 65, 1);
+    transition: all 0.2s ease;
 }
 
 /* Estilos responsive */

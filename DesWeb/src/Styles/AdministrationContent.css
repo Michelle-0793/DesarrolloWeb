@@ -236,8 +236,9 @@
     margin-left: 30px;
 }
 .BtnCerrarSesion:hover{
+  background: black; /* Efecto hover en el botón */
     color: rgba(255, 255, 255, 1) !important;
-    box-shadow: 0 4px 16px rgba(122, 31, 55, 1);
+    box-shadow: 0 4px 16px rgba(245, 176, 65, 1);
     transition: all 0.2s ease;
 }
   /* Responsividad */

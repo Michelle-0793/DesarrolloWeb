@@ -100,8 +100,8 @@ return (
 
 <div className='divDestacarServicios'>
         <h1 className='DemosFormaText'>DEMOS FORMA A LA IDENTIDAD <br />VISUAL DE SU MARCA   <span className='punto'>.</span> </h1><br /><br />
-        <p className='TextDestaServicios'>Una identidad gráfica bien construida, que refleje la esencia y valores de su negocio, <br />
-        es fundamental para atraer a sus clientes y lograr resultados. </p><br />
+        <p className='TextDestaServicios'>Una identidad gráfica bien construida, que refleje la esencia y valores <br /> de su negocio, 
+        es fundamental para atraer a sus clientes y lograr resultados. </p>
         <p className='TextDestaServicios2'>¡Estoy aquí para ayudarle a crear una Identidad Visual sólida <br />que haga destacar a su negocio!</p>
 </div> {/*Cierra divDestacarServicios*/}
 <br /><br /><br />

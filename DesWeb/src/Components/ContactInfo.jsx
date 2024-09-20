@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { message } from 'antd'; 
+import "../Styles/ContactInfo.css";
+import MapContent from "../Components/MapContent";
 
 const ContactInfo = () => {
   const form = useRef();
@@ -35,37 +37,38 @@ const ContactInfo = () => {
   };
 
   return (
-    <div>
+    <div className='ContenidoContacto'>
       {contextHolder} {/* Renderiza el contenedor para los mensajes */}
-      <h1>¡Hablemos sobre su próximo proyecto!</h1>
-      <p>
-        Estoy aquí para ayudarle a dar vida a sus ideas a través del diseño gráfico. <br />
-        Completa el formulario a continuación o utiliza los medios de contacto directo para que podamos empezar a trabajar juntos.
-      </p><br />
+      <h1 className='Hablemos'>HABLEMOS DE SU PRÓXIMO PROYECTO<span className='punto'>.</span> </h1><br /><br />
+      <p className='EstoyAqui'>¡Estoy aquí para ayudarle a dar vida 
+        a sus ideas a través del diseño gráfico!</p>
+      <p className='CompletaText'>Completa el formulario a continuación o utiliza los medios de <br /> 
+        contacto directo para que podamos empezar a trabajar juntos.</p>
+<br />
+<MapContent/>
+      <form className='FormCotizacion' ref={form} onSubmit={sendEmail}>
+      <label>Nombre completo:<span class="asterisco-obligatorio">*</span></label><br />
+      <input class="InputCotizacion" type="text" name="Username" required />
 
-      <form ref={form} onSubmit={sendEmail}>
-        <label>Nombre completo (obligatorio):</label><br />
-        <input type="text" name="Username" required /><br /><br />
+      <label>Correo electrónico:<span class="asterisco-obligatorio">*</span></label><br />
+      <input class="InputCotizacion" type="email" name="UserEmail" required />
 
-        <label>Correo electrónico (obligatorio):</label><br />
-        <input type="email" name="UserEmail" required /><br /><br />
+      <label>Teléfono:</label><br />
+      <input class="InputCotizacion" type="text" name="Phone"/>
 
-        <label>Teléfono (opcional):</label><br />
-        <input type='text' name="Phone" placeholder="Teléfono" required /><br /><br />
+      <label>Descripción del proyecto:<span class="asterisco-obligatorio">*</span></label><br />
+      <textarea class="TextAreaCotizacion" name="DescripcionProyecto" placeholder="Detalles sobre lo que necesitas" required></textarea>
 
-        <label>Descripción del proyecto:</label><br />
-        <textarea name="DescripcionProyecto" placeholder="Detalles sobre lo que necesitas" required /><br /><br />
+      <label>Presupuesto estimado:</label><br />
+      <input class="InputCotizacion" type="text" name="PrecioEstimado" />
 
-        <label>Presupuesto estimado (opcional):</label><br />
-        <input type="text" name="PrecioEstimado" /><br /><br />
+      <label>Fecha de entrega deseada:</label><br />
+      <input class="InputCotizacion" type="date" name="FechaEntregaDeseada" />
 
-        <label>Fecha de entrega deseada (opcional):</label><br />
-        <input type="date" name="FechaEntregaDeseada" /><br /><br />
+      <label>Comentarios adicionales:</label><br />
+      <textarea class="TextAreaCotizacion" name="ComentariosAdicionales"></textarea>
 
-        <label>Comentarios adicionales:</label><br />
-        <textarea name="ComentariosAdicionales" /><br /><br />
-
-        <input type="submit" value="Enviar" />
+      <input className='BtnEnviar' type="submit" value="Enviar" />
       </form><br /><br />
     </div>
   );

@@ -45,32 +45,52 @@ const ContactInfo = () => {
       <p className='CompletaText'>Completa el formulario a continuación o utiliza los medios de <br /> 
         contacto directo para que podamos empezar a trabajar juntos.</p>
 <br />
-<MapContent/>
-      <form className='FormCotizacion' ref={form} onSubmit={sendEmail}>
-      <label>Nombre completo:<span class="asterisco-obligatorio">*</span></label><br />
-      <input class="InputCotizacion" type="text" name="Username" required />
 
-      <label>Correo electrónico:<span class="asterisco-obligatorio">*</span></label><br />
-      <input class="InputCotizacion" type="email" name="UserEmail" required />
+  <div className='divForm'>
+  <form className='FormCotizacion' ref={form} onSubmit={sendEmail}>
+  
+  {/* Nombre completo */}
+  <div className="input-container">
+    <input className="InputCotizacion" type="text" name="Username" placeholder="Nombre Completo" required />
+    <span className="asterisco-obligatorio">*</span>
+  </div>
+  
+  {/* Correo electrónico */}
+  <div className="input-container">
+    <input className="InputCotizacion" type="email" name="UserEmail" placeholder="Correo electrónico" required />
+    <span className="asterisco-obligatorio">*</span>
+  </div>
+  
+  {/* Teléfono */}
+  <input className="InputCotizacion" type="text" name="Phone" placeholder="Teléfono" />
 
-      <label>Teléfono:</label><br />
-      <input class="InputCotizacion" type="text" name="Phone"/>
+  {/* Descripción del proyecto */}
+  <div className="input-container">
+    <textarea className="TextAreaCotizacion" name="DescripcionProyecto" placeholder="Descripción del proyecto" required></textarea>
+    <span className="asteriscoDescripcion">*</span>
+  </div>
 
-      <label>Descripción del proyecto:<span class="asterisco-obligatorio">*</span></label><br />
-      <textarea class="TextAreaCotizacion" name="DescripcionProyecto" placeholder="Detalles sobre lo que necesitas" required></textarea>
+  {/* Presupuesto estimado */}
+  <input className="InputCotizacion" type="text" name="PrecioEstimado" placeholder="Presupuesto estimado" />
 
-      <label>Presupuesto estimado:</label><br />
-      <input class="InputCotizacion" type="text" name="PrecioEstimado" />
+  {/* Fecha de entrega deseada */}
+  <input className="InputCotizacion" type="date" name="FechaEntregaDeseada" />
 
-      <label>Fecha de entrega deseada:</label><br />
-      <input class="InputCotizacion" type="date" name="FechaEntregaDeseada" />
+  {/* Comentarios adicionales */}
+  <textarea className="TextAreaCotizacion" name="ComentariosAdicionales" placeholder="Comentarios adicionales"></textarea>
 
-      <label>Comentarios adicionales:</label><br />
-      <textarea class="TextAreaCotizacion" name="ComentariosAdicionales"></textarea>
+  {/* Botón enviar */}
+  <input className='BtnEnviar' type="submit" value="Enviar" />
+</form><br /><br />
 
-      <input className='BtnEnviar' type="submit" value="Enviar" />
-      </form><br /><br />
-    </div>
+</div>
+<div className='divMapa'>
+      <MapContent/>
+      </div>
+</div>
+
+
+    
   );
 };
 

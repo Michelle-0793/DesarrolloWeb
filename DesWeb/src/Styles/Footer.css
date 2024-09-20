@@ -4,10 +4,11 @@
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* No repetir la imagen */
     width: 100%; /* Asegura que el fondo cubra todo el ancho */
-    min-height: 292px; /* Altura mínima del footer */
+    height: 298px; /* Altura mínima del footer */
     padding: 50px 20px; /* Añade espacio alrededor del contenido */
-    position: relative; /* Contenedor de referencia */
+    position: absolute; /* Contenedor de referencia */
     margin: 0;
+    margin-bottom: 0;
 }
 .Tranformemos{
     font-family: 'AllerDisplay';
@@ -27,7 +28,7 @@
 }
 .Reservados {
     position: absolute; /* Para permitir mover libremente el texto */
-    bottom: 10px; /* Ajusta la distancia desde el fondo del Footer */
+    bottom: 15px; /* Ajusta la distancia desde el fondo del Footer */
     left: 50%; /* Centra horizontalmente */
     transform: translateX(-50%); /* Para centrar completamente el texto */
     font-size: 18px; /* Ajusta el tamaño de la fuente si es necesario */

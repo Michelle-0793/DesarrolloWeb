@@ -145,7 +145,7 @@ const ClickImagen = () => {
   </div>
   <br /><br /><br />
 
-      {/* LISTA DE PRODUCTOS */}
+{/* LISTA DE PRODUCTOS */}
 <div className='ContenedorProductos'>
   <div>
     <ul>

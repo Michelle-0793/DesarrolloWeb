@@ -2,6 +2,8 @@ import React from 'react';
 
 import Header from "../Components/Header";
 import ContactInfo from "../Components/ContactInfo";
+import Footer from "../Components/Footer";
+
 
 function Contact() {
   return (
@@ -9,6 +11,8 @@ function Contact() {
 
     <Header /><br /><br /><br /><br /><br /><br />
     <ContactInfo />
+    <Footer />
+
 
 
     </div>

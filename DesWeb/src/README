@@ -1,0 +1,39 @@
+COMPONENTE ADMINISTRACIÓN:
+Flujo del código:
+1. Componentes principales:
+
+El componente principal es AdministrationContent, encargado de manejar la administración de servicios.
+Usa map para recorrer la lista de servicios (Servicios), representando cada servicio en la página.
+
+2. Añadir un nuevo servicio:
+Los usuarios pueden añadir un nuevo servicio utilizando los inputs: un campo de texto (input), un área de texto para la descripción (textarea), y un input de archivo para seleccionar una imagen.
+Cuando se llena la información y se hace clic en el botón "Añadir servicio", se ejecuta la función AñadirServicio, que toma los valores actuales de los inputs y los agrega a la lista de servicios.
+
+3. Listar servicios:
+Los servicios existentes se muestran recorriendo el array Servicios con map.
+Cada servicio se muestra con su nombre, descripción, imagen, y botones de "Editar" y "Eliminar".
+
+4. Editar un servicio:
+Al hacer clic en el botón "Editar", el servicio cambia de modo "visualización" a modo "edición".
+En el modo edición, el nombre, descripción e imagen se pueden modificar. Los campos se vuelven editables (con inputs y áreas de texto), y aparece un botón para "Cambiar imagen" o "Seleccionar archivo".
+Al hacer clic en "Guardar", se actualizan los valores editados y se guarda el servicio con los nuevos datos.
+
+5. Eliminar un servicio:
+Al hacer clic en el botón "Eliminar", se elimina el servicio de la lista, y este desaparece de la interfaz.
+
+6. Manejo de imágenes:
+Los usuarios pueden cargar o cambiar imágenes para los servicios tanto al añadir como al editar.
+Cuando se selecciona una imagen, se almacena temporalmente y se muestra en la página.
+
+COMPONENTE DE SERVICIOS: 
+1. Importaciones: Se importan React, los hooks useEffect y useState, estilos CSS y la función GetServicio.
+
+2. Estado del Componente: Se declara un estado servicios inicializado como un arreglo vacío para almacenar los servicios.
+
+3. Efecto para Cargar Servicios: Se utiliza useEffect para ejecutar una función asíncrona fetchServicios que llama a GetServicio para obtener los datos. Se actualiza el estado servicios con los datos obtenidos.
+
+4. Renderizado del Componente: Se devuelve un JSX que representa la interfaz del componente, incluyendo una sección de portada con un título decorativo.
+
+5. Listado de Servicios: Se verifica si hay servicios disponibles. Si los hay, se mapean y renderizan; si no, se muestra un mensaje indicando que no hay productos disponibles.
+
+6. Exportación: Se exporta el componente para su uso en otras partes de la aplicación.

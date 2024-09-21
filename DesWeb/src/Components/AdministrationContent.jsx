@@ -1,207 +1,227 @@
-import React, { useEffect, useState, useRef  } from 'react';
-import "../styles/HomeContent.css";
-import PostProducto from "../services/PostProducto";
-import GetProducto from '../services/GetProducto';
-import UpdateProducto from "../services/UpdateProducto";
-import DeleteProducto from "../services/DeleteProducto";
+import React, { useEffect, useState, useRef } from 'react';
+
+// Importación de servicios para realizar peticiones
+import PostServicio from "../Services/PostServicio";
+import GetServicio from '../services/GetServicio';
+import UpdateServicio from "../services/UpdateServicio";
+import DeleteServicio from "../services/DeleteServicio";
+
+//Importación de estilos
 import "../Styles/AdministrationContent.css";
 
 function AdministrationContent() {
-  const [Productos, setProductos] = useState([]); // Estado para la lista de productos
-  const [NuevoProducto, setNuevoProducto] = useState(""); // Estado para el nuevo nombre del producto
-  const [DescripcionProducto, setDescripcionProducto] = useState(""); // Estado para la descripción del nuevo producto
-  const [Imagen, setImagen] = useState(""); // Estado para la imagen (base64) del nuevo producto
-  const [EditarProductoId, setEditarProductoId] = useState(""); // Estado para el ID del producto en edición
-  const [ProductoEditado, setProductoEditado] = useState(""); // Estado para el nombre del producto en edición
-  const [DescripcionEditada, setDescripcionEditada] = useState(""); // Estado para la descripción editada
-  const [ImagenEditada, setImagenEditada] = useState(""); // Estado para la imagen editada
+  //Estados para gestionar los datos de los servicios
+  const [Servicios, setServicios] = useState([]); //Lista de servicios
+  const [NuevoServicio, setNuevoServicio] = useState(""); //Nombre del nuevo servicio
+  const [DescripcionServicio, setDescripcionServicio] = useState(""); //Descripción del nuevo servicio
+  const [Imagen, setImagen] = useState(""); //Imagen (base64) del nuevo servicio
+  const [EditarServicioId, setEditarServicioId] = useState(""); //ID del servicio en edición
+  const [ServicioEditado, setServicioEditado] = useState(""); //Nombre del servicio en edición
+  const [DescripcionEditada, setDescripcionEditada] = useState(""); //Descripción del servicio en edición
+  const [ImagenEditada, setImagenEditada] = useState(""); //Imagen editada del servicio
 
-//useRef proporciona una referencia al DOM para simular clics y otras interacciones directas.
-//Ref para el input de archivo (subir imagen)
-//Esto me permite acceder al input de archivo en el DOM para simular un click
-const fileInputRef = useRef(null);
+  //Ref para el input de archivo (subir imagen), permite simular clics en el input.
+  const fileInputRef = useRef(null);
 
-// Actualizar el valor del input de nombre de producto
-const NombreProducto = (event) => {
-  setNuevoProducto(event.target.value);
-};
-
-// Actualizar el valor de la descripción del producto
-const Descripcion = (event) => {
-  setDescripcionProducto(event.target.value);
-};
-
-// Actualizar el valor del nombre editado
-const CambiarNombreEditado = (event) => {
-  setProductoEditado(event.target.value);
-};
-
-// Actualizar el valor de la descripción editada
-const CambiarDescripcionEditada = (event) => {
-  setDescripcionEditada(event.target.value);
-};
-
-// Imagen a base64
-const CargarImagen = (event) => {
-  // Se selecciona imagen
-  const archivo = event.target.files[0]; //(event.target.files[0] obtiene el primer archivo).
-  const lector = new FileReader(); //FileReader, permite leer el contenido de la imagen
-  // Se define qué hacer cuando el proceso de lectura del archivo termine.
-  lector.onloadend = () => {
-      //Cuando termina la lectura, se convierte la imagen a base64 (lector.result)
-      //y se guarda en el estado 'Imagen' usando setImagen. 
-    setImagen(lector.result); 
+  //Funciones para actualizar los inputs (nuevo servicio y edición)
+  const NombreServicio = (event) => {
+    setNuevoServicio(event.target.value); //Actualiza el nombre del nuevo servicio
   };
-  //Inicia lectura del archivo en formato base64 usando el método readAsDataURL().
-  //Este método convierte el archivo en una URL de datos (data URL), que es una cadena de caracteres en formato base64.
-  lector.readAsDataURL(archivo);
-};
 
-// Imagen editada
-const CargarImagenEditada = (event) => {
-  const archivo = event.target.files[0];
-  const lector = new FileReader();
-  lector.onloadend = () => {
-    setImagenEditada(lector.result);
+  const Descripcion = (event) => {
+    setDescripcionServicio(event.target.value); //Actualiza la descripción del nuevo servicio
   };
-  lector.readAsDataURL(archivo);
-};
 
-// AÑADIR PRODUCTO
-const AñadirProducto = async () => {
-  if (NuevoProducto.trim() !== "" && DescripcionProducto.trim() !== "") {
-    const nuevoProducto = { nombre: NuevoProducto, descripcion: DescripcionProducto, imagen: Imagen };
-    const ProductoCreado = await PostProducto(nuevoProducto);
-    setProductos([...Productos, ProductoCreado]);
-    setNuevoProducto("");
-    setDescripcionProducto("");
-    setImagen("");
-  }
-};
+  const CambiarNombreEditado = (event) => {
+    setServicioEditado(event.target.value); //Actualiza el nombre del servicio en edición
+  };
 
-// EDITAR PRODUCTO
-const EditarProducto = (producto) => {
-  setEditarProductoId(producto.id);
-  setProductoEditado(producto.nombre);
-  setDescripcionEditada(producto.descripcion);
-  setImagenEditada(producto.imagen);
-};
+  const CambiarDescripcionEditada = (event) => {
+    setDescripcionEditada(event.target.value); //Actualiza la descripción del servicio en edición
+  };
 
-const GuardarEdicion = async (id) => {
-  const EdicionProducto = { id, nombre: ProductoEditado, descripcion: DescripcionEditada, imagen: ImagenEditada };
-  await UpdateProducto(EdicionProducto);
-  setProductos(Productos.map(producto => 
-    producto.id === id ? { ...producto, nombre: ProductoEditado, descripcion: DescripcionEditada, imagen: ImagenEditada } : producto
-  ));
-  setEditarProductoId("");
-  setProductoEditado("");
-  setDescripcionEditada("");
-  setImagenEditada("");
-};
-
-const EliminarProducto = async (id) => {
-  await DeleteProducto(id);
-  setProductos(Productos.filter((producto) => producto.id !== id));
-};
-
-// Función para manejar el click del botón de imagen
-const ClickImagen = () => {
-  if (fileInputRef.current) {
-    fileInputRef.current.click(); // Hacer click en el input de archivo
-  }
-};
-  // useEffect para cargar los productos al iniciar el componente
-  useEffect(() => {
-    const fetchProductos = async () => {
-      const productos = await GetProducto();
-      setProductos(productos);
+  //FUNCIÓN PARA CARGAR Y CONVERTIR LA IMAGENS A BASE64
+  const CargarImagen = (event) => {
+    const archivo = event.target.files[0]; //Selección de archivo (primera imagen seleccionada)
+    const lector = new FileReader(); //Para leer archivos del sistema
+    lector.onloadend = () => {
+      setImagen(lector.result); //Convertir imagen a base64 y guardarla en el estado
     };
-    fetchProductos();
-  }, []);
+    lector.readAsDataURL(archivo); //Iniciar la conversión a base64
+  };
+
+  //FUNCIÓN PARA CARGAR LA IMAGEN EDITADA Y CONVERTIRLA A BASE64
+  const CargarImagenEditada = (event) => {
+    const archivo = event.target.files[0];
+    const lector = new FileReader();
+    lector.onloadend = () => {
+      setImagenEditada(lector.result); // Guardar la imagen convertida
+    };
+    lector.readAsDataURL(archivo);
+  };
+
+  //FUNCIÓN PAR AÑADIR UN NUEVO SERVICIO
+  const AñadirServicio = async () => {
+    // Solo añade si ambos campos están completos
+    if (NuevoServicio.trim() !== "" && DescripcionServicio.trim() !== "") {
+      //Crea el nuevo servicio:
+      const nuevoServicio = { nombre: NuevoServicio, descripcion: DescripcionServicio, imagen: Imagen };
+      const ServicioCreado = await PostServicio(nuevoServicio); //Enviar el nuevo servicio a la API
+      setServicios([...Servicios, ServicioCreado]); //Actualiza el estado con el nuevo servicio
+      setNuevoServicio(""); //Limpia el campo de nombre
+      setDescripcionServicio(""); //Limpia el campo de descripción
+      setImagen(""); //Limpia la imagen cargada
+    }
+  };
+
+  //FUNCIÓN PARA HABILITAR LA EDICIÓN DE UN SERVICIO
+  const EditarServicio = (servicio) => {
+    setEditarServicioId(servicio.id); //Establece el servicio en edición
+    setServicioEditado(servicio.nombre); //Carga el nombre del servicio a editar
+    setDescripcionEditada(servicio.descripcion); //Carga la descripción a editar
+    setImagenEditada(servicio.imagen); //Carga la imagen actual
+  };
+
+  //FUNCIÓN PARA GUARDAR LOS CAMBIOS REALIZADOS A UN SERVICIO
+  const GuardarEdicion = async (id) => {
+     //Crea el objeto actualizado:
+    const EdicionServicio = { id, nombre: ServicioEditado, descripcion: DescripcionEditada, imagen: ImagenEditada };
+    await UpdateServicio(EdicionServicio); //Envía los cambios a la API
+    setServicios(Servicios.map(servicio => 
+      //Actualiza el servicio en el estado:
+      servicio.id === id ? { ...servicio, nombre: ServicioEditado, descripcion: DescripcionEditada, imagen: ImagenEditada } : servicio
+    )); 
+    setEditarServicioId(""); //Limpia el ID del servicio en edición
+    setServicioEditado(""); //Limpia el nombre editado
+    setDescripcionEditada(""); //Limpia la descripción editada
+    setImagenEditada(""); //Limpia la imagen editada
+  };
+
+  //FUNCIÓN PARA ELIMINAR UN SERVICIO
+  const EliminarServicio = async (id) => {
+    await DeleteServicio(id); //Elimina el servicio de la API
+    setServicios(Servicios.filter((servicio) => servicio.id !== id)); //Remueve el servicio del estado
+  };
+
+  //SIMULAR EL CLICK EN EL INPUT DE ARCHIVO PARA CARGAR UNA IMAGEN
+  const ClickImagen = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click(); //Simula el click en el input de archivo
+    }
+  };
+
+  //USEEFFECT PARA CARGAR LOS ERVICIOS AL INICIAR EL COMPONENTE
+  useEffect(() => {
+    const fetchServicios = async () => {
+      const servicios = await GetServicio(); //Obtiene los servicios desde la API
+      setServicios(servicios); //Guarda los servicios en el estado
+    };
+    fetchServicios(); //Ejecuta la función de obtención al montar el componente
+  }, []); //Solo se ejecuta una vez cuando el componente se monta
 
   return (
 <div className='Container'>
-<h1 className='Administracion'>ADMINISTRACIÓN DE SERVICIOS<span className='punto'>.</span> </h1><br /><br />
-  <div className='InputsDatos'>
-    <input className='InputNombreServicio' type="text"
-      value={NuevoProducto}
-      onChange={NombreProducto}
-      placeholder='Ingrese el nombre del producto'
+  <h1 className='Administracion'>ADMINISTRACIÓN DE SERVICIOS
+  <span className='punto'>.</span> </h1><br /><br />
+
+ {/* Inputs para añadir un nuevo servicio */}
+ <div className='InputsDatos'>
+    {/* Input para ingresar el nombre del nuevo servicio */}
+    <input className='InputNombreServicio' type="text"value={NuevoServicio} 
+      onChange={NombreServicio} // Al cambiar el valor, se ejecuta la función `NombreServicio`
+      placeholder='Ingrese el nombre del servicio' 
     /><br />
 
-    <textarea className='AreaDescripcionServicio'
-      value={DescripcionProducto}
-      onChange={Descripcion}
+    {/* Textarea para ingresar la descripción del nuevo servicio */}
+    <textarea className='AreaDescripcionServicio'value={DescripcionServicio} 
+      onChange={Descripcion} // Al cambiar el valor, se ejecuta la función `Descripcion`
       placeholder='Ingrese una descripción'
     /><br /><br />
 
-<div className="divCargarImagen">
-    <label htmlFor="file-upload" className="CargarImagen">
-    Seleccionar imagen
-    </label>
-    <input id="file-upload" type="file" accept="image/*" onChange={CargarImagen} />
-  </div> <br />
-  <button className='btnAñadirProducto' onClick={AñadirProducto}>Añadir producto</button>
+    {/* Botón para seleccionar una imagen para el nuevo servicio */}
+    <div className="divCargarImagen">
+      <label htmlFor="file-upload" className="CargarImagen">Seleccionar imagen</label>
+      <input  id="file-upload" type="file"  accept="image/*" // Solo permite subir archivos de imágenes
+        onChange={CargarImagen} // Cuando se selecciona una imagen, se ejecuta la función `CargarImagen`
+      />
+    </div>
+    <br />
+
+    {/* Botón para añadir el nuevo servicio */}
+    <button className='btnAñadirServicio' onClick={AñadirServicio}>Añadir servicio</button>
   </div>
   <br /><br /><br />
 
-{/* LISTA DE PRODUCTOS */}
-<div className='ContenedorProductos'>
+{/* LISTA DE SERVICIOS */}
+<div className='ContenedorServicios'>
   <div>
-    <ul>
-{Productos.map((producto) => (
-<li key={producto.id}>
-  {EditarProductoId === producto.id ? ( /*Abre operador ternario*/
-  /* INCIO DE EDICIÓN */
-    <>
-      <input className='InputNombreServicioEditado' type="text"
-        value={ProductoEditado}
-        onChange={CambiarNombreEditado}
-      />
-      <textarea className='AreaDescripcionServicioEditada' /*Area de edición de descripción*/
-        value={DescripcionEditada}
-        onChange={CambiarDescripcionEditada}
-      />
+  <ul>
+      {/* MAPEO DE LA LISTA DE SERVICIOS */}
+      {Servicios.map((servicio) => (
+      <li key={servicio.id}>
+      {/* Si el servicio está en edición (comparando el id del servicio con `EditarServicioId`) */}
+          {EditarServicioId === servicio.id ? ( 
+          <>
+          {/* Inputs para editar el nombre y descripción del servicio */}
+          <input className='InputNombreServicioEditado' type="text"
+         value={ServicioEditado} // El valor actual del nombre editado
+         onChange={CambiarNombreEditado} // Función que maneja el cambio del nombre
+          />
 
-      {/* Mostrar la imagen actual al editar*/}
-      {ImagenEditada && <img src={ImagenEditada} alt={ProductoEditado} width="230" />}
+          <textarea className='AreaDescripcionServicioEditada'
+          value={DescripcionEditada} // El valor actual de la descripción editada
+          onChange={CambiarDescripcionEditada} // Función que maneja el cambio de la descripción
+          />
 
-      {/* Botón para seleccionar o cambiar la imagen */}
-      <div className='divBotonesEditar'>
-      <button className='btnCambiarImagen' onClick={ClickImagen}>  {/* Simula un click en el input */}
-        {ImagenEditada || producto.imagen ? "Cambiar imagen" : "Seleccionar archivo"} </button>
+          {/* Mostrar la imagen actual mientras se edita */}
+          {ImagenEditada && <img src={ImagenEditada} alt={ServicioEditado} width="230" />}
 
-      <input ref={fileInputRef} id={`fileUpload-${producto.id}`} type="file"
-        accept="image/*"
-        onChange={CargarImagenEditada}
-        style={{ display: "none" }} //Se oculta el input de seleccionar archivo
-      />
-      <br />
-      <button className='btnGuardarProducto' onClick={() => GuardarEdicion(producto.id)}>Guardar</button>
-      </div>
-    </>
+           {/* Botón para seleccionar o cambiar la imagen */}
+          <div className='divBotonesEditar'>
+          <button className='btnCambiarImagen' onClick={ClickImagen}>
+          {ImagenEditada || servicio.imagen ? "Cambiar imagen" : "Seleccionar archivo"}
+          </button>
 
-) : ( /*Cierra operador ternario*/
-  
-    <>
-      <div className='divListaProductos'>
-        <h2 className='TituloServicio'>{producto.nombre}</h2>
-        <img src={producto.imagen} alt={producto.nombre} width="100" />
-        <p className='TextoDescripcionServicio'>{producto.descripcion}</p>
-        <div className='btnBotonesEditElim'>
-        <button className='btnEditarProducto' onClick={() => EditarProducto(producto)}>Editar</button>
-        <button className='btnEliminarProducto' onClick={() => EliminarProducto(producto.id)}>Eliminar</button>
-        </div>
-      </div>
-    </>
-    )}
-</li>
-))}
-</ul>
+          {/* Input oculto para cargar la nueva imagen al editar */}
+          <input ref={fileInputRef} //Referencia al input
+          id={`fileUpload-${servicio.id}`} //ID dinámico para cada servicio
+          type="file"
+          accept="image/*" //Acepta solo imágenes
+          onChange={CargarImagenEditada} //Función que maneja la carga de la imagen editada
+          style={{ display: "none" }} //Oculta el input
+          />
+          <br />
+           {/*BOTÓN PARA GUARDAR LAS EDICIONES*/}
+          <button className='btnGuardarServicio' onClick={() => GuardarEdicion(servicio.id)}>Guardar</button>
+          </div>
+          </>
+          ) : ( 
+
+         /*SI EL SERVICIO NO ESTÁ EN EDICIÓN, SIMPLEMNETE SE MUESTRA */
+          <>
+          <div className='divListaServicios'>
+            <h2 className='TituloServicio'>{servicio.nombre}</h2>
+            <img src={servicio.imagen} alt={servicio.nombre} width="100" />
+            <p className='TextoDescripcionServicio'>{servicio.descripcion}</p>
+            
+           {/* Botones para editar o eliminar el servicio */}
+            <div className='btnBotonesEditElim'>
+            <button className='btnEditarServicio' onClick={() => EditarServicio(servicio)}>Editar</button>
+            <button className='btnEliminarServicio' onClick={() => EliminarServicio(servicio.id)}>Eliminar</button>
+            </div>
+            
+          </div>
+          </>
+          )}
+      </li>
+      ))}
+  </ul>
   </div>
-</div> {/*Cierra div ContenedorProductos*/}
-</div>/*Cierra div Container*/
-);
+</div>
+</div>
+  );
 }
 
 export default AdministrationContent;
+
+

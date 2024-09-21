@@ -10,22 +10,24 @@
     margin: 0;
     margin-bottom: 0;
 }
-.Tranformemos{
+
+.Tranformemos {
     font-family: 'AllerDisplay';
     justify-content: center;
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
-    margin-left: -850px;
     color: rgb(255, 255, 255);
     line-height: 20px;
+    margin-left: 50px;
 }
-.punto{
+
+.punto {
     font-family: "Century Gothic", Arial, sans-serif;
-      color: #f5b041; /* Cambia el color del punto aquí */
-      font-size: 120px; /* Ajusta el tamaño del punto según tus necesidades */    
-      vertical-align:baseline
-  
+    color: #f5b041; /* Cambia el color del punto aquí */
+    font-size: 120px; /* Ajusta el tamaño del punto según tus necesidades */    
+    vertical-align: baseline;
 }
+
 .Reservados {
     position: absolute; /* Para permitir mover libremente el texto */
     bottom: 15px; /* Ajusta la distancia desde el fondo del Footer */
@@ -34,13 +36,15 @@
     font-size: 18px; /* Ajusta el tamaño de la fuente si es necesario */
     color: #000000; /* Cambia el color según el diseño */
 }
+
 .divIconContactos {
     display: flex; /* Usa flexbox para alinear los elementos horizontalmente */
     align-items: center; /* Alinea verticalmente los íconos y el texto */
     gap: 20px; /* Espacio entre los íconos y el texto */
     flex-wrap: wrap; /* Permite que los elementos se ajusten a la siguiente línea si el espacio es insuficiente */
-    margin-top: 90px;
+    margin-top: 70px;
     margin-left: 30px;
+    
 }
 
 .footer-icon {
@@ -49,9 +53,86 @@
     margin-right: 15px; /* Ajusta el espacio entre los íconos */
 }
 
-.Tranformemos {
-    margin-left: 120px; /* Empuja el texto hacia el final de la fila */
-    font-size: 30px;
-    justify-content: center;
+/* RESPONSIVIDAD */
+@media (max-width: 1200px) {
+    .Tranformemos {
+        margin-left: 0; /* Centra el texto en pantallas más pequeñas */
+        font-size: 16px; /* Ajusta el tamaño del texto */
+        text-align: center; /* Asegura que el texto esté centrado */
+        margin-top: 10px; /* Reduce el margen superior */
+    }
+
+    .divIconContactos {
+        margin-top: 50px; /* Ajusta el margen superior en pantallas más pequeñas */
+        margin-left: 0; /* Elimina el margen izquierdo */
+        justify-content: flex-start; /* Alinea los íconos a la izquierda */
+        flex-direction: row; /* Asegura que los íconos estén en fila */
+    }
+
+    .Footer {
+        height: auto; /* Permite que la altura se ajuste automáticamente */
+        padding: 20px; /* Reduce el padding para pantallas más pequeñas */
+        width: 100vw; /* Asegura que el fondo cubra todo el ancho */
+    }
 }
 
+@media (max-width: 800px) {
+    .Footer {
+        height: auto; /* Permite que la altura se ajuste automáticamente */
+        padding: 20px; /* Reduce el padding para pantallas más pequeñas */
+    }
+
+    .Tranformemos {
+        font-size: 16px; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+        margin-left: 0; /* Elimina el margen */
+        margin-top: 5px; /* Reduce aún más el margen superior */
+    }
+
+    .punto {
+        font-size: 20px; /* Reduce el tamaño del punto para pantallas más pequeñas */
+    }
+
+    .Reservados {
+        font-size: 12px; /* Ajusta el tamaño de la fuente */
+        text-align: center;
+        margin-top: -80px; /* Ajusta la posición del texto */
+    }
+
+    .divIconContactos {
+        margin-top: 20px; /* Ajusta el margen superior */
+        justify-content: flex-start; /* Alinea los íconos a la izquierda */
+    }
+
+    .footer-icon {
+        width: 45px; /* Ajusta el tamaño de los íconos para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 500px) {
+    .Tranformemos {
+        font-size: 12px; /* Ajusta aún más el tamaño del texto */
+        margin-top: -30px; /* Reduce el margen superior para pantallas muy pequeñas */
+    }
+
+    .punto {
+        font-size: 10px; /* Reduce el tamaño del punto para pantallas muy pequeñas */
+    }
+
+    .Reservados {
+        font-size: 7px; /* Ajusta el tamaño de la fuente para pantallas más pequeñas */
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    .divIconContactos {
+        align-items: center; /* Centra los íconos */
+        margin-top: 10px; /* Reduce el margen superior */
+        margin-left: 0; /* Elimina el margen izquierdo */
+        justify-content: flex-start; /* Alinea los íconos a la izquierda */
+    }
+
+    .footer-icon {
+        width: 20px; /* Ajusta el tamaño de los íconos para pantallas muy pequeñas */
+        margin: 10px 0; /* Añade margen vertical entre íconos */
+    }
+}

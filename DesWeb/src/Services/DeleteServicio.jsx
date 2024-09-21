@@ -1,6 +1,6 @@
-async function DeleteProducto(id) {
+async function DeleteServicio(id) {
     try {
-        const response = await fetch(`http://localhost:3001/Productos/${id}`, {
+        const response = await fetch(`http://localhost:3001/Servicios/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -17,4 +17,4 @@ async function DeleteProducto(id) {
     }
 }
 
-export default DeleteProducto;
+export default DeleteServicio;

@@ -1,255 +1,296 @@
-
-.Administracion{
-    font-family: 'AllerDisplay';
-    justify-content: center;
-    font-size: 40px;
-    text-align: center;
-    color: rgb(34, 34, 34);
-    line-height: 20px;
-    margin-top: 40px; /* Ajusta este valor según lo necesario para dar el espacio adecuado */
-    margin-bottom: 20px; /* Espacio debajo del título si es necesario */
-  }
-
-  /* Espacio entre el título y el resto del contenido */
-  .Container {
-    padding: 20px; /* Ajusta el relleno de contenedor principal si es necesario */
-  }
-  .punto{
-    font-family: "Century Gothic", Arial, sans-serif;
-      color: #c88594; /* Cambia el color del punto aquí */
-      font-size: 120px; /* Ajusta el tamaño del punto según tus necesidades */    
-      vertical-align:baseline
-  }
-
-  .InputsDatos{
-    text-align: center;
-  }
-  .InputNombreServicio, .InputNombreServicioEditado {
-    border: none;
-    font-size: 18px;
-    text-align: center;
-    font-family: "Century Gothic", Arial, sans-serif;
-    height: auto;
-    margin: 0;
-    outline: 0;
-    padding: 15px;
-    width: 500px;
-    background-color: #8b8b8b2a;
-    color: #000000;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
-    margin-bottom: 30px;
-    border-radius: 50px;
-  }
-  .AreaDescripcionServicio{
-    border: none;
-    font-size: 18px;
-    text-align: center;
-    font-family: "Century Gothic", Arial, sans-serif;
-    height: 200px;
-    margin: 0;
-    outline: 0;
-    padding: 15px;
-    width: 500px;
-    background-color: #8b8b8b2a;
-    color: #000000;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
-    margin-bottom: 30px;
-    border-radius: 20px;
-  }
-  .AreaDescripcionServicioEditada{
-    border: none;
-    font-size: 18px;
-    text-align: center;
-    font-family: "Century Gothic", Arial, sans-serif;
-    height: 100px;
-    margin: 0;
-    outline: 0;
-    padding: 15px;
-    width: 500px;
-    background-color: #8b8b8b2a;
-    color: #000000;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
-    margin-bottom: 30px;
-    border-radius: 20px;
-  }
-.TituloServicio{
-    font-family: "Century Gothic", Arial, sans-serif;
-    font-weight: bold;
-    font-size: 20px;
+/* TÍTULO */
+.Administracion {
+  font-family: 'AllerDisplay';
+  justify-content: center;
+  font-size: 40px;
+  text-align: center;
+  color: rgb(34, 34, 34);
+  line-height: 20px;
+  margin-top: 150px; /* Ajusta este valor según lo necesario para dar el espacio adecuado */
+  margin-bottom: 20px; /* Espacio debajo del título si es necesario */
 }
-.TextoDescripcionServicio{
-    font-family: "Century Gothic", Arial, sans-serif;
-    font-size: 18px;
-    margin-top: 30px;
-    text-align: center;
+
+/* ESPACIO ENTRE EL TÍTULO Y EL RESTO DEL CONTENIDO */
+.Container {
+  padding: 20px; /* Ajusta el relleno de contenedor principal si es necesario */
 }
-  .divBotonesEditar{
-    display: flex;
-    justify-content: flex-start; /* Alinea los botones al inicio del contenedor */
-    gap: 10px; /* Espacio entre los botones */
-    margin-top: 10px; /* Espacio arriba de los botones si es necesario */
-    margin-bottom: 40px;
-  }
-  .btnCambiarImagen{
-    display: inline-block;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    background-color:#808080;
-    color: #000000;
-  }
-  .btnGuardarProducto{
-    display: inline-block;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    background-color: #447f0f;
-    color: #000000;
-  }
-.btnAñadirProducto{
-    border: none;
-    outline: none;
-    width: 200px;
-    height: 40px;
-    margin-top: -20px;
-    font-size: 20px;
-    border-radius: 40px;
-    cursor: pointer;
-    background: #f5b041;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    font-weight: bold;
+
+/* PUNTO */
+.punto {
+  font-family: "Century Gothic", Arial, sans-serif;
+  color: #c88594; /* Cambia el color del punto aquí */
+  font-size: 120px; /* Ajusta el tamaño del punto según tus necesidades */
+  vertical-align: baseline;
 }
+
+/* ENTRADAS DE DATOS */
+.InputsDatos {
+  text-align: center;
+}
+.InputNombreServicio, .InputNombreServicioEditado {
+  border: none;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Century Gothic", Arial, sans-serif;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 500px;
+  background-color: #8b8b8b2a;
+  color: #000000;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
+  margin-bottom: 30px;
+  border-radius: 50px;
+}
+.AreaDescripcionServicio {
+  border: none;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Century Gothic", Arial, sans-serif;
+  height: 200px;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 500px;
+  background-color: #8b8b8b2a;
+  color: #000000;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
+  margin-bottom: 30px;
+  border-radius: 20px;
+}
+.AreaDescripcionServicioEditada {
+  border: none;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Century Gothic", Arial, sans-serif;
+  height: 100px;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 500px;
+  background-color: #8b8b8b2a;
+  color: #000000;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
+  margin-bottom: 30px;
+  border-radius: 20px;
+}
+
+/* TÍTULO DE SERVICIO */
+.TituloServicio {
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* TEXTO DESCRIPCIÓN SERVICIO */
+.TextoDescripcionServicio {
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 18px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* BOTONES EDITAR */
+.divBotonesEditar {
+  display: flex;
+  justify-content: flex-start; /* Alinea los botones al inicio del contenedor */
+  gap: 10px; /* Espacio entre los botones */
+  margin-top: 10px; /* Espacio arriba de los botones si es necesario */
+  margin-bottom: 40px;
+}
+.btnCambiarImagen {
+  display: inline-block;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #808080;
+  color: #000000;
+}
+.btnGuardarServicio {
+  display: inline-block;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #447f0f;
+  color: #000000;
+}
+.btnAñadirServicio {
+  border: none;
+  outline: none;
+  width: 200px;
+  height: 40px;
+  margin-top: -20px;
+  font-size: 20px;
+  border-radius: 40px;
+  cursor: pointer;
+  background: #f5b041;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-weight: bold;
+}
+
+/* CARGAR IMAGEN */
 .custom-file-upload {
-    margin-bottom: 20px; /* Espacio entre el botón y los demás elementos */
-  }
-  
-  /* Oculta el input original */
-  #file-upload {
-    display: none;
-  }
-.divCargarImagen{
-    display: flex; /* Flexbox en el contenedor padre */
-    justify-content: center; /* Centra horizontalmente el contenido */
-    align-items: center; /* Opcional, si necesitas centrar verticalmente también */
-    height: 30px; /* Ajusta el tamaño de altura del contenedor según tu diseño */
-
+  margin-bottom: 20px; /* Espacio entre el botón y los demás elementos */
 }
-  /* Estilos del botón cargar imagen */
-  .CargarImagen {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #adadad; /* Color del botón */
-    color: rgb(0, 0, 0);
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 18px;
-    text-align: center; /* Asegura que el texto esté centrado */
-    border: none;
-    width: 200px;
-    height: 40px;    
-    display: flex;  /* Flexbox para centrar vertical y horizontal */
-    justify-content: center;  /* Centra el texto horizontalmente */
-    align-items: center; /* Centra el texto verticalmente */
-  }
-  
-  /* Estilo de hover para el botón */
-  .CargarImagen:hover {
-    background-color: #252525;
-  }
-  .ContenedorProductos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
-    gap: 20px; 
-    padding: 20px;
-
-  }
-  .divListaProductos {
-    background: #f4f4f4;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin: 0;
-    margin-bottom: 30px;
-    height: 410px;
-  }
-  
-  .divListaProductos img {
-    width: auto;
-    height: 200px;
-    border-radius: 8px;
-  }
-  
-  /* Botones de editar y eliminar */
-
-  .btnBotonesEditElim{
-    display: flex;
-    align-items: center; /* Centra verticalmente los botones si es necesario */
-    gap: 10px; /* Espacio entre los botones */
-  }
-  .btnEditarProducto {
-    width: 40px;
-    height: 40px;
-    background: url(../Img/Icon_Editar.png) no-repeat center center;
-    background-size: contain;
-    text-indent: -9999px; /* Ocultar el texto del botón */
-    border: transparent;
-    cursor: pointer;
-    margin-left: 300px;
-  }
-
-  .btnEliminarProducto {
-    width: 40px;
-    height: 40px;
-    background: url(../Img/Icon_Eliminar.png) no-repeat center center;
-    background-size: contain;
-    text-indent: -9999px; /* Ocultar el texto del botón */
-    border: transparent;
-    cursor: pointer;
-    margin-left: 20px;
-  }
-  
-  ul {
-    list-style-type: none; /* Elimina los puntos de viñeta */
-    padding: 0; /* Elimina el padding predeterminado */
-    margin: 0; /* Elimina el margen predeterminado */
-  }
-
-.BtnCerrarSesion{
-    font-family: "Century Gothic", Arial, sans-serif;
-    border: none;
-    outline: none;
-    width: 150px;
-    margin-top: 30px;
-    padding: 10px 0;
-    font-size: 18px;
-    border-radius: 40px;
-    cursor: pointer;
-    background: #c88594 ;
-    color: white;
-    margin-left: 30px;
+#file-upload {
+  display: none; /* Oculta el input original */
 }
-.BtnCerrarSesion:hover{
+.divCargarImagen {
+  display: flex; /* Flexbox en el contenedor padre */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; /* Opcional, si necesitas centrar verticalmente también */
+  height: 30px; /* Ajusta el tamaño de altura del contenedor según tu diseño */
+}
+.CargarImagen {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #adadad; /* Color del botón */
+  color: rgb(0, 0, 0);
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center; /* Asegura que el texto esté centrado */
+  border: none;
+  width: 200px;
+  height: 40px;
+  display: flex;  /* Flexbox para centrar vertical y horizontal */
+  justify-content: center;  /* Centra el texto horizontalmente */
+  align-items: center; /* Centra el texto verticalmente */
+}
+.CargarImagen:hover {
+  background-color: #252525;
+}
+
+/* CONTENEDOR DE SERVICIOS */
+.ContenedorServicios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+  gap: 20px; 
+  padding: 20px;
+}
+.divListaServicios {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 0;
+  margin-bottom: 30px;
+  height: 410px;
+}
+.divListaServicios img {
+  width: auto;
+  height: 200px;
+  border-radius: 8px;
+}
+
+/* BOTONES DE EDITAR Y ELIMINAR */
+.btnBotonesEditElim {
+  display: flex;
+  align-items: center; /* Centra verticalmente los botones si es necesario */
+  gap: 10px; /* Espacio entre los botones */
+}
+.btnEditarServicio {
+  width: 40px;
+  height: 40px;
+  background: url(../Img/Icon_Editar.png) no-repeat center center;
+  background-size: contain;
+  text-indent: -9999px; /* Ocultar el texto del botón */
+  border: transparent;
+  cursor: pointer;
+  margin-left: 300px;
+}
+.btnEliminarServicio {
+  width: 40px;
+  height: 40px;
+  background: url(../Img/Icon_Eliminar.png) no-repeat center center;
+  background-size: contain;
+  text-indent: -9999px; /* Ocultar el texto del botón */
+  border: transparent;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+/* LISTAS */
+ul {
+  list-style-type: none; /* Elimina los puntos de viñeta */
+  padding: 0; /* Elimina el padding predeterminado */
+  margin: 0; /* Elimina el margen predeterminado */
+}
+
+/* CERRAR SESIÓN */
+.BtnCerrarSesion {
+  font-family: "Century Gothic", Arial, sans-serif;
+  border: none;
+  outline: none;
+  width: 150px;
+  margin-top: 30px;
+  padding: 10px 0;
+  font-size: 18px;
+  border-radius: 40px;
+  cursor: pointer;
+  background: #c88594;
+  color: white;
+  margin-left: 30px;
+}
+.BtnCerrarSesion:hover {
   background: black; /* Efecto hover en el botón */
-    color: rgba(255, 255, 255, 1) !important;
-    box-shadow: 0 4px 16px rgba(245, 176, 65, 1);
-    transition: all 0.2s ease;
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 4px 16px rgba(245, 176, 65, 1);
+  transition: all 0.2s ease;
 }
-  /* Responsividad */
-  @media (max-width: 1200px) {
-    .ContenedorProductos {
-      grid-template-columns: repeat(2, 1fr);
-    }
+
+/* RESPONSIVIDAD */
+@media (max-width: 1200px) {
+  .ContenedorServicios {
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+      gap: 20px; /* Aumenta el espacio entre tarjetas */
   }
-  
-  @media (max-width: 800px) {
-    .ContenedorProductos {
-      grid-template-columns: 1fr;
-    }
+}
+
+@media (max-width: 800px) {
+  .ContenedorServicios {
+      grid-template-columns: 1fr; /* Una columna */
+      padding: 10px; /* Espacio interno reducido */
   }
+
+  .divListaServicios {
+      margin: 0 auto; /* Centra las tarjetas */
+      width: 90%; /* Ajusta el ancho para pantallas pequeñas */
+      max-width: 400px; /* Limita el ancho máximo */
+      margin-bottom: 20px; /* Espacio entre las tarjetas */
+  }
+
+  .InputsDatos {
+      flex-direction: column; /* Coloca los inputs en columna */
+      align-items: center; /* Centra los inputs */
+  }
+
+  .InputNombreServicio, .InputNombreServicioEditado,
+  .AreaDescripcionServicio, .AreaDescripcionServicioEditada {
+      width: 90%; /* Ajusta el ancho para pantallas pequeñas */
+      max-width: 400px; /* Limita el ancho máximo */
+  }
+
+  .divBotonesEditar {
+      flex-direction: column; /* Coloca los botones en columna */
+      align-items: center; /* Centra los botones */
+  }
+
+  .btnCambiarImagen,
+  .btnGuardarServicio,
+  .btnAñadirServicio {
+      width: 90%; /* Ajusta el ancho de los botones para pantallas pequeñas */
+  }
+
+  .BtnCerrarSesion {
+      width: 90%; /* Ajusta el ancho del botón de cerrar sesión */
+  }
+}

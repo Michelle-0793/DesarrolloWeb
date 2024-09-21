@@ -1,11 +1,11 @@
-async function UpdateProducto(producto) {
+async function UpdateServicio(servicio) {
     try {
-      const response = await fetch(`http://localhost:3001/Productos/${producto.id}`, {
+      const response = await fetch(`http://localhost:3001/Productos/${servicio.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(producto)
+        body: JSON.stringify(servicio)
       });
       if (!response.ok) {
         throw new Error(`Error: ${response.status} ${response.statusText}`);
@@ -13,9 +13,9 @@ async function UpdateProducto(producto) {
       const data = await response.json();
       return data;
     } catch (error) {
-      console.error('Error al actualizar producto:', error);
+      console.error('Error al actualizar servicio:', error);
       throw error;
     }
   }
   
-  export default UpdateProducto;
+  export default UpdateServicio;

@@ -1,60 +1,67 @@
-/* Estilos de reset para asegurar que todo se comporta correctamente */
+/* ESTILOS DE RESET */
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Contenedor principal que ocupa toda la página */
-  .divServicios{
-    display: flex;
-    flex-direction: column;
-    margin-top: 130px;
-  }
-  
-  /* Este es el contenido principal que empujará al footer hacia abajo */
-  .divServicios h1 {
-    text-align: center;
-    margin-top: 20px;
-    flex: 1; /* Empuja el footer hacia abajo */
-  }
-  
-  /* El footer se queda en la parte inferior */
-  footer {
-    margin-top: auto;
-  }
-  .PortadaServicios {
-    background-image: url('../Img/PortadaServicios.jpg'); /* Ruta de la imagen de portada */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 470px;
-    width: 100%;
-    display: flex;
-    align-items: center; /* Vertical */
-    justify-content: start; /* Horizontal */
-    position: relative;
-    text-align: left;
-    margin-top: 0; /* Asegura que no haya espacio extra arriba */
-    padding: 0;
+  height: 100%; /* Asegura que la altura del body sea 100% */
+  margin: 0; /* Elimina el margen predeterminado */
+  padding: 0; /* Elimina el padding predeterminado */
 }
-  @font-face {
-    font-family: 'AllerDisplay';
-    src:url('../fonts/AllerDisplay.ttf') format('truetype');
-  }
-  .SuVision{
-    justify-content: center;
-    font-size: 40px;
-    text-align: center;
-    margin-left: -550px;
-    color: rgb(255, 255, 255);
-    line-height: 20px;
-    font-family: 'AllerDisplay';
-  }
-  .punto{
-    font-family: 'AllerDisplay';
-      color: #c88594; /* Cambia el color del punto aquí */
-      font-size: 120px; /* Ajusta el tamaño del punto según tus necesidades */    
-      vertical-align:baseline
-  
-  }
+
+/* CONTENEDOR PRINCIPAL */
+.divServicios {
+  display: flex; /* Usa flexbox para el diseño */
+  flex-direction: column; /* Coloca los elementos en una columna */
+  margin-top: 130px; /* Margen superior para dar espacio al contenido */
+}
+
+/* CONTENIDO PRINCIPAL */
+.divServicios h1 {
+  text-align: center; /* Centra el texto del encabezado */
+  margin-top: 20px; /* Espacio superior para el encabezado */
+  flex: 1; /* Permite que el encabezado empuje el footer hacia abajo */
+}
+
+/* FOOTER */
+footer {
+  margin-top: auto; /* Asegura que el footer se mantenga al final */
+}
+
+/* PORTADA DE SERVICIOS */
+.PortadaServicios {
+  background-image: url('../Img/PortadaServicios.jpg'); /* Imagen de fondo */
+  background-size: cover; /* Cubre todo el contenedor */
+  background-position: center; /* Centra la imagen de fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 470px; /* Altura del contenedor de portada */
+  width: 100%; /* Ancho completo */
+  display: flex; /* Usa flexbox para alinear elementos */
+  align-items: center; /* Centra verticalmente */
+  justify-content: start; /* Alinea horizontalmente al inicio */
+  position: relative; /* Posicionamiento relativo para elementos internos */
+  text-align: left; /* Alineación del texto a la izquierda */
+  margin-top: 0; /* Sin margen superior extra */
+  padding: 0; /* Sin padding extra */
+}
+
+/* FUENTES */
+@font-face {
+  font-family: 'AllerDisplay'; /* Define la fuente personalizada */
+  src: url('../fonts/AllerDisplay.ttf') format('truetype'); /* Ruta de la fuente */
+}
+
+/* TÍTULO DE SERVICIOS */
+.SuVision {
+  justify-content: center; /* Alinea horizontalmente */
+  font-size: 40px; /* Tamaño de fuente */
+  text-align: center; /* Centra el texto */
+  margin-left: -550px; /* Ajuste de margen para posicionamiento */
+  color: rgb(255, 255, 255); /* Color del texto */
+  line-height: 20px; /* Espaciado entre líneas */
+  font-family: 'AllerDisplay'; /* Fuente personalizada */
+}
+
+/* PUNTO DECORATIVO */
+.punto {
+  font-family: 'AllerDisplay'; /* Fuente personalizada */
+  color: #c88594; /* Color del punto */
+  font-size: 120px; /* Tamaño del punto */
+  vertical-align: baseline; /* Alineación vertical del punto */
+}

@@ -1,6 +1,6 @@
 async function UpdateServicio(servicio) {
     try {
-      const response = await fetch(`http://localhost:3001/Productos/${servicio.id}`, {
+      const response = await fetch(`http://localhost:3001/Servicios/${servicio.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

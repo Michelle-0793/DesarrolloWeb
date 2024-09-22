@@ -16,7 +16,7 @@ body {
   }
   
   .ImgPortada {
-    background-image: url('../Img/Home_Portada2.jpg'); /* Ruta imagen de portada */
+    background-image: url("../Img/PortadaPrincipal.jpg"); /* Ruta imagen de portada */
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -175,41 +175,43 @@ body {
   font-size: 30px;
 }
 
-
+.Marcas{
+  color: #F5B041; /* Cambia el color según tu diseño */
+  font-family: "Century Gothic", Arial, sans-serif;
+  margin-top: 10px ;
+  font-weight: bold;
+}
 /*ESTILOS CARRUCEL*/
 .divCarrucel {
   background-color: black;
   width: 100%;
-  height: 200px;
   margin: 0 auto;
-  overflow: hidden; 
   display: flex;
-  justify-content: center;
-  position: relative; /* Asegura que las flechas se posicionen correctamente */
-}
-
-.alice-carousel__stage {
-  display: flex;
-  justify-content: space-between; /* Asegura que el espacio entre los logos sea uniforme */
-}
-
-.alice-carousel img {
-  height: 110px;
-  object-fit: contain;
-  margin: 0; /* Asegura que no haya margen que cause desbordamiento */
-  padding: 0 30px; /* Ajusta el padding horizontal para evitar el corte */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .alice-carousel {
   width: 100%;
-  padding: 0; /* Elimina cualquier padding que pueda desbordar el carrusel */
+  overflow: hidden; /* Oculta el desbordamiento */
+}
+
+.alice-carousel__stage {
+  display: flex;
+  justify-content: flex-start; /* Cambiar a flex-start para evitar espacios vacíos */
+}
+
+.alice-carousel img {
+  max-height: 130px;
+  object-fit: contain;
+  width: auto; /* Permite que las imágenes mantengan su proporción */
+  margin: 0 3px; /* Ajusta según sea necesario */
 }
 
 .alice-carousel__stage-item {
-  padding: 0 10px; /* Ajusta el padding de los elementos para que no se desborden */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex: 0 0 auto; /* Asegura que los items no se expandan */
+  margin: 0 30px; /* Añade espacio entre los items del carrusel */
 }
 .custom-arrow {
   position: absolute;
@@ -218,7 +220,7 @@ body {
   background-color: transparent;
   color: #F5B041; /* Color dorado */
   border: none;
-  font-size: 2rem;
+  font-size: 4rem;
   cursor: pointer;
   padding: 10px;
   border-radius: 50%;
@@ -226,17 +228,18 @@ body {
 }
 
 .custom-arrow-left {
-  left: 10px; /* Ajuste de la posición de la flecha izquierda */
+  left: 30px; /* Ajuste de la posición de la flecha izquierda */
 }
 
 .custom-arrow-right {
-  right: 10px; /* Ajuste de la posición de la flecha derecha */
+  right: 30px; /* Ajuste de la posición de la flecha derecha */
 }
 
 /* Oculta los indicadores del carrusel */
 .alice-carousel__dots {
   display: none !important;
 }
+
 
 .divDestacarServicios {
   margin-top: -120px;

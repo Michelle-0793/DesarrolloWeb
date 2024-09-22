@@ -14,6 +14,58 @@
 .Container {
   padding: 20px; /* Ajusta el relleno de contenedor principal si es necesario */
 }
+.ContenedorServicios {
+  display: flex; /* Utiliza flexbox para centrar */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
+  width: 100%;
+  
+}
+/*ESTILOS DE LOS CARDS*/
+.divCardAdmi {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;  /* Ajusta el espacio entre las tarjetas */
+  justify-content: center;  /* Centrar las columnas horizontalmente */
+  justify-items: center;  /* Centrar cada tarjeta dentro de su columna */
+  align-items: center;  /* Centrar las tarjetas verticalmente */
+  height: 400px;
+  margin-top: -70px;
+}
+
+.CardAdmi {
+  width: 200px; 
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+.EstilosCardAdmi{
+  border-radius: 20px;
+  overflow: hidden;
+  margin-left: 100px;
+  background-color: #000000;
+  
+}
+.CardAdmi img {
+  object-fit: cover;
+  height: 150px; /* Ajusta la altura de la imagen */
+  width: 200px; /* Asegúrate de que la imagen ocupe todo el ancho del card */
+}
+.card-title {
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #F5B041;
+}
+
+.card-description {
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 16px;
+  color: #757575;
+}
 
 /* PUNTO */
 .punto {
@@ -48,7 +100,7 @@
   font-size: 18px;
   text-align: center;
   font-family: "Century Gothic", Arial, sans-serif;
-  height: 200px;
+  height: 150px;
   margin: 0;
   outline: 0;
   padding: 15px;
@@ -59,6 +111,22 @@
   margin-bottom: 30px;
   border-radius: 20px;
 }
+.InputNombreServicioEditado {
+  border: none;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Century Gothic", Arial, sans-serif;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 400px;
+  background-color: #8b8b8b2a;
+  color: #000000;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
+  margin-bottom: 30px;
+  border-radius: 50px;
+}
 .AreaDescripcionServicioEditada {
   border: none;
   font-size: 18px;
@@ -68,7 +136,7 @@
   margin: 0;
   outline: 0;
   padding: 15px;
-  width: 500px;
+  width: 400px;
   background-color: #8b8b8b2a;
   color: #000000;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
@@ -90,18 +158,26 @@
   margin-top: 30px;
   text-align: center;
 }
-
+.DivEdicion {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  margin: 20px; /* Ajusta el margen según sea necesario */
+}
 /* BOTONES EDITAR */
 .divBotonesEditar {
   display: flex;
-  justify-content: flex-start; /* Alinea los botones al inicio del contenedor */
+  justify-content: center; /* Alinea los botones al inicio del contenedor */
   gap: 10px; /* Espacio entre los botones */
   margin-top: 10px; /* Espacio arriba de los botones si es necesario */
   margin-bottom: 40px;
 }
 .btnCambiarImagen {
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-weight: bold;
   display: inline-block;
-  padding: 10px 15px;
+  padding: 5px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -110,6 +186,8 @@
   color: #000000;
 }
 .btnGuardarServicio {
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-weight: bold;
   display: inline-block;
   padding: 10px 15px;
   border: none;
@@ -163,33 +241,6 @@
   justify-content: center;  /* Centra el texto horizontalmente */
   align-items: center; /* Centra el texto verticalmente */
 }
-.CargarImagen:hover {
-  background-color: #252525;
-}
-
-/* CONTENEDOR DE SERVICIOS */
-.ContenedorServicios {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
-  gap: 20px; 
-  padding: 20px;
-}
-.divListaServicios {
-  background: #f4f4f4;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 0;
-  margin-bottom: 30px;
-  height: 410px;
-}
-.divListaServicios img {
-  width: auto;
-  height: 200px;
-  border-radius: 8px;
-}
 
 /* BOTONES DE EDITAR Y ELIMINAR */
 .btnBotonesEditElim {
@@ -216,6 +267,12 @@
   border: transparent;
   cursor: pointer;
   margin-left: 20px;
+}
+.btnEditarServicio:hover,
+.btnEliminarServicio:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del botón */
+    opacity: 0.8; /* Cambia la opacidad */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
 }
 
 /* LISTAS */
@@ -249,48 +306,73 @@ ul {
 
 /* RESPONSIVIDAD */
 @media (max-width: 1200px) {
-  .ContenedorServicios {
-      grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-      gap: 20px; /* Aumenta el espacio entre tarjetas */
+  .divCardAdmi {
+    grid-template-columns: repeat(1, 1fr); /* Una columna en lugar de tres */
+    gap: 20px; /* Espacio entre tarjetas */
+    justify-items: center; /* Centra los elementos dentro del grid */
   }
 }
 
 @media (max-width: 800px) {
   .ContenedorServicios {
-      grid-template-columns: 1fr; /* Una columna */
-      padding: 10px; /* Espacio interno reducido */
+    flex-direction: column; /* Cambia a columna para una mejor visualización */
+    align-items: center; /* Centra los elementos */
+    padding: 10px; /* Espacio uniforme alrededor */
+    width: 100%; /* Asegura que ocupe todo el ancho */
   }
 
-  .divListaServicios {
-      margin: 0 auto; /* Centra las tarjetas */
-      width: 90%; /* Ajusta el ancho para pantallas pequeñas */
-      max-width: 400px; /* Limita el ancho máximo */
-      margin-bottom: 20px; /* Espacio entre las tarjetas */
+  .divCardAdmi {
+    grid-template-columns: 1fr; /* Una columna para móviles */
+    gap: 15px; /* Espacio entre tarjetas reducido */
+    width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
+    justify-items: center; /* Centra los elementos dentro del grid */
+  }
+
+  .CardAdmi {
+    width: 90%; /* Aumenta el ancho para que ocupe más espacio en móviles */
+    max-width: 300px; /* Limita el ancho máximo de las tarjetas */
+    margin: 10px auto; /* Centra las tarjetas */
   }
 
   .InputsDatos {
-      flex-direction: column; /* Coloca los inputs en columna */
-      align-items: center; /* Centra los inputs */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Coloca los inputs en columna */
+    align-items: center; /* Centra los inputs */
+    width: 90%; /* Ajusta el ancho */
   }
 
-  .InputNombreServicio, .InputNombreServicioEditado,
-  .AreaDescripcionServicio, .AreaDescripcionServicioEditada {
-      width: 90%; /* Ajusta el ancho para pantallas pequeñas */
-      max-width: 400px; /* Limita el ancho máximo */
+  .InputNombreServicio,
+  .InputNombreServicioEditado,
+  .AreaDescripcionServicio,
+  .AreaDescripcionServicioEditada {
+    width: 100%; /* Asegúrate de que ocupe el ancho completo */
+    max-width: 350px; /* Limita el ancho máximo */
+    margin-bottom: 15px; /* Espacio entre inputs */
   }
 
   .divBotonesEditar {
-      flex-direction: column; /* Coloca los botones en columna */
-      align-items: center; /* Centra los botones */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Coloca los botones en columna */
+    align-items: center; /* Centra los botones */
+    width: 90%; /* Ajusta el ancho */
+    justify-content: center; /* Centra verticalmente si hay espacio extra */
   }
 
   .btnCambiarImagen,
   .btnGuardarServicio,
   .btnAñadirServicio {
-      width: 90%; /* Ajusta el ancho de los botones para pantallas pequeñas */
+    width: 100%; /* Ajusta el ancho de los botones para pantallas pequeñas */
+    max-width: 200px; /* Limita el ancho máximo */
+    margin: 5px 0; /* Espacio entre botones */
   }
 
   .BtnCerrarSesion {
-      width: 90%; /* Ajusta el ancho del botón de cerrar sesión */
+    width: 100%; /* Ajusta el ancho del botón de cerrar sesión */
+    max-width: 350px; /* Limita el ancho máximo */
+    margin: 20px 0; /* Espacio adicional */
+    display: flex; /* Flexbox para centrar el texto */
+    justify-content: center; /* Centra el texto horizontalmente */
+    align-items: center; /* Centra el texto verticalmente */
   }
 }
+

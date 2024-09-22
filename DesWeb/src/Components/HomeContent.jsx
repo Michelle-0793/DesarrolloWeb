@@ -19,6 +19,18 @@ import Logo2 from '../Img/Logo_2.png';
 import Logo3 from '../Img/Logo_3.png';
 import Logo4 from '../Img/Logo_4.png';
 import Logo5 from '../Img/Logo_5.png';
+import Logo6 from '../Img/Logo_6.png';
+import Logo7 from '../Img/Logo_7.png';
+import Logo8 from '../Img/Logo_8.png';
+import Logo9 from '../Img/Logo_9.png';
+import Logo10 from '../Img/Logo_10.png';
+import Logo11 from '../Img/Logo_11.png';
+import Logo12 from '../Img/Logo_12.png';
+import Logo13 from '../Img/Logo_13.png';
+import Logo14 from '../Img/Logo_14.png';
+import Logo15 from '../Img/Logo_15.png';
+import Logo16 from '../Img/Logo_16.png';
+import Logo17 from '../Img/Logo_17.png';
 
 // Elementos del carrusel usando las imágenes importadas
 const items = [
@@ -27,28 +39,27 @@ const items = [
   <img src={Logo3} alt="Logo 3" className="CarouselImg" />,
   <img src={Logo4} alt="Logo 4" className="CarouselImg" />,
   <img src={Logo5} alt="Logo 5" className="CarouselImg" />,
+  <img src={Logo6} alt="Logo 6" className="CarouselImg" />,
+  <img src={Logo7} alt="Logo 7" className="CarouselImg" />,
+  <img src={Logo8} alt="Logo 8" className="CarouselImg" />,
+  <img src={Logo9} alt="Logo 9" className="CarouselImg" />,
+  <img src={Logo10} alt="Logo 10" className="CarouselImg" />,
+  <img src={Logo11} alt="Logo 11" className="CarouselImg" />,
+  <img src={Logo12} alt="Logo 12" className="CarouselImg" />,
+  <img src={Logo13} alt="Logo 13" className="CarouselImg" />,
+  <img src={Logo14} alt="Logo 14" className="CarouselImg" />,
+  <img src={Logo15} alt="Logo 15" className="CarouselImg" />,
+  <img src={Logo16} alt="Logo 16" className="CarouselImg" />,
+  <img src={Logo17} alt="Logo 17" className="CarouselImg" />,
 ];
 
 const responsive = {
-  0: { items: 1 },
-  600: { items: 2 },
-  1024: { items: 3 },
-  1300: { items: 5 }
+  0: { items: 1 },      // 1 logo en pantallas pequeñas
+  600: { items: 2 },    // 2 logos en pantallas medianas
+  1024: { items: 3 },   // 3 logos en pantallas grandes
+  1300: { items: 5 }    // 4 logos en pantallas extra grandes
 };
 
-/*
-const CustomLeftArrow = ({ onClick }) => (
-  <button onClick={onClick} className="custom-arrow custom-arrow-left">
-    &#10094;
-  </button>
-);
-
-const CustomRightArrow = ({ onClick }) => (
-  <button onClick={onClick} className="custom-arrow custom-arrow-right">
-    &#10095;
-  </button>
-);
-*/
 
 function HomeContent() {
 
@@ -63,28 +74,28 @@ return (
 
 <div className="divContenido">
 
-    <div className="ImgPortada">
-      <div className="TextoPortada">
-        <h1>Transformando ideas en <br />diseños extraordinarios</h1>
-      </div>
-    </div> {/* Cierra divImgPortada */}
+    <div className="ImgPortada"></div>
 
-    {/* Carrusel de logos */}
-    <div className="divCarrucel">
-	  <h2>Marcas que han confiado en mi trabajo</h2><br />
-    <AliceCarousel
-    mouseTracking
-    items={items}
-    responsive={responsive}
-    infinite
-    autoPlay
-    autoPlayInterval={3000}
-    disableDotsControls
-    disableButtonsControls
-    renderPrevButton={() => <button className="custom-arrow custom-arrow-left">‹</button>}
-    renderNextButton={() => <button className="custom-arrow custom-arrow-right">›</button>}
-    />
-   </div>
+{/* Carrusel de logos */}
+
+<div className="divCarrucel">
+  <h2 className='Marcas'>→ Marcas que han confiado en mi trabajo ←</h2><br /><br /><br />
+
+  <AliceCarousel
+  mouseTracking
+  items={items}
+  responsive={responsive}
+  infinite
+  autoPlay
+  autoPlayInterval={3000}
+  disableDotsControls
+  renderPrevButton={() => <button className="custom-arrow custom-arrow-left">‹</button>}
+  renderNextButton={() => <button className="custom-arrow custom-arrow-right">›</button>}
+  paddingLeft={50} // Ajusta el padding
+  paddingRight={50} // Ajusta el padding
+/>
+
+</div>
 
 <div className="Plasta1">
       <div className="divBtn">

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { message } from 'antd'; 
+import { Card} from 'antd'; // Importación de Card e Image de Ant Design
 import "../Styles/ServiciosProductosContent.css"; 
 import GetServicio from '../Services/GetServicio';
 
@@ -68,18 +69,24 @@ function ServiciosProductosContent() {
   </div>
 </div> {/* Cierra PortadaServicios */}
 
-<div className='products-list'>
+<div className="divCard">
   {/* Verifica si hay servicios disponibles para mostrar */}
   {servicios.length > 0 ? (
     // Mapea sobre el arreglo de servicios para renderizar cada uno
     servicios.map((servicio) => (
-      <div key={servicio.id} className='product-item'>
-        {/* Muestra el nombre del servicio */}
-        <h2>{servicio.nombre}</h2>
-        {/* Muestra la imagen del servicio */}
-        <img src={servicio.imagen} alt={servicio.nombre} />
-        {/* Muestra la descripción del servicio */}
-        <p>{servicio.descripcion}</p>
+      <div key={servicio.id} className='Card'>
+        {/* Card con estilo y contenido */}
+        <Card
+          hoverable
+          className="EstilosCard"
+          cover={<img alt={servicio.nombre} src={servicio.imagen} />}
+        >
+          {/* Muestra el nombre del servicio */}
+          <Card.Meta
+            title={<span className="card-title">{servicio.nombre}</span>}
+            description={<span className="card-description">{servicio.descripcion}</span>}
+          />
+        </Card>
       </div>
     ))
   ) : (
@@ -88,8 +95,10 @@ function ServiciosProductosContent() {
   )}
 </div>
 
-{/* Sección de planes de cotización */}
 
+<div className="LineaDivisora"></div><br /><br />
+
+{/* Sección de planes de cotización */}
 <h1 className='Administracion'>PLANES DE SERVICIOS <br />DE IDENTIDAD DE MARCA
 <span className='punto'>.</span> </h1><br /><br />
 <div className='PlanesCotización'>

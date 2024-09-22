@@ -47,6 +47,55 @@ footer {
   src: url('../fonts/AllerDisplay.ttf') format('truetype'); /* Ruta de la fuente */
 }
 
+/*ESTILOS DE LOS CARDS*/
+.divCard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;  /* Ajusta el espacio entre las tarjetas */
+  justify-content: center;  /* Centrar las columnas horizontalmente */
+  justify-items: center;  /* Centrar cada tarjeta dentro de su columna */
+  align-items: center;  /* Centrar las tarjetas verticalmente */
+  height: 500px;
+}
+
+.Card {
+  width: 370px; 
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+.EstilosCard{
+  border-radius: 20px;
+  overflow: hidden;
+  
+}
+.Card img {
+  object-fit: cover;
+  height: 200px; /* Ajusta la altura de la imagen */
+  width: 100%; /* Asegúrate de que la imagen ocupe todo el ancho del card */
+}
+.card-title {
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #F5B041;
+}
+
+.card-description {
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 16px;
+  color: #757575;
+}
+
+.LineaDivisora {
+  height: 2px; 
+  background: linear-gradient(to right, rgba(200, 133, 148, 0), #c88594, #000000, #c88594, rgba(200, 133, 148, 0));
+  width: 80%;
+  margin: 20px auto;
+}
+
 /* TÍTULO DE SERVICIOS */
 .SuVision {
   justify-content: center; /* Alinea horizontalmente */
@@ -101,12 +150,11 @@ footer {
 .asterisco-obligatorio {
   color: red;
   font-weight: bold;
-  margin-left: 10px;
   position: absolute;
-  right: 10px; /* Alinea el asterisco a la derecha del input */
+  right: 20px; /* Alinea el asterisco a la derecha del input */
   top: 50%;
   transform: translateY(-50%);
-  margin-top: -5px;
+  margin-top: -2px;
 }
 .InputPlanSeleccionado{
   background-color: #f5b041;
@@ -132,9 +180,9 @@ font-weight: bold;
 font-family: "Century Gothic", Arial, sans-serif;
 border: none;
 outline: none;
-width: 150px;
+width: 120px;
 margin-top: 30px;
-padding: 10px 0;
+padding: 7px 0;
 font-size: 18px;
 border-radius: 40px;
 cursor: pointer;
@@ -187,7 +235,7 @@ transform: translateY(-5px); /* Movimiento hacia arriba en hover */
   text-indent: -9999px; /* Ocultar el texto del botón */
   border: transparent;
   cursor: pointer;
-  margin-left: 400px;
+  margin-left: 450px;
   margin-top: -20px;
 }
 .PlanesCotización {
@@ -219,7 +267,7 @@ transform: translateY(-5px); /* Movimiento hacia arriba en hover */
   box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Aumenta la sombra */
 }
 .Plan2 {
-  background: #363636; /* Fondo gris oscuro */
+  background: #303030; /* Fondo gris oscuro */
   border: 1px solid #ddd; /* Borde */
   border-radius: 20px; /* Bordes redondeados */
   padding: 25px; /* Espacio interior */
@@ -230,6 +278,9 @@ transform: translateY(-5px); /* Movimiento hacia arriba en hover */
   text-align: center; /* Centra el texto */
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra inicial */
   transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+  color: rgb(255, 255, 255);
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 16px;
 }
 
 .Plan2:hover {
@@ -248,6 +299,9 @@ transform: translateY(-5px); /* Movimiento hacia arriba en hover */
   text-align: center; /* Centra el texto */
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra inicial */
   transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+  color: rgb(255, 255, 255);
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 16px;
 }
 
 .Plan3:hover {
@@ -264,7 +318,7 @@ transform: translateY(-5px); /* Movimiento hacia arriba en hover */
 .Entregables{
   font-family: "Century Gothic", Arial, sans-serif;
   font-size: 16px;
-  color: rgb(119, 119, 119);
+  color: rgb(163, 163, 163);
 }
 .btnPlanes{
 font-family: "Century Gothic", Arial, sans-serif;
@@ -276,8 +330,8 @@ padding: 1px 0;
 font-size: 18px;
 border-radius: 40px;
 cursor: pointer;
-background: #c88594 ;
-color: white;
+background:  #f5b041;
+color: rgb(0, 0, 0);
 margin-top: 20px;
 }
 .btnPlanes:hover {
@@ -286,3 +340,100 @@ margin-top: 20px;
   box-shadow: 0 4px 16px rgba(245, 176, 65, 1);
   transition: all 0.1s ease;
   }
+
+  /*RESPONSIVIDAD*/
+
+@media (max-width: 768px) {
+  
+  /* PORTADA DE SERVICIOS */
+  .PortadaServicios {
+    height: 300px; /* Reducir la altura de la portada */
+  }
+  
+  /* TITULO DE SERVICIOS */
+  .SuVision {
+    font-size: 16px; /* Aumentar el tamaño de la fuente del título */
+    margin-left: 10px; /* Añadir un pequeño margen lateral */
+    margin-right: 10px; /* Añadir un pequeño margen lateral */
+    text-align: center; /* Centrar el texto completamente */
+  }
+
+  /* MODIFICACIONES DE LOS CARDS */
+  .divCard {
+    grid-template-columns: 1fr; /* Un card por fila */
+    height: auto; /* Altura automática para acomodar mejor el contenido */
+  }
+
+  .Card {
+    width: 80%; /* Ajustar el ancho del card al 100% */
+    margin-bottom: 20px; /* Añadir espacio entre los cards */
+  }
+
+  /* BOTÓN DE MODAL */
+  .ContenidoModal {
+    width: 90%; /* Hacer que el modal sea más pequeño en pantallas pequeñas */
+    padding: 20px; /* Reducir padding interno */
+  }
+  
+  .InputCotizacionModal {
+    width: 100%; /* Hacer el input del modal más flexible */
+  }
+
+  /* MODALES */
+  .Modal {
+    padding: 30px; /* Añadir padding alrededor del modal */
+  }
+
+  /* TAMAÑOS DE FUENTE */
+  .card-title {
+    font-size: 18px; /* Reducir el tamaño de los títulos de las tarjetas */
+  }
+
+  .card-description {
+    font-size: 14px; /* Reducir el tamaño de las descripciones */
+  }
+
+  /* INPUTS */
+  .InputCotizacionModal {
+    font-size: 16px; /* Reducir tamaño de fuente */
+    width: 90%; /* Hacer que el input ocupe casi todo el ancho */
+  }
+}
+
+/* Media queries para pantallas muy pequeñas (menores de 480px) */
+@media (max-width: 480px) {
+  
+  /* PORTADA DE SERVICIOS */
+  .PortadaServicios {
+    height: 250px; /* Reducir aún más la altura */
+  }
+
+  /* MODIFICACIONES A LOS CARDS */
+  .Card {
+    width: 80%; /* Ajustar el ancho para pantallas más pequeñas */
+  }
+
+  /* TÍTULO DE SERVICIOS */
+  .SuVision {
+    font-size: 2px; /* Aumentar el tamaño de la fuente */
+    margin-left: 5px; /* Añadir un pequeño margen lateral */
+    margin-right: 5px; /* Añadir un pequeño margen lateral */
+    text-align: center; /* Centrar el texto completamente */
+  }
+
+  /* CONTENIDO DEL MODAL */
+  .ContenidoModal {
+    width: 100%; /* Ajustar el ancho del modal */
+    padding: 10px; /* Reducir el padding */
+  }
+
+  /* INPUTS */
+  .InputCotizacionModal {
+    font-size: 14px; /* Reducir tamaño de fuente */
+  }
+
+  .BtnEnviarModal {
+    width: 100px; /* Ajustar tamaño del botón */
+    font-size: 16px; /* Reducir tamaño de fuente */
+  }
+}

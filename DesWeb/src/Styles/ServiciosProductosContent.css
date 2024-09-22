@@ -65,3 +65,224 @@ footer {
   font-size: 120px; /* Tamaño del punto */
   vertical-align: baseline; /* Alineación vertical del punto */
 }
+/* MODALES */
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ocupa el 100% del ancho */
+  height: 100%; /* Ocupa el 100% de la altura */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+.FormCotizacionModal{
+  text-align: center;
+}
+.InputCotizacionModal {
+  border: none;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Century Gothic", Arial, sans-serif;
+  height: 40px; /* Ajusta la altura aquí */
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 400px;
+  background-color: #8b8b8b2a;
+  color: #000000;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
+  border-radius: 50px;
+  padding-right: 30px; /* Espacio extra para el asterisco */
+  position: relative; /* Necesario para que el asterisco se posicione correctamente */
+}
+.asterisco-obligatorio {
+  color: red;
+  font-weight: bold;
+  margin-left: 10px;
+  position: absolute;
+  right: 10px; /* Alinea el asterisco a la derecha del input */
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: -5px;
+}
+.InputPlanSeleccionado{
+  background-color: #f5b041;
+  text-align: center;
+  font-family: "Century Gothic", Arial, sans-serif;
+border: none;
+outline: none;
+font-size: 18px;
+border-radius: 50px;
+width: 150px;
+font-weight: bold;
+
+}
+.DivInputModal {
+  position: relative;
+  margin-bottom: 20px; /* Espacio entre cada campo */
+}
+
+.DivPlanSeleccionado{
+  margin-top: 10px;
+}
+.BtnEnviarModal{
+font-family: "Century Gothic", Arial, sans-serif;
+border: none;
+outline: none;
+width: 150px;
+margin-top: 30px;
+padding: 10px 0;
+font-size: 18px;
+border-radius: 40px;
+cursor: pointer;
+background: #c88594 ;
+color: white;
+margin-top: 20px;
+
+}
+.BtnEnviarModal:hover {
+background: black; 
+color: rgba(255, 255, 255, 1) !important;
+box-shadow: 0 4px 16px rgba(245, 176, 65, 1);
+transition: all 0.2s ease;
+}
+
+.divForm {
+justify-content: center;
+
+}
+
+.ContenidoModal{
+background: rgb(255, 255, 255);
+border-radius: 15px;
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+padding: 40px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+transition: all 0.3s ease-in-out;
+width: 500px;
+
+}
+.ContenidoModal:hover {
+box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+transform: translateY(-5px); /* Movimiento hacia arriba en hover */
+}
+.TituloModal{
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+.btnCerrarModal{
+  width: 20px;
+  height: 20px;
+  background: url(../Img/CerrarModal.png) no-repeat center center;
+  background-size: contain;
+  text-indent: -9999px; /* Ocultar el texto del botón */
+  border: transparent;
+  cursor: pointer;
+  margin-left: 400px;
+  margin-top: -20px;
+}
+.PlanesCotización {
+  display: flex;
+  justify-content: space-around; /* Espacia los planes uniformemente */
+  align-items: stretch; /* Alinea los elementos para que todos tengan la misma altura */
+  flex-wrap: wrap; /* Permite que los planes se ajusten en pantallas más pequeñas */
+}
+
+.Plan1{
+  background: #ffffff; /* Fondo gris oscuro */
+  border: 1px solid #ddd; /* Borde */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 25px; /* Espacio interior */
+  margin: 0 5px 20px 5px; /* Reduce el margen entre los planes */
+  flex: 1; /* Los planes ocuparán el mismo ancho */
+  max-width: 340px; /* Ancho máximo para cada plan */
+  height: 430px; /* Altura fija para todos los planes */
+  text-align: center; /* Centra el texto */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra inicial */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+  color: black;
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 16px;
+}
+
+.Plan1:hover {
+  transform: translateY(-5px); /* Levanta el contenedor al pasar el mouse */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Aumenta la sombra */
+}
+.Plan2 {
+  background: #363636; /* Fondo gris oscuro */
+  border: 1px solid #ddd; /* Borde */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 25px; /* Espacio interior */
+  margin: 0 5px 20px 5px; /* Reduce el margen entre los planes */
+  flex: 1; /* Los planes ocuparán el mismo ancho */
+  max-width: 340px; /* Ancho máximo para cada plan */
+  height: 430px; /* Altura fija para todos los planes */
+  text-align: center; /* Centra el texto */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra inicial */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+.Plan2:hover {
+  transform: translateY(-5px); /* Levanta el contenedor al pasar el mouse */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Aumenta la sombra */
+}
+.Plan3 {
+  background: #000000; /* Fondo gris oscuro */
+  border: 1px solid #ddd; /* Borde */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 25px; /* Espacio interior */
+  margin: 0 5px 20px 5px; /* Reduce el margen entre los planes */
+  flex: 1; /* Los planes ocuparán el mismo ancho */
+  max-width: 340px; /* Ancho máximo para cada plan */
+  height: 430px; /* Altura fija para todos los planes */
+  text-align: center; /* Centra el texto */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra inicial */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+.Plan3:hover {
+  transform: translateY(-5px); /* Levanta el contenedor al pasar el mouse */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Aumenta la sombra */
+}
+.TituloPlan{
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: #f5b041;
+}
+
+.Entregables{
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 16px;
+  color: rgb(119, 119, 119);
+}
+.btnPlanes{
+font-family: "Century Gothic", Arial, sans-serif;
+border: none;
+outline: none;
+width: 200px;
+margin-top: 20px;
+padding: 1px 0;
+font-size: 18px;
+border-radius: 40px;
+cursor: pointer;
+background: #c88594 ;
+color: white;
+margin-top: 20px;
+}
+.btnPlanes:hover {
+  background: black; 
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 4px 16px rgba(245, 176, 65, 1);
+  transition: all 0.1s ease;
+  }

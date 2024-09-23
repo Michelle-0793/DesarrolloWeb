@@ -73,18 +73,18 @@
 }
 
 /* Estilos para el mensaje de éxito/error */
-.custom-class {
-  font-size: 16px;
-  color: rgb(0, 0, 0);
+.MensajeAlerta {
   font-family: "Century Gothic", Arial, sans-serif;
-  border-radius: 8px;
-  padding: 60px; /* Espaciado interno */
+  font-size: 20px; /* Cambia el tamaño de la fuente */
+  padding: 10px; /* Añade un poco de espacio interno */
+  border-radius: 50px; /* Esquinas redondeadas */
+  color: #000000; /* Cambia el color del texto */
 }
 
 .NuevoAdministrador {
   color: white;
   font-family: "Century Gothic", Arial, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   cursor: pointer;
   text-transform: uppercase;
   padding: 10px 15px;

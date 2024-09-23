@@ -30,7 +30,35 @@ html, body {
     position: relative; 
     text-align: left;
     margin-top: 100px;
-  }
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+/* Pseudo-elemento para la capa de aclarado y oscurecimiento */
+.ImgPortada::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color de superposición inicial */
+    animation: fade 4s infinite; /* Duración de la animación */
+    z-index: 1; /* Coloca el pseudo-elemento detrás del texto */
+}
+
+/* Asegura que el texto esté por encima del efecto */
+.ImgPortada > * {
+    position: relative; /* Necesario para aplicar z-index */
+    z-index: 2; /* Coloca el texto por encima del pseudo-elemento */
+}
+
+/* Animación para aclarar y oscurecer */
+@keyframes fade {
+    0%, 100% { background: rgba(0, 0, 0, 0.5); } /* Color oscuro */
+    50% { background: rgba(0, 0, 0, 0.089); } /* Color claro */
+}
+
+  
   .Plasta1{
     background-image: url('../Img/Inicio_Plasta1.png'); /* Ruta imagen de portada */
     background-size: cover; 
@@ -74,7 +102,6 @@ html, body {
   left: -100%;
   background: linear-gradient(to right, rgba(0, 0, 0, 0), #f6e58d);
   border-radius: 50px;
-  animation: span1 2s linear infinite;
 }
 
 @keyframes span1 {
@@ -175,11 +202,30 @@ html, body {
   margin: 10px 0 0;
   font-size: 30px;
 }
+/* TÍTULO HOME */
+.Imagina {
+  font-family: 'AllerDisplay'; /* Fuente personalizada */
+  justify-content: center; /* Alinea horizontalmente */
+  font-size: 90px; /* Tamaño de fuente */
+  text-align:left; /* Centra el texto */
+  margin-left: 100px; /* Ajuste de margen para posicionamiento */
+  color: rgb(255, 255, 255); /* Color del texto */
+  line-height: 45px; /* Espaciado entre líneas */
+  margin-top: 40px;
+  
+}
 
+
+/* PUNTO DECORATIVO */
+.PuntoInicio {
+  font-family: "Century Gothic", Arial, sans-serif;
+  color: #F5B041; /* Color del punto */
+  font-size: 200px; /* Tamaño del punto */
+}
 .Marcas{
   color: #F5B041; /* Cambia el color según tu diseño */
   font-family: "Century Gothic", Arial, sans-serif;
-  margin-top: 10px ;
+  margin-top: 60px ;
   font-weight: bold;
 }
 /*ESTILOS CARRUCEL*/

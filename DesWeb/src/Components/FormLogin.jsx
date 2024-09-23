@@ -40,7 +40,7 @@ function FormLogin() {
   messageApi.open({
     type: 'success',
     content: '¡Inicio de sesión exitoso!',
-    className: 'custom-class',
+    className: 'MensajeAlerta',
     style: {
       marginTop: '5vh',
     },
@@ -57,7 +57,7 @@ function FormLogin() {
   messageApi.open({
     type: 'error',
     content: 'Acceso denegado',
-    className: 'custom-class',
+    className: 'MensajeAlerta',
     style: {
       marginTop: '5vh',
     },

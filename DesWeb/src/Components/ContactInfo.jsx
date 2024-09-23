@@ -11,6 +11,26 @@ const ContactInfo = () => {
   const sendEmail = (event) => {
     event.preventDefault();
 
+
+   ////////////VALIDAR CAMPOS VACÍOS CON EMAILJS/////////////////
+   const username = form.current.Username.value.trim();
+   const userEmail = form.current.UserEmail.value.trim();
+   const phone = form.current.Phone.value.trim();
+   const description = form.current.DescripcionProyecto.value.trim();
+   
+    if (!username || !userEmail || !description) {
+      //Si hay campos vacíos, mostrar un mensaje de error
+      messageApi.open({
+        type: 'error',
+        content: 'Debe completar todos los campos',
+        className: 'MensajeAlerta',
+        style: {
+          marginTop: '10vh',
+        },
+      });
+      return; // Termina la ejecución de la función si hay campos vacíos
+    }
+
     const key = 'updatable';  // Clave para los mensajes actualizables
 
     // Muestra un mensaje de carga mientras se envía el correo
@@ -18,6 +38,7 @@ const ContactInfo = () => {
       key,
       type: 'loading',
       content: 'Enviando cotización...',
+      className: 'MensajeAlerta',
     });
 
     emailjs
@@ -29,7 +50,8 @@ const ContactInfo = () => {
             key,
             type: 'success',
             content: 'Cotización enviada con éxito',
-            duration: 2,  // Duración del mensaje
+            className: 'MensajeAlerta',
+            duration: 2.5,  // Duración del mensaje
           });
           console.log('ENVIADO');
 
@@ -52,13 +74,13 @@ const ContactInfo = () => {
     <form className='FormCotizacion' ref={form} onSubmit={sendEmail}>
       {/* Nombre completo */}
       <div className="input-container">
-        <input className="InputCotizacion" type="text" name="Username" placeholder="Nombre Completo" required />
+        <input className="InputCotizacion" type="text" name="Username" placeholder="Nombre Completo" />
         <span className="AsteriscoContact">*</span>
       </div>
       
       {/* Correo electrónico */}
       <div className="input-container">
-        <input className="InputCotizacion" type="email" name="UserEmail" placeholder="Correo electrónico" required />
+        <input className="InputCotizacion" type="email" name="UserEmail" placeholder="Correo electrónico"  />
         <span className="AsteriscoContact">*</span>
       </div>
       
@@ -67,7 +89,7 @@ const ContactInfo = () => {
   
       {/* Descripción del proyecto */}
       <div className="input-container">
-        <textarea className="TextAreaCotizacion" name="DescripcionProyecto" placeholder="Descripción del proyecto" required></textarea>
+        <textarea className="TextAreaCotizacion" name="DescripcionProyecto" placeholder="Descripción del proyecto"></textarea>
         <span className="asteriscoDescripcion">*</span>
       </div>
   

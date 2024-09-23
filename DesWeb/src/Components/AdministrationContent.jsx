@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 
-// Importación de servicios para realizar peticiones
+////////////////// Importación de servicios para realizar peticiones////////////////////
 import PostServicio from "../Services/PostServicio";
 import GetServicio from '../Services/GetServicio';
 import UpdateServicio from "../services/UpdateServicio";
 import DeleteServicio from "../services/DeleteServicio";
 
-//Importación de estilos
+///////////////// Importación de estilos ////////////////
 import "../Styles/AdministrationContent.css";
 import { Card} from 'antd'; // Importación de Card e Image de Ant Design
 
@@ -25,7 +25,7 @@ function AdministrationContent() {
   //Ref para el input de archivo (subir imagen), permite simular clics en el input.
   const fileInputRef = useRef(null);
 
-  //Funciones para actualizar los inputs (nuevo servicio y edición)
+  //////////// Funciones para actualizar los inputs (nuevo servicio y edición) ///////////////
   const NombreServicio = (event) => {
     setNuevoServicio(event.target.value); //Actualiza el nombre del nuevo servicio
   };
@@ -42,7 +42,7 @@ function AdministrationContent() {
     setDescripcionEditada(event.target.value); //Actualiza la descripción del servicio en edición
   };
 
-  //FUNCIÓN PARA CARGAR Y CONVERTIR LA IMAGENS A BASE64
+  /////////// FUNCIÓN PARA CARGAR Y CONVERTIR LA IMAGENS A BASE64 /////////////
   const CargarImagen = (event) => {
     const archivo = event.target.files[0]; //Selección de archivo (primera imagen seleccionada)
     const lector = new FileReader(); //Para leer archivos del sistema
@@ -55,7 +55,7 @@ function AdministrationContent() {
     lector.readAsDataURL(archivo); //Iniciar la conversión a base64
   };
 
-  //FUNCIÓN PARA CARGAR LA IMAGEN EDITADA Y CONVERTIRLA A BASE64
+  /////// FUNCIÓN PARA CARGAR LA IMAGEN EDITADA Y CONVERTIRLA A BASE64 ////////
   const CargarImagenEditada = (event) => {
     const archivo = event.target.files[0];
     const lector = new FileReader();
@@ -65,7 +65,7 @@ function AdministrationContent() {
     lector.readAsDataURL(archivo);
   };
 
-  //FUNCIÓN PAR AÑADIR UN NUEVO SERVICIO
+  ///////////// FUNCIÓN PAR AÑADIR UN NUEVO SERVICIO ///////////////
   const AñadirServicio = async () => {
     // Solo añade si ambos campos están completos
     if (NuevoServicio.trim() !== "" && DescripcionServicio.trim() !== "") {
@@ -73,13 +73,14 @@ function AdministrationContent() {
       const nuevoServicio = { nombre: NuevoServicio, descripcion: DescripcionServicio, imagen: Imagen };
       const ServicioCreado = await PostServicio(nuevoServicio); //Enviar el nuevo servicio a la API
       setServicios([...Servicios, ServicioCreado]); //Actualiza el estado con el nuevo servicio
-      setNuevoServicio(""); //Limpia el campo de nombre
-      setDescripcionServicio(""); //Limpia el campo de descripción
-      setImagen(""); //Limpia la imagen cargada
+      //Limpiar
+      setNuevoServicio("");
+      setDescripcionServicio("");
+      setImagen("");
     }
   };
 
-  //FUNCIÓN PARA HABILITAR LA EDICIÓN DE UN SERVICIO
+  ////////////////// FUNCIÓN PARA HABILITAR LA EDICIÓN DE UN SERVICIO /////////////////////////
   const EditarServicio = (servicio) => {
     setEditarServicioId(servicio.id); //Establece el servicio en edición
     setServicioEditado(servicio.nombre); //Carga el nombre del servicio a editar
@@ -87,7 +88,7 @@ function AdministrationContent() {
     setImagenEditada(servicio.imagen); //Carga la imagen actual
   };
 
-  //FUNCIÓN PARA GUARDAR LOS CAMBIOS REALIZADOS A UN SERVICIO
+  /////////////////// FUNCIÓN PARA GUARDAR LOS CAMBIOS REALIZADOS A UN SERVICIO ///////////////
   const GuardarEdicion = async (id) => {
      //Crea el objeto actualizado:
     const EdicionServicio = { 
@@ -99,27 +100,28 @@ function AdministrationContent() {
     setServicios(Servicios.map(servicio => 
       //Actualiza el servicio en el estado:
       servicio.id === id ? { ...servicio, nombre: ServicioEditado, descripcion: DescripcionEditada, imagen: ImagenEditada } : servicio
-    )); 
-    setEditarServicioId(""); //Limpia el ID del servicio en edición
-    setServicioEditado(""); //Limpia el nombre editado
-    setDescripcionEditada(""); //Limpia la descripción editada
-    setImagenEditada(""); //Limpia la imagen editada
+    ));  
+    //Limpiar
+    setEditarServicioId("");
+    setServicioEditado("");
+    setDescripcionEditada("");
+    setImagenEditada(""); 
   };
 
-  //FUNCIÓN PARA ELIMINAR UN SERVICIO
+  //////////////////// FUNCIÓN PARA ELIMINAR UN SERVICIO //////////////////////
   const EliminarServicio = async (id) => {
     await DeleteServicio(id); //Elimina el servicio de la API
     setServicios(Servicios.filter((servicio) => servicio.id !== id)); //Remueve el servicio del estado
   };
 
-  //SIMULAR EL CLICK EN EL INPUT DE ARCHIVO PARA CARGAR UNA IMAGEN
+  /////////////// SIMULAR EL CLICK EN EL INPUT DE ARCHIVO PARA CARGAR UNA IMAGEN//////////////////
   const ClickImagen = () => {
     if (fileInputRef.current) {
       fileInputRef.current.click(); //Simula el click en el input de archivo
     }
   };
 
-  //USEEFFECT PARA CARGAR LOS ERVICIOS AL INICIAR EL COMPONENTE
+  ////////////////// USEEFFECT /////////////////////////////
   useEffect(() => {
     const fetchServicios = async () => {
       const servicios = await GetServicio(); //Obtiene los servicios desde la API
@@ -128,7 +130,8 @@ function AdministrationContent() {
     fetchServicios(); //Ejecuta la función de obtención al montar el componente
   }, []); //Solo se ejecuta una vez cuando el componente se monta
 
-  return (
+
+return (
 <div className='Container'>
 <h1 className='Administracion'>ADMINISTRACIÓN DE SERVICIOS
 <span className='punto'>.</span> </h1><br /><br />

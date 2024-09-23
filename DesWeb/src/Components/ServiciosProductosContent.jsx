@@ -7,14 +7,14 @@ import GetServicio from '../Services/GetServicio';
 
 
 function ServiciosProductosContent() {
-  // Declara un estado llamado 'servicios', inicializado como un arreglo vacío
+  //////// Declara un estado llamado 'servicios', inicializado como un arreglo vacío /////////
   const [servicios, setServicios] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [planSeleccionado, setPlanSeleccionado] = useState('');
   const form = useRef();
   const [messageApi, contextHolder] = message.useMessage(); // Hook de Ant Design para mensajes
 
-  // useEffect se ejecuta después de que el componente se monta
+  ///////////// USE EFFECT ////////////////////////
   useEffect(() => {
     // Función asíncrona para obtener los servicios
     const fetchServicios = async () => {
@@ -27,46 +27,56 @@ function ServiciosProductosContent() {
     fetchServicios();
   }, []); // El arreglo vacío indica que este efecto solo se ejecuta una vez al montar el componente
 
-  // Función para manejar el envío del formulario con EmailJS
+  //////////////// Función para manejar el envío del formulario con EmailJS ////////////////////////
   const sendEmail = (event) => {
     event.preventDefault();
     
+
     const key = 'updatable';  // Clave para los mensajes actualizables
+
     // Muestra un mensaje de carga mientras se envía el correo
     messageApi.open({
       key,
       type: 'loading',
       content: 'Enviando cotización...',
+      className: 'MensajeAlerta',
     });
 
     emailjs
       .sendForm('service_9of4zxx', 'template_vw6uh2k', form.current, 'ymYtdvW4jhBm2ACDK')
       .then(
         () => {
-          // Cambia el mensaje a éxito cuando el correo se envía
+          //Cambia el mensaje a éxito cuando el correo se envía
           messageApi.open({
             key,
             type: 'success',
             content: 'Cotización enviada con éxito',
-            duration: 2,  // Duración del mensaje
+            className: 'MensajeAlerta',
+            duration: 2000,  // Duración del mensaje
           });
-          console.log('ENVIADO');
-          setModalVisible(false); // Cerrar modal al enviar la cotización
-        }
-      );
-  };
 
-  return (
+        console.log('ENVIADO');
+        //Limpia los inputs del formulario
+         form.current.reset();
+        //Cierra el modal después de que el mensaje de éxito haya aparecido
+        setTimeout(() => {
+        setModalVisible(false); // Cerrar modal al enviar la cotización
+        }, 2500);
+        });
+        };
+
+
+return (
 <div className='divServicios'>
 <div className="PortadaServicios">
     {/* Título principal con estilo */}
     <h1 className='SuVision'>Su Visión, Nuestro Diseño:<br />Resultados que Inspiran  
-      {/* Punto decorativo */}
       <span className='punto'>.</span> 
     </h1>
     <br /><br />
 </div> {/* Cierra PortadaServicios */}
 <br />
+
 <h1 className='Administracion'>SERVICIOS DE DISEÑO GRÁFICO
 <span className='punto'>.</span> </h1>
 

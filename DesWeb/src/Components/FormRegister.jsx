@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react';
 import GetUsers from "../Services/GetUsers";
 import PostUsers from "../Services/PostUsers";
 import { useNavigate } from "react-router-dom";
+import { message } from 'antd'; 
 import "../Styles/FormRegister.css"
 
-//HOOK
+////////////////////////   HOOKS  //////////////////////////////////////////
 function FormRegister() {
   const navigate = useNavigate();
 
@@ -14,6 +15,9 @@ function FormRegister() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [users, setUsers] = useState([]);
+
+  //Hook de mensajes de Ant Design
+  const [messageApi, contextHolder] = message.useMessage(); 
 
   function  cargaUsuario(event) {
 
@@ -28,30 +32,56 @@ function FormRegister() {
   };
 
 
-  //ESTA FUNCION PUEDE CARGAR, HACER POST O BIEN REALIZAR VALIDACIONES
+ 
   const cargar = (event) => {
     event.preventDefault(); //Prevenir el comportamiento por defecto del formulario
-    // Validar que todos los campos estén llenos
-    if (!username || !email || !password) {
-      return;
-    }
-    //setSaludo("Debes llenar todos los campos")-para que imprima el texto en el DOM
 
-  //VALIDACIONES
-  //Verificar si el usuario ya está registrado
-  const UsuarioExistente = users.find(user => user.email === email);
+////////////////////////////// VALIDACIONES /////////////////////////////////////////
+// 1.Validar que todos los campos estén llenos
+  if (!username || !email || !password) {
+    messageApi.open({
+      type: 'error',
+      content: 'Debe completar todos los campos',
+      className: 'MensajeAlerta',
+      style: {
+        marginTop: '10vh',
+      },
+    });
+    return; //Termina la ejecución de la función si hay campos vacíos
+  }
+
+  //2. Verificar si el usuario ya está registrado
+  const UsuarioExistente = users.find(user => user.email === email || user.username === username);
   if (UsuarioExistente) {
-
+    messageApi.open({
+      type: 'error',
+      content: 'El usuario ya está registrado',
+      className: 'MensajeAlerta',
+      style: {
+        marginTop: '10vh',
+      },
+    });
   } else {
-    PostUsers(username, email, password).then(() => { //el then se usa para manejar el resultado exitoso de una promesa.
+    PostUsers(username, email, password).then(() => {
+      // Mostrar el mensaje de éxito de Ant Design
+      messageApi.open({
+        type: 'success',
+        content: '¡Usuario registrado con éxito!',
+        className: 'MensajeAlerta',
+        style: {
+          marginTop: '10vh',
+        },
+      });
 
-        navigate("/");  //Redirigir al login tras el cierre de la alerta
-
+      //Esperar un breve intervalo antes de redirigir
+      setTimeout(() => {
+        navigate("/Login");  //Redirigir al login tras el cierre del mensaje
+      }, 2000);
     });
   }
 };
 
-//USE EFFECT
+///////////////////// USE EFFECT //////////////////////////////////////////
 useEffect(() => {
     const fetchUsers = async () => {
       const data = await GetUsers();    
@@ -62,10 +92,14 @@ useEffect(() => {
 
 
     return(
-      <div className="divForm">
+
+      <div className="divRegister"> 
+      
+      {contextHolder} {/*Mostrar mensaje*/}
+
         <form className="FormRegister">
-        <div className="datosForm">
-        <input className="inputDatos" type="text" id="username"  name="username" placeholder="Usuario"
+        <div className="DatosRegister">
+        <input className="InputRegister" type="text" id="username"  name="username" placeholder="Usuario"
           value={username}
           onChange={cargaUsuario}
           required
@@ -74,8 +108,8 @@ useEffect(() => {
         </div>
 
         <br /><br />
-        <div className="datosForm">
-          <input className="inputDatos" type="text" id="email" name="email" placeholder="Ingrese su email"
+        <div className="DatosRegister">
+          <input className="InputRegister"  type="text" id="email" name="email" placeholder="Ingrese su email"
           value={email}
           onChange={cargaEmail}
           required
@@ -84,8 +118,8 @@ useEffect(() => {
         </div>
         <br /><br />
 
-        <div className="datosForm">
-          <input className="inputDatos" type="password" id="contraseña" name="contraseña" placeholder="Contraseña"
+        <div className="DatosRegister">
+          <input className="InputRegister"  type="password" id="contraseña" name="contraseña" placeholder="Contraseña"
           value={password}
           onChange={cargaContra}
           required

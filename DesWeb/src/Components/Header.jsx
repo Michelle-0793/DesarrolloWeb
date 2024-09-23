@@ -19,17 +19,17 @@ const IniciarSesión = () => {
 };
 
     return (
-      <header>
+      <header className='HeaderPrincipal '>
         <img src={Logo} alt="Logo" className="logo" />
-        <nav className={`navbar ${menuAbierto ? "activo" : ""}`}>
-          <Link to="/" className="nav-link">INICIO</Link>
-          <Link to="/About" className="nav-link">SOBRE MÍ</Link>
-          <Link to="/ServiciosProductos" className="nav-link">SERVICIOS</Link>
-          <Link to="/Contact" className="nav-link">CONTÁCTAME</Link>
+        <nav className={`NavbarPrincipal ${menuAbierto ? "activo" : ""}`}>
+          <Link to="/" className="nav-linkPrincipal">INICIO</Link>
+          <Link to="/About" className="nav-linkPrincipal">SOBRE MÍ</Link>
+          <Link to="/ServiciosProductos" className="nav-linkPrincipal">SERVICIOS</Link>
+          <Link to="/Contact" className="nav-linkPrincipal">CONTÁCTAME</Link>
           <button onClick={IniciarSesión} className="BtnIniciarSesion">Iniciar sesión</button>
         </nav>
         {/* Ícono de menú hamburguesa */}
-      <div className="icono-hamburguesa" onClick={alternarMenu}>
+      <div className="icono-hamburguesaPrincipal" onClick={alternarMenu}>
         <span></span>
         <span></span>
         <span></span>

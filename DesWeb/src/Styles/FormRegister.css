@@ -1,20 +1,23 @@
 
-.divForm {
-    background-color: rgba(10, 10, 10, 0.90); /* Negro semi-transparente */
+.divRegister{
+    background-color: rgba(255, 255, 255, 0.9); /* Negro semi-transparente */
     height: 100vh; /* O ajusta la altura que desees */
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 65px;
+    text-align: center;
   }
   
   /* Estilos para el formulario */
   .FormRegister{
-    background: rgba(226, 226, 226, 0.1); /* Fondo semitransparente */
+    background: rgba(44, 44, 44, 0.904); /* Fondo semitransparente */
     border-radius: 15px; /* Bordes redondeados */
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); /* Sombra para darle profundidad */
     backdrop-filter: blur(8px); /* Efecto de desenfoque */
     -webkit-backdrop-filter: blur(8px); /* Compatibilidad con WebKit */
-    padding: 70px; /* Espaciado interno */
+    padding: 40px; /* Espaciado interno */
+    width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,13 +30,13 @@
     transform: translateY(-5px); /* Movimiento hacia arriba en hover */
   }
   
-  .datosForm {
-    margin-bottom: 20px; /* Espaciado entre los campos */
+  .DatosRegister{
+    margin-bottom: 10px; /* Espaciado entre los campos */
     width: 100%;
     position: relative;
   }
   
-  .inputDatos {
+  .InputRegister {
     font-family: "Century Gothic", Arial, sans-serif;
     border: none;
     outline: none;
@@ -41,12 +44,12 @@
     width:250px;
     padding: 10px;
     font-size: 17px;
-    color: #fff;
+    color: #ffffff;
     border-bottom: 2px solid rgba(255, 255, 255, 0.842); /* Línea inferior semi-transparente */
     transition: border-bottom 0.3s ease;
   }
   
-  .inputDatos:focus {
+  .InputRegister:focus {
     border-bottom: 2px solid #f5b041; /* Cambia el color al enfocarse */
   }
   
@@ -55,7 +58,7 @@
     border: none;
     outline: none;
     width: 150px;
-    margin-top: 10px;
+    margin-top: -20px;
     padding: 10px 0;
     font-size: 18px;
     border-radius: 40px;
@@ -110,19 +113,20 @@
     color: white;
   }
   @media only screen and (max-width: 767px) {
-    .form {
-      padding: 20px; /* Reducir más el espaciado interno */
+    .FormRegister {
+      padding: 30px; /* Reducir más el espaciado interno */
       text-align: center;
+      width: 300px;
     }
   
-    .inputDatos {
+    .InputRegister {
       width: 80%; /* Asegurar que ocupe todo el ancho */
       font-size: 14px; /* Ajustar tamaño de fuente */
   
   
     }
   
-    .btnIniciarSesion {
+    .btnRegistrarse {
       width: 80%; /* Botón a ancho completo */
       font-size: 14px; /* Ajustar tamaño de fuente */
       margin-top: -10px; /* Ajustar margen superior */

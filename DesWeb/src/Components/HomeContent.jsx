@@ -4,16 +4,16 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 import '../Styles/HomeContent.css';
 import { Card, Image } from 'antd'; // Importación de Card e Image de Ant Design
 import { useNavigate } from 'react-router-dom';
-import EnlacesCarrusel from '../Components/EnlacesCarrusel'; // Importa el nuevo carrusel
+import EnlacesCarrusel from '../Components/EnlacesCarrusel'; //Importa el nuevo carrusel
 import Footer from "../Components/Footer"
 
 
-//Importación de imaganes para Cards
+//////////////////// Importación de imaganes para Cards ///////////////////////
 import Proyecto1 from "../Img/ICP_LibroMarca.jpg";
 import Proyecto2 from "../Img/RRSS-01.jpg";
 import Proyecto3 from "../Img/Editorial-01.jpg";
 
-// Importación de las imágenes de los logos
+////////////////////// Importación de las imágenes de los logos //////////////
 import Logo1 from '../Img/Logo_1.png';
 import Logo2 from '../Img/Logo_2.png';
 import Logo3 from '../Img/Logo_3.png';
@@ -32,7 +32,7 @@ import Logo15 from '../Img/Logo_15.png';
 import Logo16 from '../Img/Logo_16.png';
 import Logo17 from '../Img/Logo_17.png';
 
-// Elementos del carrusel usando las imágenes importadas
+///////////// Elementos del carrusel usando las imágenes importadas////////////
 const items = [
   <img src={Logo1} alt="Logo 1" className="CarouselImg" />,
   <img src={Logo2} alt="Logo 2" className="CarouselImg" />,
@@ -75,7 +75,13 @@ return (
 <div className="divContenido">
 
     <div className="ImgPortada">
-      
+    
+    {/* Título principal con estilo */}
+    <h1 className='Imagina' data-reflect="Imagina">Imagina<br /><br />
+      Crea<br />
+      Impacta <span className='PuntoInicio'>.</span> 
+    </h1>
+    <button></button>
     </div>
 
 {/* Carrusel de logos */}

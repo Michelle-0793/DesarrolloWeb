@@ -196,7 +196,6 @@ border-radius: 40px;
 cursor: pointer;
 background: #c88594 ;
 color: white;
-margin-top: 20px;
 
 }
 .BtnEnviarModal:hover {
@@ -243,8 +242,11 @@ transform: translateY(-5px); /* Movimiento hacia arriba en hover */
   text-indent: -9999px; /* Ocultar el texto del botón */
   border: transparent;
   cursor: pointer;
-  margin-left: 450px;
-  margin-top: -20px;
+  position: absolute; /* Asegúrate de que el botón esté en posición absoluta */
+  top: 20px; /* Ajusta la posición desde la parte superior */
+  right: 20px; /* Ajusta la posición desde la derecha */
+  z-index: 1100; /* Asegúrate de que esté encima de otros elementos */
+  
 }
 .PlanesCotización {
   display: flex;
@@ -308,99 +310,117 @@ margin-top: 20px;
   transition: all 0.1s ease;
   }
 
-  /*RESPONSIVIDAD*/
 
+
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
+  /* Ajustes para dispositivos móviles y tablets */
   
-  /* PORTADA DE SERVICIOS */
-  .PortadaServicios {
-    height: 300px; /* Reducir la altura de la portada */
-  }
-  
-  /* TITULO DE SERVICIOS */
-  .SuVision {
-    font-size: 16px; /* Aumentar el tamaño de la fuente del título */
-    margin-left: 10px; /* Añadir un pequeño margen lateral */
-    margin-right: 10px; /* Añadir un pequeño margen lateral */
-    text-align: center; /* Centrar el texto completamente */
+  .divServicios {
+      margin-top: -200px; /* Reduce el margen superior en móviles */
   }
 
-  /* MODIFICACIONES DE LOS CARDS */
+  .divServicios h1 {
+      font-size: 24px; /* Tamaño de fuente más pequeño para encabezados */
+      margin-top: 60px; /* Espacio superior reducido */
+  }
+
+  .PortadaServicios {
+      height: 280px; /* Altura menor para la portada en dispositivos pequeños */
+      padding: 10px; /* Añadir un poco de padding */
+      margin-top: 250px;
+  }
+
+  .SuVision {
+      font-size: 50px; 
+      margin-left: 0; /* Elimina margen izquierdo */
+      margin-right: 0; /* Elimina margen derecho */
+      text-align: center; /* Centra el texto */
+      line-height: 0;
+  }
+
   .divCard {
-    grid-template-columns: 1fr; /* Un card por fila */
-    height: auto; /* Altura automática para acomodar mejor el contenido */
+      grid-template-columns: repeat(1, 1fr); /* Una columna en móviles */
+      padding: 30px; /* Reduce el padding */
+      margin-top: -20px;
   }
 
   .Card {
-    width: 80%; /* Ajustar el ancho del card al 100% */
-    margin-bottom: 20px; /* Añadir espacio entre los cards */
+      width: auto; /* Ajusta el ancho de las tarjetas */
   }
 
-  /* BOTÓN DE MODAL */
-  .ContenidoModal {
-    width: 90%; /* Hacer que el modal sea más pequeño en pantallas pequeñas */
-    padding: 20px; /* Reducir padding interno */
-  }
-  
-  .InputCotizacionModal {
-    width: 100%; /* Hacer el input del modal más flexible */
+  .Card img {
+      height: 200px; /* Ajusta la altura de la imagen */
   }
 
-  /* MODALES */
-  .Modal {
-    padding: 30px; /* Añadir padding alrededor del modal */
-  }
-
-  /* TAMAÑOS DE FUENTE */
   .card-title {
-    font-size: 18px; /* Reducir el tamaño de los títulos de las tarjetas */
+      font-size: 18px; /* Tamaño de fuente más pequeño */
   }
 
   .card-description {
-    font-size: 14px; /* Reducir el tamaño de las descripciones */
+      font-size: 14px; /* Tamaño de fuente más pequeño */
   }
 
-  /* INPUTS */
+  .PlanesCotización {
+      flex-direction: column; /* Cambia a una columna */
+      align-items: center; /* Centra los elementos */
+      margin-top: -50px;
+  }
+
+  .Plan1, .Plan2, .Plan3 {
+      max-width: 85%; /* Ancho máximo del 100% para que se ajuste a la pantalla */
+      margin: 10px 0; /* Margen vertical entre planes */
+  }
+
+  .ContenidoModal {
+      width: 80%; /* Ancho del modal más responsivo */
+  }
+
+  .btnCerrarModal {
+    width: 25px; /* Tamaño adecuado para móviles */
+    height: 25px; /* Tamaño adecuado para móviles */
+    top: 15px; /* Ajusta la posición para móviles */
+    right: 15px; /* Ajusta la posición para móviles */
+  }
+
   .InputCotizacionModal {
-    font-size: 16px; /* Reducir tamaño de fuente */
-    width: 90%; /* Hacer que el input ocupe casi todo el ancho */
+    width: 230px;
+  }
+  
+  .asterisco-obligatorio {
+    right: 10px; /* Alinea el asterisco a la derecha del input */
+  }
+  .btnPlanes {
+      width: 100%; /* Botones ocupan el ancho completo */
   }
 }
 
-/* Media queries para pantallas muy pequeñas (menores de 480px) */
 @media (max-width: 480px) {
+  /* Ajustes específicos para dispositivos muy pequeños */
   
-  /* PORTADA DE SERVICIOS */
-  .PortadaServicios {
-    height: 250px; /* Reducir aún más la altura */
+  .divServicios h1 {
+      font-size: 20px; /* Tamaño de fuente más pequeño */
   }
 
-  /* MODIFICACIONES A LOS CARDS */
-  .Card {
-    width: 80%; /* Ajustar el ancho para pantallas más pequeñas */
-  }
-
-  /* TÍTULO DE SERVICIOS */
   .SuVision {
-    font-size: 2px; /* Aumentar el tamaño de la fuente */
-    margin-left: 5px; /* Añadir un pequeño margen lateral */
-    margin-right: 5px; /* Añadir un pequeño margen lateral */
-    text-align: center; /* Centrar el texto completamente */
+      font-size: 24px; /* Tamaño de fuente aún más pequeño */
   }
 
-  /* CONTENIDO DEL MODAL */
-  .ContenidoModal {
-    width: 100%; /* Ajustar el ancho del modal */
-    padding: 10px; /* Reducir el padding */
+  .Card img {
+      height: 150px; /* Ajusta la altura de la imagen en móviles muy pequeños */
   }
 
-  /* INPUTS */
-  .InputCotizacionModal {
-    font-size: 14px; /* Reducir tamaño de fuente */
+  .card-title {
+      font-size: 16px; /* Tamaño de fuente más pequeño */
   }
 
-  .BtnEnviarModal {
-    width: 100px; /* Ajustar tamaño del botón */
-    font-size: 16px; /* Reducir tamaño de fuente */
+  .card-description {
+      font-size: 12px; /* Tamaño de fuente más pequeño */
+  }
+  .btnCerrarModal {
+    width: 20px; /* Más pequeño para pantallas muy pequeñas */
+    height: 20px; /* Más pequeño para pantallas muy pequeñas */
+    top: 10px; /* Ajuste fino para móviles pequeños */
+    right: 10px; /* Ajuste fino para móviles pequeños */
   }
 }

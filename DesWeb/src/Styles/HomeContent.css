@@ -336,3 +336,65 @@ body {
   color: rgb(34, 34, 34);
   line-height: 20px;
 }
+
+
+/* Media Query para dispositivos móviles y tablets */
+@media (max-width: 768px) {
+  .ImgPortada {
+      height: 300px; /* Ajusta la altura para pantallas más pequeñas */
+      margin-top: 20px; /* Reduce el margen superior */
+      width: 768px;
+  }
+
+  .BtnSolicitarCotización {
+      width: 90%; /* Ajusta el ancho del botón */
+      height: 50px; /* Ajusta la altura del botón */
+      margin: 20px auto; /* Centra el botón */
+      font-size: 18px; /* Reduce el tamaño de la fuente */
+      display: block; /* Asegura que se comporte como un bloque */
+  }
+
+  .TextoPortada {
+      text-align: center; /* Centra el texto sobre la imagen */
+      padding: 0 10px; /* Agrega un poco de padding lateral */
+  }
+
+  .TextoPortada h1 {
+      font-size: 24px; /* Ajusta el tamaño de fuente */
+      margin: 0; /* Elimina margen */
+  }
+
+  .TextoPortada p {
+      font-size: 16px; /* Ajusta el tamaño de fuente */
+      margin: 10px 0; /* Agrega margen vertical */
+  }
+
+  .divCardHome {
+      grid-template-columns: repeat(1, 1fr); /* Cambia a una columna */
+      height: auto; /* Permite que la altura se ajuste automáticamente */
+      padding: 0 10px; /* Agrega padding lateral */
+      text-align: center;
+  }
+
+  .CardHome {
+      width: 100%; /* Ajusta el ancho de las tarjetas */
+      margin-bottom: 20px; /* Agrega espacio entre tarjetas */
+  }
+
+  .DemosFormaText {
+      font-size: 28px; /* Ajusta el tamaño de fuente */
+      margin-left: 0; /* Elimina el margen negativo */
+      text-align: center; /* Centra el texto */
+  }
+
+  .TextDestaServicios, .TextDestaServicios2 {
+      margin-left: 0; /* Elimina el margen negativo */
+      font-size: 16px; /* Ajusta el tamaño de fuente */
+      text-align: center; /* Centra el texto */
+  }
+
+  .punto {
+      font-size: 60px; /* Ajusta el tamaño del punto */
+      text-align: center; /* Centra el punto */
+  }
+}

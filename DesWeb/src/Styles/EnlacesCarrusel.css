@@ -52,3 +52,64 @@
 .divCarrusel {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+
+/* Media queries para tabletas (pantallas entre 768px y 1024px) */
+@media only screen and (max-width: 1024px) {
+  .divCarrusel {
+    width: 90%; /* Ajustar el ancho del carrusel */
+    overflow: hidden; /* Ocultar cualquier desbordamiento de contenido */
+    height: 360px;
+  }
+
+  .CarouselItem {
+    width: 100%; /* Asegurar que las imágenes no se salgan del contenedor */
+    max-width: 500px; /* Limitar el tamaño máximo de la imagen en tabletas */
+    margin: 0 auto; /* Centrar la imagen */
+    overflow: hidden; /* Evitar que el contenido de las imágenes se desborde */
+  }
+
+  .TituloEnlace {
+    font-size: 30px; /* Reducir el tamaño de la fuente */
+    line-height: 25px;
+  }
+
+  .TextoEnlace, .Leer, .Mas {
+    font-size: 18px; /* Reducir ligeramente el tamaño de la fuente */
+    line-height: 25px;
+  }
+}
+
+/* Media queries para móviles (pantallas hasta 767px) */
+@media only screen and (max-width: 767px) {
+  .divCarrusel {
+    width: 100%; /* Hacer que el carrusel ocupe todo el ancho de la pantalla */
+    margin: 0 auto; /* Mantener centrado */
+    overflow: hidden; /* Asegurar que no haya desbordamiento de imágenes */
+  }
+
+  .CarouselItem {
+    width: 100%; /* Asegurar que las imágenes ocupen todo el ancho disponible */
+    max-width: 300px; /* Limitar el tamaño máximo de la imagen en móviles */
+    margin: 0 auto; /* Centrar la imagen */
+    overflow: hidden; /* Evitar que el contenido de las imágenes se desborde */
+  }
+
+  .TituloEnlace {
+    font-size: 25px; /* Reducir el tamaño de la fuente */
+    line-height: 22px;
+  }
+
+  .TextoEnlace, .Leer, .Mas {
+    font-size: 16px; /* Ajustar el tamaño de la fuente */
+    line-height: 22px;
+  }
+
+  .CarouselItem {
+    border-radius: 15px; /* Ajustar ligeramente el radio de las esquinas en móviles */
+  }
+
+  .Enlace {
+    border-radius: 15px; /* Ajustar bordes redondeados en móviles */
+  }
+}

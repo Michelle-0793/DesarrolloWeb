@@ -250,3 +250,113 @@ html, body {
     vertical-align:baseline
 
 }
+
+
+
+
+/* Para tabletas (pantallas entre 768px y 1024px) */
+@media only screen and (max-width: 1024px) {
+  /* Ajustar la imagen de portada para verse completa */
+  .PortadaAbout {
+    background-size: contain; /* Cambiado a contain para que la imagen se vea completa */
+    height: 400px; /* Reduzco la altura para tablets */
+    margin-top: 50px; /* Ajusto el margen superior */
+  }
+
+  /* Ajuste del botón de cotización */
+  .BtnIniciarProyecto {
+    width: 300px; /* Reduzco el ancho */
+    height: 40px; /* Reduzco la altura */
+    margin-top: -100px; /* Ajusto el margen superior */
+    margin-left: 150px; /* Alineo mejor para pantallas pequeñas */
+    font-size: 18px; /* Ajusto el tamaño de la fuente */
+  }
+
+  .divAprendizaje {
+    margin-top: -100px;
+  }
+
+  /* Ajustar la imagen de aprendizaje */
+  .ImgAprendizaje {
+    width: 100%; /* Se ajusta para ocupar todo el ancho disponible */
+    height: auto; /* Mantener proporción */
+    margin-top: -100px;
+  }
+
+  .CaminoAprendizaje {
+    font-size: 20px;
+    margin-left: -70px;
+  }
+
+  .TituloCompromisos {
+    font-size: 20px;
+    margin-left: 15px;
+  }
+
+  /* Estilos para organizar los cards de Misión y Visión en una sola columna */
+  .divMV {
+    grid-template-columns: 1fr; /* Los elementos ocupan una sola columna */
+    margin-top: -100px;
+    display: flex; /* Cambio a flexbox */
+    flex-direction: column; /* Los items se apilan uno debajo del otro */
+    gap: 20px; /* Espacio entre los elementos */
+
+  }
+
+  /* Ajuste de tamaño para los títulos principales */
+  .TituloMision, .TituloVision {
+    font-size: 28px; /* Reducir el tamaño del título para tablets */
+    text-align: center; /* Alinear al centro en pantallas más pequeñas */
+  }
+}
+
+/* Para móviles (pantallas hasta 767px) */
+@media only screen and (max-width: 767px) {
+  /* Ajustar la imagen de portada */
+  .PortadaAbout {
+    height: 300px; /* Reduzco la altura en móviles */
+    background-size: contain; /* Para que la imagen se vea completa */
+  }
+
+  /* Ajuste del botón de cotización */
+  .BtnIniciarProyecto {
+    width: 500px; /* Reduzco el ancho */
+    height: 20px; /* Reduzco la altura */
+    font-size: 11px; /* Ajusto el tamaño de la fuente */
+    margin-top: 50px;
+    margin-right: 20px;
+  }
+
+  /* Ajustar la imagen de aprendizaje */
+  .ImgAprendizaje {
+    width: 100%; /* Ocupa todo el ancho */
+    height: auto; /* Mantener proporción */
+  }
+
+  .CaminoAprendizaje {
+    font-size: 20px;
+    margin-left: -70px;
+  }
+
+  /* Estilos para los cards de Misión y Visión */
+  .Mision, .Vision {
+    padding: 15px; /* Reducir más el padding */
+    font-size: 12px; /* Ajusto el tamaño de la fuente */
+    height: auto; /* Ajustar altura automática */
+    margin-top: -10px;
+  }
+
+  /* Ajuste de tamaño para los títulos principales */
+  .TituloMision, .TituloVision {
+    font-size: 24px; /* Reducir aún más el tamaño del título para móviles pequeños */
+    text-align: center; /* Alinear al centro */
+  }
+
+  /* Organizar los cards de Misión y Visión en una columna */
+  .divMV {
+    display: flex; /* Uso flexbox */
+    flex-direction: column; /* Los items se apilan uno debajo del otro */
+    gap: 20px; /* Espacio entre los elementos */
+    margin-top: -100px;
+  }
+}

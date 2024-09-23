@@ -3,10 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  height: 100%;
-  margin: 0;
-}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
 
 .divContenido {
@@ -341,9 +342,10 @@ body {
 /* Media Query para dispositivos móviles y tablets */
 @media (max-width: 768px) {
   .ImgPortada {
-      height: 300px; /* Ajusta la altura para pantallas más pequeñas */
+    width: 100%; /* Se ajusta para ocupar todo el ancho disponible */
+    height: 200px; /* Mantener proporción */
       margin-top: 20px; /* Reduce el margen superior */
-      width: 768px;
+ 
   }
 
   .BtnSolicitarCotización {
@@ -382,7 +384,8 @@ body {
   }
 
   .DemosFormaText {
-      font-size: 28px; /* Ajusta el tamaño de fuente */
+    font-size: 20px;
+    line-height: 0;
       margin-left: 0; /* Elimina el margen negativo */
       text-align: center; /* Centra el texto */
   }
@@ -392,7 +395,10 @@ body {
       font-size: 16px; /* Ajusta el tamaño de fuente */
       text-align: center; /* Centra el texto */
   }
-
+.TituloEnlaces{
+  font-size: 20px;
+  line-height: 0;
+}
   .punto {
       font-size: 60px; /* Ajusta el tamaño del punto */
       text-align: center; /* Centra el punto */

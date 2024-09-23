@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from '../Pages/Login';
+import Register from "../Pages/Register";
 import Home from "../Pages/Home";
 import About from "../Pages/About";
 import Contact from "../Pages/Contact";
@@ -17,6 +18,7 @@ const Routing = () => {
         <Route path="/ServiciosProductos" element={<ServiciosProductos />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Login" element={<Login />}/>
+        <Route path="/Register" element={<Register />}/>
         <Route path="/Administration" element={<ProtectedRoute><Administration /></ProtectedRoute>}/>
 
       </Routes>

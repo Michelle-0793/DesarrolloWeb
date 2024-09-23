@@ -312,56 +312,58 @@ ul {
   transition: all 0.2s ease;
 }
 
-/* Media query para pantallas pequeñas (móviles) */
-@media (max-width: 600px) {
+/* Media Query para dispositivos móviles y tablets */
+/* Media Query para dispositivos móviles y tablets */
+@media (max-width: 768px) {
   .Administracion {
-    font-size: 30px; /* Reduce el tamaño de la fuente del título */
-    margin-top: 100px; /* Ajusta el margen superior */
-    margin-bottom: 10px; /* Ajusta el margen inferior */
+   font-size: 30px;
+   line-height: 1px;
+   margin-left: 60px;
+   text-align: center;
   }
-
+ 
+  /* Ajustar el ancho de los cards */
   .divCardAdmi {
-    grid-template-columns: 1fr; /* Cambia a una columna para móviles */
+    grid-template-columns: repeat(1fr); /* Ajusta a 2 columnas en lugar de 3 */
+    gap: 10px;  /* Aumenta un poco el espacio entre las tarjetas */
   }
-
+ 
   .CardAdmi {
-    width: 100%; /* Hace que el ancho del card sea del 100% */
-    height: auto; /* Ajusta la altura automáticamente */
-    margin-top: 50px; /* Ajusta el margen superior */
+    width: 40px; /* Reduce el ancho de los cards para hacerlos más angostos */
+    height: 400px; /* Ajusta la altura si es necesario */
+    margin-top: 50px; /* Ajuste del margen superior si es necesario */
   }
-
-  .InputsDatos, .AreaDescripcionServicio, .AreaDescripcionServicioEditada {
-    width: 90%; /* Reduce el ancho de los inputs */
-    margin-left: auto; /* Centra horizontalmente */
-    margin-right: auto; /* Centra horizontalmente */
+ 
+  .EstilosCardAdmi {
+    margin-left: 0; /* Asegúrate de que los cards estén centrados y no desfasados a la izquierda */
   }
-
-  .BtnCerrarSesion {
-    width: 100%; /* Botón ocupará el 100% del ancho */
-    margin-left: 0; /* Elimina margen a la izquierda */
+ 
+  .CardAdmi img {
+    width: 150px; /* Ajusta el ancho de la imagen para que coincida con el nuevo ancho del card */
+    height: 200px; /* Ajusta la altura de la imagen para mantener proporciones */
   }
-
-  .divBotonesEditar {
-    flex-direction: column; /* Apila los botones verticalmente */
+ 
+  /* Otros ajustes previos */
+  .InputNombreServicio {
+    width: 300px;
+    margin-left: 40px;
+    margin-top: -20px;
   }
-
-  .btnEditarServicio, .btnEliminarServicio {
-    margin-left: 0; /* Elimina margen a la izquierda en botones */
+ 
+  .AreaDescripcionServicio {
+    width: 300px;
+    margin-left: 40px;
+    height: 110px;
   }
-}
-
-/* Media query para pantallas medianas (tabletas) */
-@media (min-width: 601px) and (max-width: 900px) {
-  .Administracion {
-    font-size: 35px; /* Ajusta el tamaño de la fuente del título */
-    margin-top: 160px; /* Ajusta el margen superior */
+ 
+  .divCargarImagen {
+    margin-top: -10px;
+    margin-left: 50px;
   }
-
-  .divCardAdmi {
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas en tabletas */
+ 
+  .btnAñadirServicio {
+    margin-left: 50px;
+    margin-bottom: -10px;
   }
-
-  .CardAdmi {
-    width: 80%; /* Ancho del card ajustado */
-  }
-}
+ }
+ 

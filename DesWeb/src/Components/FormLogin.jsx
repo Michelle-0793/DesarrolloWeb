@@ -17,6 +17,7 @@ function FormLogin() {
 
   // Hook de mensajes de Ant Design
   const [messageApi, contextHolder] = message.useMessage(); 
+ 
 
 
   function  cargaUsuario(event) {
@@ -64,6 +65,10 @@ function FormLogin() {
 }
 };
 
+const IrRegistro = () => {
+  navigate('/Register');
+};
+
 //USE EFFECT
 useEffect(() => {
   const fetchUsers = async () => {
@@ -98,10 +103,16 @@ useEffect(() => {
         />
         <i className="fa-solid fa-user"></i>
         </div>
-        <br /><br />
+        <br />
 
         <button type="submit" className="btnIniciarSesion" onClick={(IniciarSesion)}>Iniciar Sesión</button>
-      </form>
+<br />
+        <div>
+        <p className="NuevoAdministrador" onClick={IrRegistro}>
+        → Agregar administrador ←</p>
+       </div>
+       </form>
+
 
 </div>
   );

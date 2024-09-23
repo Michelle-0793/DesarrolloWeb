@@ -55,7 +55,7 @@
   border: none;
   outline: none;
   width: 150px;
-  margin-top: 30px;
+  margin-top: 10px;
   padding: 10px 0;
   font-size: 18px;
   border-radius: 40px;
@@ -81,20 +81,51 @@
   padding: 60px; /* Espaciado interno */
 }
 
+.NuevoAdministrador {
+  color: white;
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-weight: bold;
+  background-color: black;
+  border-radius: 50px;
+
+}
+
+/* Efecto hover */
+.NuevoAdministrador:hover {
+  color:#f5b041; /* Cambiar a un color vibrante */
+  background-color: white; /* Fondo blanco al pasar el mouse */
+  transform: scale(1.1); /* Aumentar ligeramente el tamaño */
+}
+
+/* Efecto activo (cuando se presiona) */
+.NuevoAdministrador:active {
+  transform: scale(1); /* Restablecer el tamaño al hacer clic */
+  background-color: #ffcc00;
+  color: white;
+}
 @media only screen and (max-width: 767px) {
   .form {
-    padding: 50px; /* Reducir más el espaciado interno */
+    padding: 20px; /* Reducir más el espaciado interno */
+    text-align: center;
   }
 
   .inputDatos {
-    width: 100%; /* Asegurar que ocupe todo el ancho */
+    width: 80%; /* Asegurar que ocupe todo el ancho */
     font-size: 14px; /* Ajustar tamaño de fuente */
+
+
   }
 
   .btnIniciarSesion {
-    width: 100%; /* Botón a ancho completo */
+    width: 80%; /* Botón a ancho completo */
     font-size: 14px; /* Ajustar tamaño de fuente */
-    margin-top: -20px; /* Ajustar margen superior */
+    margin-top: -10px; /* Ajustar margen superior */
   }
 
   .custom-class {

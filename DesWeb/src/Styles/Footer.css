@@ -52,7 +52,12 @@
     height: auto;
     margin-right: 15px; /* Ajusta el espacio entre los íconos */
 }
-
+.footer-icon:hover,
+.footer-icon:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del botón */
+    opacity: 0.8; /* Cambia la opacidad */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+}
 /* RESPONSIVIDAD */
 @media (max-width: 1200px) {
     .Tranformemos {

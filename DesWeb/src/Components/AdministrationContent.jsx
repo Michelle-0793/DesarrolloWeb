@@ -20,6 +20,7 @@ function AdministrationContent() {
   const [ServicioEditado, setServicioEditado] = useState(""); //Nombre del servicio en edición
   const [DescripcionEditada, setDescripcionEditada] = useState(""); //Descripción del servicio en edición
   const [ImagenEditada, setImagenEditada] = useState(""); //Imagen editada del servicio
+  const [NombreImagen, setNombreImagen] = useState(""); // Para almacenar el nombre de la imagen seleccionada
 
   //Ref para el input de archivo (subir imagen), permite simular clics en el input.
   const fileInputRef = useRef(null);
@@ -45,6 +46,9 @@ function AdministrationContent() {
   const CargarImagen = (event) => {
     const archivo = event.target.files[0]; //Selección de archivo (primera imagen seleccionada)
     const lector = new FileReader(); //Para leer archivos del sistema
+    if (archivo) {
+      setNombreImagen(archivo.name); // Almacena el nombre del archivo seleccionado
+    }
     lector.onloadend = () => {
       setImagen(lector.result); //Convertir imagen a base64 y guardarla en el estado
     };
@@ -141,10 +145,12 @@ placeholder='Ingrese una descripción'
 
 {/* Botón para seleccionar una imagen para el nuevo servicio */}
 <div className="divCargarImagen">
-<label htmlFor="file-upload" className="CargarImagen">Seleccionar imagen</label>
+<label htmlFor="file-upload" className="BtnSeleccionaImg">Seleccionar imagen</label>
 <input id="file-upload" type="file" accept="image/*" // Solo permite subir archivos de imágenes
   onChange={CargarImagen} // Cuando se selecciona una imagen, se ejecuta la función `CargarImagen`
 />
+{/* Muestra el nombre de la imagen seleccionada */}
+{NombreImagen && <p className='TextImgSelect'>Imagen seleccionada: {NombreImagen}</p>}
 </div>
 <br />
 
@@ -176,7 +182,7 @@ placeholder='Ingrese una descripción'
   />
 
   {/* Mostrar la imagen actual mientras se edita */}
-  {ImagenEditada && <img src={ImagenEditada} alt={ServicioEditado} width="230"/>}
+  { ImagenEditada && <img src={ImagenEditada} alt={ServicioEditado} width="230"/>}
 
   {/* Botón para seleccionar o cambiar la imagen */}
   <div className='divBotonesEditar'>

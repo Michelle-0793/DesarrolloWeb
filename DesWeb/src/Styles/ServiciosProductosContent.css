@@ -30,7 +30,7 @@ footer {
   background-size: cover; /* Cubre todo el contenedor */
   background-position: center; /* Centra la imagen de fondo */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
-  height: 470px; /* Altura del contenedor de portada */
+  height: 505px; /* Altura del contenedor de portada */
   width: 100%; /* Ancho completo */
   display: flex; /* Usa flexbox para alinear elementos */
   align-items: center; /* Centra verticalmente */
@@ -39,6 +39,26 @@ footer {
   text-align: left; /* Alineación del texto a la izquierda */
   margin-top: 0; /* Sin margen superior extra */
   padding: 0; /* Sin padding extra */
+}
+/* TÍTULO DE SERVICIOS */
+.SuVision {
+  font-family: 'AllerDisplay'; /* Fuente personalizada */
+  justify-content: center; /* Alinea horizontalmente */
+  font-size: 50px; /* Tamaño de fuente */
+  text-align:left; /* Centra el texto */
+  margin-left: -550px; /* Ajuste de margen para posicionamiento */
+  color: rgb(255, 255, 255); /* Color del texto */
+  line-height: 20px; /* Espaciado entre líneas */
+  margin-right: 100px;
+
+}
+
+/* PUNTO DECORATIVO */
+.punto {
+  font-family: 'AllerDisplay'; /* Fuente personalizada */
+  color: #c88594; /* Color del punto */
+  font-size: 120px; /* Tamaño del punto */
+  vertical-align: baseline; /* Alineación vertical del punto */
 }
 
 /* FUENTES */
@@ -50,32 +70,37 @@ footer {
 /*ESTILOS DE LOS CARDS*/
 .divCard {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5px;  /* Ajusta el espacio entre las tarjetas */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 20px;  /* Ajusta el espacio entre las tarjetas */
   justify-content: center;  /* Centrar las columnas horizontalmente */
   justify-items: center;  /* Centrar cada tarjeta dentro de su columna */
   align-items: center;  /* Centrar las tarjetas verticalmente */
-  height: 500px;
+  padding: 20px;  /* Añade algo de espacio interior al contenedor */
+  min-height: 100vh; /* Asegura que el contenedor siempre tenga al menos la altura de la ventana */
+  height: auto; /* Permite que el contenedor crezca según el contenido */
+ margin-top: 30px;
 }
 
 .Card {
-  width: 370px; 
-  height: auto;
+  width: 380px; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
 }
-.EstilosCard{
+
+.EstilosCard {
   border-radius: 20px;
   overflow: hidden;
-  
+  background-color: #000000;
 }
+
 .Card img {
   object-fit: cover;
-  height: 200px; /* Ajusta la altura de la imagen */
+  height: 300px; /* Ajusta la altura de la imagen */
   width: 100%; /* Asegúrate de que la imagen ocupe todo el ancho del card */
 }
+
 .card-title {
   font-family: "Century Gothic", Arial, sans-serif;
   font-size: 20px;
@@ -86,8 +111,9 @@ footer {
 .card-description {
   font-family: "Century Gothic", Arial, sans-serif;
   font-size: 16px;
-  color: #757575;
+  color: #c50c0c;
 }
+
 
 .LineaDivisora {
   height: 2px; 
@@ -96,24 +122,6 @@ footer {
   margin: 20px auto;
 }
 
-/* TÍTULO DE SERVICIOS */
-.SuVision {
-  justify-content: center; /* Alinea horizontalmente */
-  font-size: 40px; /* Tamaño de fuente */
-  text-align: center; /* Centra el texto */
-  margin-left: -550px; /* Ajuste de margen para posicionamiento */
-  color: rgb(255, 255, 255); /* Color del texto */
-  line-height: 20px; /* Espaciado entre líneas */
-  font-family: 'AllerDisplay'; /* Fuente personalizada */
-}
-
-/* PUNTO DECORATIVO */
-.punto {
-  font-family: 'AllerDisplay'; /* Fuente personalizada */
-  color: #c88594; /* Color del punto */
-  font-size: 120px; /* Tamaño del punto */
-  vertical-align: baseline; /* Alineación vertical del punto */
-}
 /* MODALES */
 .Modal {
   position: fixed;
@@ -245,80 +253,39 @@ transform: translateY(-5px); /* Movimiento hacia arriba en hover */
   flex-wrap: wrap; /* Permite que los planes se ajusten en pantallas más pequeñas */
 }
 
-.Plan1{
-  background: #ffffff; /* Fondo gris oscuro */
-  border: 1px solid #ddd; /* Borde */
-  border-radius: 20px; /* Bordes redondeados */
+.Plan1, .Plan2, .Plan3{
+  background: #dddddd23; 
+  border: 1px solid #ddd; 
+  border-radius: 20px; 
   padding: 25px; /* Espacio interior */
   margin: 0 5px 20px 5px; /* Reduce el margen entre los planes */
   flex: 1; /* Los planes ocuparán el mismo ancho */
   max-width: 340px; /* Ancho máximo para cada plan */
   height: 430px; /* Altura fija para todos los planes */
   text-align: center; /* Centra el texto */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra inicial */
+  box-shadow: 0 6px 10px rgba(0,0,0,0.1); /* Sombra inicial */
   transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
-  color: black;
+  color: rgb(0, 0, 0);
   font-family: "Century Gothic", Arial, sans-serif;
   font-size: 16px;
 }
 
-.Plan1:hover {
+.Plan1:hover, .Plan2:hover, .Plan3:hover {
   transform: translateY(-5px); /* Levanta el contenedor al pasar el mouse */
   box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Aumenta la sombra */
-}
-.Plan2 {
-  background: #303030; /* Fondo gris oscuro */
-  border: 1px solid #ddd; /* Borde */
-  border-radius: 20px; /* Bordes redondeados */
-  padding: 25px; /* Espacio interior */
-  margin: 0 5px 20px 5px; /* Reduce el margen entre los planes */
-  flex: 1; /* Los planes ocuparán el mismo ancho */
-  max-width: 340px; /* Ancho máximo para cada plan */
-  height: 430px; /* Altura fija para todos los planes */
-  text-align: center; /* Centra el texto */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra inicial */
-  transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
-  color: rgb(255, 255, 255);
-  font-family: "Century Gothic", Arial, sans-serif;
-  font-size: 16px;
 }
 
-.Plan2:hover {
-  transform: translateY(-5px); /* Levanta el contenedor al pasar el mouse */
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Aumenta la sombra */
-}
-.Plan3 {
-  background: #000000; /* Fondo gris oscuro */
-  border: 1px solid #ddd; /* Borde */
-  border-radius: 20px; /* Bordes redondeados */
-  padding: 25px; /* Espacio interior */
-  margin: 0 5px 20px 5px; /* Reduce el margen entre los planes */
-  flex: 1; /* Los planes ocuparán el mismo ancho */
-  max-width: 340px; /* Ancho máximo para cada plan */
-  height: 430px; /* Altura fija para todos los planes */
-  text-align: center; /* Centra el texto */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra inicial */
-  transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
-  color: rgb(255, 255, 255);
-  font-family: "Century Gothic", Arial, sans-serif;
-  font-size: 16px;
-}
-
-.Plan3:hover {
-  transform: translateY(-5px); /* Levanta el contenedor al pasar el mouse */
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Aumenta la sombra */
-}
 .TituloPlan{
   font-family: "Century Gothic", Arial, sans-serif;
   font-size: 25px;
   font-weight: bold;
-  color: #f5b041;
+  color:#c88594 ;
 }
 
 .Entregables{
   font-family: "Century Gothic", Arial, sans-serif;
   font-size: 16px;
-  color: rgb(163, 163, 163);
+  color: rgb(100, 100, 100);
 }
 .btnPlanes{
 font-family: "Century Gothic", Arial, sans-serif;

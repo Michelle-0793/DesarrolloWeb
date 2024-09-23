@@ -167,7 +167,7 @@ body {
   margin: 0;
   font-size: 40px;
   text-align: left;
-  font-family: "Century Gothic", Arial, sans-serif;
+  font-family: 'AllerDisplay';
 }
 
 .TextoPortada p {
@@ -247,9 +247,6 @@ body {
   padding-bottom: 20px;
 }
 
-.divCard {
-  margin-top: 20px; /* O ajustar según lo que prefieras */
-}
 @font-face {
   font-family: 'AllerDisplay';
   src: url('../fonts/AllerDisplay.ttf');
@@ -290,7 +287,7 @@ body {
 }
 
 /*ESTILOS DE LOS CARDS*/
-.divCard {
+.divCardHome {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;  /* Ajusta el espacio entre las tarjetas */
@@ -300,7 +297,7 @@ body {
   height: 500px;
 }
 
-.Card {
+.CardHome{
   width: 370px; 
   height: 500px;
   display: flex;
@@ -308,7 +305,7 @@ body {
   justify-content: space-between;
   
 }
-.EstilosCard{
+.EstilosCardHome{
   border-radius: 20px;
   overflow: hidden;
   
@@ -318,14 +315,14 @@ body {
   height: 200px; /* Ajusta la altura de la imagen */
   width: 100%; /* Asegúrate de que la imagen ocupe todo el ancho del card */
 }
-.card-title {
+.CardTituloHome {
   font-family: "Century Gothic", Arial, sans-serif;
   font-size: 20px;
   font-weight: bold;
   color: #F5B041;
 }
 
-.card-description {
+.CardDescripHome {
   font-family: "Century Gothic", Arial, sans-serif;
   font-size: 16px;
   color: #757575;

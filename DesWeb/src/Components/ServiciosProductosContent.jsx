@@ -59,15 +59,16 @@ function ServiciosProductosContent() {
   return (
 <div className='divServicios'>
 <div className="PortadaServicios">
-  <div className="TextoPortada">
     {/* Título principal con estilo */}
     <h1 className='SuVision'>Su Visión, Nuestro Diseño:<br />Resultados que Inspiran  
       {/* Punto decorativo */}
       <span className='punto'>.</span> 
     </h1>
     <br /><br />
-  </div>
 </div> {/* Cierra PortadaServicios */}
+<br />
+<h1 className='Administracion'>SERVICIOS DE DISEÑO GRÁFICO
+<span className='punto'>.</span> </h1>
 
 <div className="divCard">
   {/* Verifica si hay servicios disponibles para mostrar */}
@@ -95,7 +96,7 @@ function ServiciosProductosContent() {
   )}
 </div>
 
-
+<br /><br />
 <div className="LineaDivisora"></div><br /><br />
 
 {/* Sección de planes de cotización */}

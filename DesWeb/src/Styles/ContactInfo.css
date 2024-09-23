@@ -1,87 +1,83 @@
-.ContenidoContacto {
-    margin-top: 100px; /* Ajusta esto según la altura de tu header */
-    padding: 20px; /* Añade espacio interno */
-  }
-  .Hablemos{
-    font-family: 'AllerDisplay';
-    justify-content: center;
-    font-size: 40px;
-    text-align: center;
-    color: rgb(34, 34, 34);
-    line-height: 20px;
-    margin-top: -100px;
-  }
-  .punto{
-    font-family: "Century Gothic", Arial, sans-serif;
-      color: #c88594; /* Cambia el color del punto aquí */
-      font-size: 120px; /* Ajusta el tamaño del punto según tus necesidades */    
-      vertical-align:baseline
-  }
-  .EstoyAqui{
-    text-align: center;
-    font-family: "Century Gothic", Arial, sans-serif;
-    font-size: 22px;
-    font-weight: bold;
-    color: #C88594;
-    font-style: oblique;
-    margin-top: -20px;
-  }
-  .CompletaText{
-    text-align: center;
-    font-family: "Century Gothic", Arial, sans-serif;
-    font-size: 20px;
-    color: rgb(34, 34, 34);
-    line-height: 30px;
-  }
-  .InputCotizacion {
-    border: none;
-    font-size: 18px;
-    text-align: center;
-    font-family: "Century Gothic", Arial, sans-serif;
-    height: 40px; /* Ajusta la altura aquí */
-    margin: 0;
-    outline: 0;
-    padding: 15px;
-    width: 400px;
-    background-color: #8b8b8b2a;
-    color: #000000;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
-    margin-bottom: 30px;
-    border-radius: 50px;
-    padding-right: 30px; /* Espacio extra para el asterisco */
-    position: relative; /* Necesario para que el asterisco se posicione correctamente */
+.Cotizar{
+  margin-top: 100px; /* Ajusta esto según la altura de tu header */
+  padding: 20px; /* Añade espacio interno */
+  
+}
+
+.Hablemos {
+  font-family: 'AllerDisplay';
+  justify-content: center;
+  font-size: 40px;
+  text-align: center;
+  color: rgb(34, 34, 34);
+  line-height: 20px;
+  margin-top: -100px;
+}
+
+.punto {
+  font-family: "Century Gothic", Arial, sans-serif;
+  color: #c88594; /* Cambia el color del punto aquí */
+  font-size: 120px; /* Ajusta el tamaño del punto según tus necesidades */    
+  vertical-align: baseline;
+}
+
+.EstoyAqui {
+  text-align: center;
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #C88594;
+  font-style: oblique;
+  margin-top: -20px;
+}
+
+.CompletaText {
+  text-align: center;
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 20px;
+  color: rgb(34, 34, 34);
+  line-height: 30px;
+}
+
+.InputCotizacion {
+  border: none;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Century Gothic", Arial, sans-serif;
+  height: 40px; /* Ajusta la altura aquí */
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 400px;
+  background-color: #8b8b8b2a;
+  color: #000000;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  padding-right: 30px; /* Espacio extra para el asterisco */
+  position: relative; /* Necesario para que el asterisco se posicione correctamente */
 }
 
 .TextAreaCotizacion {
-    border: none;
-    font-size: 18px;
-    text-align: center;
-    font-family: "Century Gothic", Arial, sans-serif;
-    height: 200px; /* Ajusta la altura aquí */
-    margin: 0;
-    outline: 0;
-    padding: 15px;
-    width: 400px;
-    background-color: #8b8b8b2a;
-    color: #000000;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
-    margin-bottom: 30px;
-    border-radius: 20px;
-    padding-right: 30px; /* Espacio extra para el asterisco */
-    position: relative;
+  border: none;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Century Gothic", Arial, sans-serif;
+  height: 120px; /* Ajusta la altura aquí */
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 400px;
+  background-color: #8b8b8b2a;
+  color: #000000;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding-right: 30px; /* Espacio extra para el asterisco */
+  position: relative;
 }
 
-.asterisco-obligatorio {
-    color: red;
-    font-weight: bold;
-    margin-left: 10px;
-    position: absolute;
-    right: 10px; /* Alinea el asterisco a la derecha del input */
-    top: 50%;
-    transform: translateY(-50%);
-    margin-top: -20px;
-}
-.asteriscoDescripcion{
+.AsteriscoContact {
   color: red;
   font-weight: bold;
   margin-left: 10px;
@@ -89,15 +85,26 @@
   right: 10px; /* Alinea el asterisco a la derecha del input */
   top: 50%;
   transform: translateY(-50%);
-  margin-top: -100px;
+  margin-top: -10px;
 }
+
+.asteriscoDescripcion {
+  color: red;
+  font-weight: bold;
+  margin-left: 10px;
+  position: absolute;
+  right: 10px; /* Alinea el asterisco a la derecha del input */
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: -50px;
+}
+
 .input-container {
-    position: relative;
-    margin-bottom: 20px; /* Espacio entre cada campo */
+  position: relative;
+  margin-bottom: 20px; /* Espacio entre cada campo */
 }
 
-
-.BtnEnviar{
+.BtnEnviar {
   font-family: "Century Gothic", Arial, sans-serif;
   border: none;
   outline: none;
@@ -107,11 +114,11 @@
   font-size: 18px;
   border-radius: 40px;
   cursor: pointer;
-  background: #c88594 ;
+  background: #c88594;
   color: white;
   margin-top: -15px;
- 
 }
+
 .BtnEnviar:hover {
   background: black; 
   color: rgba(255, 255, 255, 1) !important;
@@ -119,9 +126,19 @@
   transition: all 0.2s ease;
 }
 
+.ContenidoContacto {
+  display: flex; /* Alinea elementos en fila */
+  justify-content: center; /* Centra horizontalmente el contenedor principal */
+  align-items: flex-start; /* Alinea al inicio verticalmente */
+  gap: 20px; /* Espacio entre elementos */
+}
 .divForm {
-justify-content: center;
-
+  display: flex;
+  flex-direction: column; /* Cambiar a columna para centrar los elementos verticalmente */
+  justify-content: center; /* Centra verticalmente los elementos dentro del formulario */
+  align-items: center; /* Centra horizontalmente los elementos dentro del formulario */
+  width: 50%;
+  max-width: 500px; /* Asegura un tamaño máximo */
 }
 
 .FormCotizacion {
@@ -136,8 +153,7 @@ justify-content: center;
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease-in-out;
-  width: 500px;
-
+  width: 100%; /* Asegura que el formulario use todo el ancho disponible */
 }
 
 .FormCotizacion:hover {
@@ -145,17 +161,138 @@ justify-content: center;
   transform: translateY(-5px); /* Movimiento hacia arriba en hover */
 }
 
+.DivMapaContact {
+  display: flex;
+  flex-direction: column; /* Alinea el contenido verticalmente */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  width: 50%;
+  max-width: 500px; /* Asegura un tamaño máximo */
+}
 .divMapa {
-  width: 600px;
-  height: 300px;
-  position: relative;
-  z-index: 1; /* Mapa debajo del formulario */
+  width: 100%; /* Cambiado a 100% para usar todo el ancho disponible */
+  height: 296px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: center; /* Centra el mapa horizontalmente */
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px; /* Bordes redondeados para un aspecto más suave */
 }
-.Ubicacion{
-background-color: #000000;
-width: 500px;
-height: 100px;
+
+.DivContacto {
+  background-color: #000000;
+  color: #FFFFFF; /* Texto blanco para mayor legibilidad */
+  width: 100%; /* Cambiado a 100% para usar todo el ancho disponible */
+  height: 185px;
+  padding: 20px; /* Espaciado interno */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column; /* Alinea el texto verticalmente */
+  justify-content: center; /* Centra el contenido verticalmente */
+  text-align: center;
+}
+
+.DivContacto h2 {
+  margin-bottom: 10px; /* Espaciado entre el título y el resto del contenido */
+}
+
+.DivContacto p {
+  margin: 5px 0; /* Espaciado entre párrafos */
+}
+
+.DivContacto a {
+  color: #F5B041;; /* Color del enlace */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.DivContacto a:hover {
+  text-decoration: underline; /* Subrayar al pasar el ratón */
+}
+.Contácteme{
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.DatosContact{
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 16px;
+  color: #ffffff;;
+}
+
+
+/* Media Queries para móviles y tablets */
+@media (max-width: 768px) {
+  .Cotizar {
+    margin-top: 60px; /* Ajustado para pantallas más pequeñas */
+    padding: 10px; /* Menos espacio interno */
+  }
+
+  .Hablemos {
+    font-size: 30px; /* Tamaño de fuente reducido */
+    margin-top: -50px; /* Ajustado */
+    line-height: 2px;
+  }
+
+  .punto {
+    font-size: 80px; /* Tamaño de fuente reducido */
+  }
+
+  .EstoyAqui {
+    font-size: 18px; /* Tamaño de fuente reducido */
+    margin-top: -10px; /* Ajustado */
+  }
+
+  .CompletaText {
+    font-size: 19px; /* Tamaño de fuente reducido */
+    line-height: 20px;
+  }
+
+  .InputCotizacion,
+  .TextAreaCotizacion {
+    font-size: 16px; /* Tamaño de fuente reducido */
+    width: 100%; /* Ancho completo en móviles */
+    padding: 10px; /* Ajustado el padding */
+  }
+
+  .BtnEnviar {
+    width: 100%; /* Botón ocupa todo el ancho */
+    font-size: 16px; /* Tamaño de fuente reducido */
+    margin-top: 10px; /* Ajustado */
+  }
+
+  .ContenidoContacto {
+    flex-direction: column; /* Cambia a columna en móviles */
+    align-items: center; /* Centra los elementos */
+    gap: 10px; /* Espacio reducido entre elementos */
+    margin-top: -40px;
+  }
+
+  .divForm,
+  .DivMapaContact {
+    width: 100%; /* Ancho completo en móviles */
+    max-width: 100%; /* Sin tamaño máximo */
+  }
+
+  .FormCotizacion {
+    padding: 20px; /* Menos padding en móviles */
+  }
+  .DivMapaContact {
+    width: 100%; /* Ancho completo en móviles */
+    margin-top: 12px;
+  }
+
+  .DivContacto {
+    height: auto; /* Altura automática para contenido variable */
+    padding: 10px; /* Menos padding en móviles */
+  }
+
+  .Contácteme {
+    font-size: 20px; /* Tamaño de fuente reducido */
+  }
+
+  .DatosContact {
+    font-size: 14px; /* Tamaño de fuente reducido */
+  }
 }

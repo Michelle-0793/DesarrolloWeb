@@ -74,7 +74,9 @@ return (
 
 <div className="divContenido">
 
-    <div className="ImgPortada"></div>
+    <div className="ImgPortada">
+      
+    </div>
 
 {/* Carrusel de logos */}
 
@@ -118,46 +120,46 @@ return (
 <br /><br /><br />
 
 {/* Cards de Ant Design */}
-<div className="divCard">
+<div className="divCardHome">
 
-  <div className="Card">
+  <div className="CardHome">
   <Card 
   hoverable
-  className="EstilosCard"
+  className="EstilosCardHome"
   cover={<Image alt="Proyecto 1" src={Proyecto1} />}
   >
   <Card.Meta 
-  title={<span className="card-title">BRANDING</span>} 
-  description={<span className="card-description">Construyo identidades visuales coherentes, 
+  title={<span className="CardTituloHome">BRANDING</span>} 
+  description={<span className="CardDescripHome">Construyo identidades visuales coherentes, 
   reflejando la esencia y valores de su marca para impactar a su público objetivo.</span>} 
   />
   </Card>
   </div>
 
-  <div className="Card">
+  <div className="CardHome">
   <Card 
   hoverable
-  className="EstilosCard"
+  className="EstilosCardHome"
   cover={<Image alt="Proyecto 2" src={Proyecto2}/>}
   >
   <Card.Meta   
-  title={<span className="card-title">DISEÑO PARA REDES SOCIALES</span>} 
-  description={<span className="card-description">Contenido visual que 
+  title={<span className="CardTituloHome">DISEÑO PARA REDES SOCIALES</span>} 
+  description={<span className="CardDescripHome">Contenido visual que 
   conecte y destaque en redes sociales, logrando más interacción 
   y visibilidad para su negocio. </span>} 
   />
   </Card>
   </div>
 
-  <div className="Card">
+  <div className="CardHome">
   <Card 
   hoverable
-  className="EstilosCard"
+  className="EstilosCardHome"
   cover={<Image alt="Proyecto 3" src={Proyecto3} />}
   >
   <Card.Meta   
-  title={<span className="card-title">DISEÑO EDITORIAL</span>} 
-  description={<span className="card-description">Transformo ideas en publicaciones 
+  title={<span className="CardTituloHome">DISEÑO EDITORIAL</span>} 
+  description={<span className="CardDescripHome">Transformo ideas en publicaciones 
   visualmente atractivas y funcionales, como catálogos, libros, revistas, folletos, menús... </span>} 
   />
   </Card>

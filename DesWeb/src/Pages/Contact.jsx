@@ -10,7 +10,7 @@ function Contact() {
     <div>
 
     <Header /><br /><br /><br /><br /><br /><br />
-    <ContactInfo />
+    <ContactInfo /><br /><br /><br /><br />
     <Footer />
 
 

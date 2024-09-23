@@ -90,7 +90,11 @@ function AdministrationContent() {
   //FUNCIÓN PARA GUARDAR LOS CAMBIOS REALIZADOS A UN SERVICIO
   const GuardarEdicion = async (id) => {
      //Crea el objeto actualizado:
-    const EdicionServicio = { id, nombre: ServicioEditado, descripcion: DescripcionEditada, imagen: ImagenEditada };
+    const EdicionServicio = { 
+      id, nombre: ServicioEditado, 
+      descripcion: DescripcionEditada, 
+      imagen: ImagenEditada };
+
     await UpdateServicio(EdicionServicio); //Envía los cambios a la API
     setServicios(Servicios.map(servicio => 
       //Actualiza el servicio en el estado:

@@ -132,10 +132,11 @@ body{
     display: none;
     flex-direction: column; /* Asegura que los enlaces se coloquen en columna */
     position: absolute;
-    top: 130px;
+    top: 100px;
     left: 0; /* Alinea el menú con el borde izquierdo */
     background-color: #020003;
     width: 100%; /* Asegura que el menú ocupe el 100% del ancho de la pantalla */
+    height: 250px;
     text-align: center; /* Centra los enlaces */
     padding: 0; /* Elimina el padding extra en el contenedor */
     z-index: 999; /* Asegúrate de que esté sobre otros elementos */
@@ -153,6 +154,7 @@ body{
     font-size: 1rem; /* Aumenta un poco el tamaño de la fuente para que sea más legible */
     width: 100%; /* Ocupa el 100% del ancho del contenedor */
     text-align: center; /* Asegura que el texto esté centrado en el enlace */
+    margin-top: -10px;
   }
 
   .nav-link:hover {
@@ -174,5 +176,10 @@ body{
     background-color: white;
     margin: 4px 0;
     transition: 0.4s;
+  }
+  .BtnIniciarSesion{
+   width: 150px;
+   height: 50px;
+   margin-left: 5px;
   }
 }

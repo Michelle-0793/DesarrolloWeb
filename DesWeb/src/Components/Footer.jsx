@@ -3,6 +3,7 @@ import "../Styles/Footer.css";
 import Icon1 from '../Img/Icon_Portfolio.png';
 import Icon2 from "../Img/Icon_WhatsApp.png";
 import Icon3 from "../Img/Icon_Correo.png";
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (

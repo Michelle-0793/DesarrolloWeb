@@ -329,6 +329,7 @@ margin-top: 20px;
       height: 280px; /* Altura menor para la portada en dispositivos pequeños */
       padding: 10px; /* Añadir un poco de padding */
       margin-top: 250px;
+      margin-bottom: -80px;
   }
 
   .SuVision {
@@ -343,6 +344,7 @@ margin-top: 20px;
       grid-template-columns: repeat(1, 1fr); /* Una columna en móviles */
       padding: 30px; /* Reduce el padding */
       margin-top: -20px;
+      margin-bottom: -50px;
   }
 
   .Card {
@@ -360,7 +362,9 @@ margin-top: 20px;
   .card-description {
       font-size: 14px; /* Tamaño de fuente más pequeño */
   }
-
+.LineaDivisora{
+  margin-bottom: -60px;
+}
   .PlanesCotización {
       flex-direction: column; /* Cambia a una columna */
       align-items: center; /* Centra los elementos */

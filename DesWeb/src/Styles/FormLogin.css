@@ -81,3 +81,24 @@
   padding: 60px; /* Espaciado interno */
 }
 
+@media only screen and (max-width: 767px) {
+  .form {
+    padding: 50px; /* Reducir más el espaciado interno */
+  }
+
+  .inputDatos {
+    width: 100%; /* Asegurar que ocupe todo el ancho */
+    font-size: 14px; /* Ajustar tamaño de fuente */
+  }
+
+  .btnIniciarSesion {
+    width: 100%; /* Botón a ancho completo */
+    font-size: 14px; /* Ajustar tamaño de fuente */
+    margin-top: -20px; /* Ajustar margen superior */
+  }
+
+  .custom-class {
+    padding: 20px; /* Reducir espaciado interno */
+    font-size: 14px; /* Ajustar tamaño de fuente */
+  }
+}

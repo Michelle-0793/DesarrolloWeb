@@ -300,7 +300,6 @@ html, body {
     display: flex; /* Cambio a flexbox */
     flex-direction: column; /* Los items se apilan uno debajo del otro */
     gap: 20px; /* Espacio entre los elementos */
-
   }
 
   /* Ajuste de tamaño para los títulos principales */

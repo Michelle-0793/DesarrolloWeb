@@ -56,83 +56,116 @@
 /* RESPONSIVIDAD */
 @media (max-width: 1200px) {
     .Tranformemos {
-        margin-left: 0; /* Centra el texto en pantallas más pequeñas */
+        display: flex; /* Flexbox para alinear el texto e íconos */
+        align-items: center; /* Alinea verticalmente el texto e íconos */
+        justify-content: center; /* Centra horizontalmente */
+        margin-left: 0; /* Elimina el margen izquierdo */
         font-size: 16px; /* Ajusta el tamaño del texto */
-        text-align: center; /* Asegura que el texto esté centrado */
+        text-align: left; /* Alinea el texto a la izquierda */
         margin-top: 10px; /* Reduce el margen superior */
     }
 
     .divIconContactos {
-        margin-top: 50px; /* Ajusta el margen superior en pantallas más pequeñas */
-        margin-left: 0; /* Elimina el margen izquierdo */
+        margin-left: 10px; /* Ajusta el margen para que quede alineado */
+        margin-top: 0; /* Elimina el margen superior */
+        flex-direction: row; /* Mantén los íconos en fila */
         justify-content: flex-start; /* Alinea los íconos a la izquierda */
-        flex-direction: row; /* Asegura que los íconos estén en fila */
+        gap: 10px; /* Ajusta el espacio entre los íconos */
+    }
+
+    .Reservados {
+        position: relative; /* Ajusta la posición en pantallas pequeñas */
+        bottom: auto; /* Elimina la posición inferior */
+        left: 0; /* Alinea a la izquierda */
+        font-size: 14px; /* Ajusta el tamaño de la fuente */
+        text-align: center; /* Centra el texto */
+        transform: none; /* Elimina la transformación para centrar */
+        margin-top: 20px; /* Añade margen superior para separar del contenido */
     }
 
     .Footer {
         height: auto; /* Permite que la altura se ajuste automáticamente */
         padding: 20px; /* Reduce el padding para pantallas más pequeñas */
         width: 100vw; /* Asegura que el fondo cubra todo el ancho */
+        margin-bottom: -20px;
     }
 }
 
 @media (max-width: 800px) {
-    .Footer {
-        height: auto; /* Permite que la altura se ajuste automáticamente */
-        padding: 20px; /* Reduce el padding para pantallas más pequeñas */
-    }
-
     .Tranformemos {
-        font-size: 16px; /* Ajusta el tamaño del texto para pantallas más pequeñas */
-        margin-left: 0; /* Elimina el margen */
-        margin-top: 5px; /* Reduce aún más el margen superior */
-    }
-
-    .punto {
-        font-size: 20px; /* Reduce el tamaño del punto para pantallas más pequeñas */
-    }
-
-    .Reservados {
-        font-size: 12px; /* Ajusta el tamaño de la fuente */
-        text-align: center;
-        margin-top: -80px; /* Ajusta la posición del texto */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px; /* Ajusta el tamaño del texto */
+        margin-left: 0; /* Elimina el margen izquierdo */
+        margin-top: 5px; /* Reduce el margen superior */
+        text-align: left; /* Alinea el texto a la izquierda */
     }
 
     .divIconContactos {
-        margin-top: 20px; /* Ajusta el margen superior */
+        margin-left: 10px; /* Ajusta el margen para mantener alineado */
+        margin-top: 0; /* Elimina el margen superior */
+        flex-direction: row; /* Mantén los íconos en fila */
         justify-content: flex-start; /* Alinea los íconos a la izquierda */
+        gap: 10px;
     }
 
-    .footer-icon {
-        width: 45px; /* Ajusta el tamaño de los íconos para pantallas más pequeñas */
+    .Reservados {
+        position: relative; /* Ajusta la posición en pantallas más pequeñas */
+        bottom: auto;
+        left: 0;
+        font-size: 12px; /* Reduce el tamaño del texto */
+        text-align: center;
+        margin-top: 20px; /* Espacio entre el texto y el contenido superior */
+    }
+
+    .Footer {
+        height: auto; /* Permite que la altura se ajuste automáticamente */
+        padding: 20px; /* Reduce el padding para pantallas más pequeñas */
+        margin-bottom: -10px;
     }
 }
 
 @media (max-width: 500px) {
     .Tranformemos {
-        font-size: 12px; /* Ajusta aún más el tamaño del texto */
-        margin-top: -30px; /* Reduce el margen superior para pantallas muy pequeñas */
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* Alinea los íconos y el texto a la izquierda */
+        font-size: 10px; /* Ajusta el tamaño del texto */
+        margin-left: 0; /* Elimina el margen */
+        margin-top: 30px; /* Reduce el margen superior */
+        text-align: left; /* Alinea el texto a la izquierda */
     }
-
-    .punto {
-        font-size: 10px; /* Reduce el tamaño del punto para pantallas muy pequeñas */
-    }
-
-    .Reservados {
-        font-size: 7px; /* Ajusta el tamaño de la fuente para pantallas más pequeñas */
-        text-align: center;
-        margin-bottom: 32px;
+    .punto{
+       margin-top: -80px;
+       font-size: 5px;
     }
 
     .divIconContactos {
-        align-items: center; /* Centra los íconos */
-        margin-top: 10px; /* Reduce el margen superior */
-        margin-left: 0; /* Elimina el margen izquierdo */
+        margin-left: 10px; /* Añade un pequeño margen a la izquierda */
+        margin-top: 0; /* Elimina el margen superior */
+        flex-direction: row; /* Mantén los íconos en una fila */
         justify-content: flex-start; /* Alinea los íconos a la izquierda */
+        gap: 5px; /* Reduce el espacio entre íconos */
     }
 
     .footer-icon {
         width: 20px; /* Ajusta el tamaño de los íconos para pantallas muy pequeñas */
-        margin: 10px 0; /* Añade margen vertical entre íconos */
+        margin: 0 5px; /* Ajusta el margen para que se vea bien en línea */
+    }
+
+    .Reservados {
+        position: relative; /* Ajusta la posición en pantallas muy pequeñas */
+        bottom: auto;
+        left: 0;
+        font-size: 8px; /* Ajusta el tamaño de la fuente */
+        text-align: center; /* Asegura que el texto quede centrado */
+        margin-top: -23px; /* Espacio entre el texto y el contenido superior */
+    }
+
+    .Footer {
+        height: auto; /* Permite que la altura se ajuste automáticamente */
+        padding: 15px; /* Reduce el padding aún más */
+        margin-bottom: -10px;
     }
 }

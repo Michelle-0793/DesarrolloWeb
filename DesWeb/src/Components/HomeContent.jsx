@@ -89,7 +89,7 @@ return (
   responsive={responsive}
   infinite
   autoPlay
-  autoPlayInterval={3000}
+  autoPlayInterval={2000}
   disableDotsControls
   renderPrevButton={() => <button className="custom-arrow custom-arrow-left">‹</button>}
   renderNextButton={() => <button className="custom-arrow custom-arrow-right">›</button>}

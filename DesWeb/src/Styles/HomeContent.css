@@ -268,6 +268,7 @@ html, body {
     vertical-align:baseline
 
 }
+
 .TextDestaServicios{
   text-align: center;
   font-family: "Century Gothic", Arial, sans-serif;
@@ -342,65 +343,117 @@ html, body {
 /* Media Query para dispositivos móviles y tablets */
 @media (max-width: 768px) {
   .ImgPortada {
-    width: 100%; /* Se ajusta para ocupar todo el ancho disponible */
-    height: 200px; /* Mantener proporción */
-      margin-top: 20px; /* Reduce el margen superior */
- 
+    background-size: contain; /* Cambiado a contain para que la imagen se vea completa */
+    height: 400px; /* Reduzco la altura para tablets */
+    margin-top: -15px; /* Reduce el margen superior */
   }
 
   .BtnSolicitarCotización {
-      width: 90%; /* Ajusta el ancho del botón */
-      height: 50px; /* Ajusta la altura del botón */
-      margin: 20px auto; /* Centra el botón */
-      font-size: 18px; /* Reduce el tamaño de la fuente */
-      display: block; /* Asegura que se comporte como un bloque */
+    width: 90%; /* Ajusta el ancho del botón */
+    height: 50px; /* Ajusta la altura del botón */
+    margin: 20px auto; /* Centra el botón */
+    font-size: 18px; /* Reduce el tamaño de la fuente */
+    display: block; /* Asegura que se comporte como un bloque */
   }
 
   .TextoPortada {
-      text-align: center; /* Centra el texto sobre la imagen */
-      padding: 0 10px; /* Agrega un poco de padding lateral */
+    text-align: center; /* Centra el texto sobre la imagen */
+    padding: 0 10px; /* Agrega un poco de padding lateral */
   }
 
   .TextoPortada h1 {
-      font-size: 24px; /* Ajusta el tamaño de fuente */
-      margin: 0; /* Elimina margen */
+    font-size: 24px; /* Ajusta el tamaño de fuente */
+    margin: 0; /* Elimina margen */
   }
 
   .TextoPortada p {
-      font-size: 16px; /* Ajusta el tamaño de fuente */
-      margin: 10px 0; /* Agrega margen vertical */
+    font-size: 16px; /* Ajusta el tamaño de fuente */
+    margin: 10px 0; /* Agrega margen vertical */
   }
 
+  .divCarrucel {
+    margin-top: -147px;
+    width: auto;
+    height:220px;
+  
+  }
+
+  .Marcas {
+    font-size: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: -80px;
+  }
+
+  .alice-carousel img {
+    width: auto;
+    height: 60px;
+    margin: 0 1px; /* Menos espacio entre los logos */
+  }
+
+  .alice-carousel__stage-item {
+    margin: 0 1px; /* Reduce el margen entre los items del carrusel */
+    flex: 0 0 auto; /* Asegura que los items no se expandan */
+  }
+
+  /* Añade un estilo para asegurarte de que al menos 3 logos se muestren */
+  .alice-carousel__stage {
+    justify-content: space-around; /* Distribuye los elementos de manera uniforme */
+    margin-top: 10px;
+  }
+.Plasta1{
+  background-size: contain; /* Cambiado a contain para que la imagen se vea completa */
+  height: 400px; /* Reduzco la altura para tablets */
+  margin-top: -160px;
+  position: relative;
+}
+.BtnSolicitarCotización {
+  width: 120px;
+  height: 43px;
+  margin-top: 160px;
+  position: absolute;
+  margin-left: 240px;
+  font-size: 14px;
+  line-height: 13px;
+}
   .divCardHome {
-      grid-template-columns: repeat(1, 1fr); /* Cambia a una columna */
-      height: auto; /* Permite que la altura se ajuste automáticamente */
-      padding: 0 10px; /* Agrega padding lateral */
-      text-align: center;
+    grid-template-columns: repeat(1, 1fr); /* Cambia a una columna */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    padding: 0 10px; /* Agrega padding lateral */
+    text-align: center;
+    margin-top: -80px;
   }
 
   .CardHome {
-      width: 100%; /* Ajusta el ancho de las tarjetas */
-      margin-bottom: 20px; /* Agrega espacio entre tarjetas */
+    width: 80%; /* Ajusta el ancho de las tarjetas */
+    margin-bottom: 20px; /* Agrega espacio entre tarjetas */
   }
 
   .DemosFormaText {
-    font-size: 20px;
-    line-height: 0;
-      margin-left: 0; /* Elimina el margen negativo */
-      text-align: center; /* Centra el texto */
+    font-size: 18px;
+    line-height:0;
+    margin-left: 0; /* Elimina el margen negativo */
+    text-align: center; /* Centra el texto */
   }
 
   .TextDestaServicios, .TextDestaServicios2 {
-      margin-left: 0; /* Elimina el margen negativo */
-      font-size: 16px; /* Ajusta el tamaño de fuente */
-      text-align: center; /* Centra el texto */
+    margin-left: 20px; /* Elimina el margen negativo */
+    margin-right: 20px;
+    font-size: 14px; /* Ajusta el tamaño de fuente */
+    text-align: center; /* Centra el texto */
+    line-height: 20px;
+    margin-top: -20px;
   }
-.TituloEnlaces{
-  font-size: 20px;
-  line-height: 0;
-}
+
+  .TituloEnlaces {
+    font-size: 20px;
+    line-height: 0;
+    margin-top: -150px;
+  }
+
   .punto {
-      font-size: 60px; /* Ajusta el tamaño del punto */
-      text-align: center; /* Centra el punto */
+    font-size: 60px; /* Ajusta el tamaño del punto */
+    text-align: center; /* Centra el punto */
   }
+
 }

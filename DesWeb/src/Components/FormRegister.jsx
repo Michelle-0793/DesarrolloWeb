@@ -9,7 +9,6 @@ import "../Styles/FormRegister.css"
 
 ////////////////////////   HOOKS  //////////////////////////////////////////
 function FormRegister() {
-  const navigate = useNavigate();
 
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -72,11 +71,10 @@ function FormRegister() {
           marginTop: '10vh',
         },
       });
-
-      //Esperar un breve intervalo antes de redirigir
-      setTimeout(() => {
-        navigate("/Login");  //Redirigir al login tras el cierre del mensaje
-      }, 2000);
+        //Limpiar los campos después de registrar el usuario
+        setUsername('');
+        setEmail('');
+        setPassword('');
     });
   }
 };

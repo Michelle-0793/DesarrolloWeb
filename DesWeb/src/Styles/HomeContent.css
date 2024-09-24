@@ -393,7 +393,19 @@ html, body {
     height: 400px; /* Reduzco la altura para tablets */
     margin-top: -15px; /* Reduce el margen superior */
   }
-
+  .Imagina {
+    font-size: 30px; /* Tamaño de fuente */
+    margin-left: 30px; /* Ajuste de margen para posicionamiento */
+    line-height: 15px; /* Espaciado entre líneas */
+    margin-top: 10px;
+    
+  }
+  
+  
+  /* PUNTO DECORATIVO */
+  .PuntoInicio {
+    font-size: 80px; /* Tamaño del punto */
+  }
   .BtnSolicitarCotización {
     width: 90%; /* Ajusta el ancho del botón */
     height: 50px; /* Ajusta la altura del botón */

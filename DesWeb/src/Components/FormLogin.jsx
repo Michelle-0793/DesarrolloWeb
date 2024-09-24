@@ -32,42 +32,38 @@ function FormLogin() {
   const IniciarSesion = (event) => {
     event.preventDefault();
 
- // Verificar si el usuario y contraseña coinciden usuario del db.json
- const usuarioValido = Users.find((user) => user.username === username && user.password === password);
+    // Verificar si el usuario y contraseña coinciden usuario del db.json
+    const usuarioValido = Users.find((user) => user.username === username && user.password === password);
 
- if (usuarioValido) {
-  // Mostrar el mensaje de éxito de Ant Design
-  messageApi.open({
-    type: 'success',
-    content: '¡Inicio de sesión exitoso!',
-    className: 'MensajeAlerta',
-    style: {
-      marginTop: '5vh',
-    },
-  });
+    if (usuarioValido) {
+      // Mostrar el mensaje de éxito de Ant Design
+      messageApi.open({
+        type: 'success',
+        content: '¡Inicio de sesión exitoso!',
+        className: 'MensajeAlerta',
+        style: {
+          marginTop: '5vh',
+        },
+      });
 
-  // Guardar la autenticación en el localStorage
-  localStorage.setItem("Autenticado", "true");
+      // Guardar la autenticación en el localStorage
+      localStorage.setItem("Autenticado", "true");
 
-  // Redirigir a la página de administración después de un pequeño retraso
-  setTimeout(() => {
-    navigate("/Administration");
-  }, 1500);
-} else {
-  messageApi.open({
-    type: 'error',
-    content: 'Acceso denegado',
-    className: 'MensajeAlerta',
-    style: {
-      marginTop: '5vh',
-    },
-  });
-}
-};
-
-const IrRegistro = () => {
-  navigate('/Register');
-};
+      // Redirigir a la página de administración después de un pequeño retraso
+      setTimeout(() => {
+        navigate("/Administration");
+      }, 1500);
+    } else {
+      messageApi.open({
+        type: 'error',
+        content: 'Acceso denegado',
+        className: 'MensajeAlerta',
+        style: {
+          marginTop: '5vh',
+        },
+      });
+    }
+  };
 
 //USE EFFECT
 useEffect(() => {
@@ -107,10 +103,6 @@ useEffect(() => {
 
         <button type="submit" className="btnIniciarSesion" onClick={(IniciarSesion)}>Iniciar Sesión</button>
 <br />
-        <div>
-        <p className="NuevoAdministrador" onClick={IrRegistro}>
-        → Agregar administrador ←</p>
-       </div>
        </form>
 
 

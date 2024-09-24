@@ -127,6 +127,12 @@ function AdministrationContent() {
       const servicios = await GetServicio(); //Obtiene los servicios desde la API
       setServicios(servicios); //Guarda los servicios en el estado
     };
+
+  /////////// Implementación de localStorage para guardar un indicador de acceso /////////
+    // Cuando el usuario acceda a la administración, guarda un indicador en el localStorage
+    localStorage.setItem('puedeAccederARegistro', 'true');
+
+
     fetchServicios(); //Ejecuta la función de obtención al montar el componente
   }, []); //Solo se ejecuta una vez cuando el componente se monta
 

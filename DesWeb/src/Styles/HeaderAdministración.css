@@ -1,0 +1,189 @@
+
+/* ESTILO GENERAL DEL HEADER */
+.HeaderAdmi {
+    background-color: #020003;
+    width: 100%;
+    height: 130px;
+    display: grid;
+    grid-template-columns: 1fr; /* Solo una columna que abarque todo el ancho */
+    align-items: center;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    padding: 0 40px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  .BotonesHeaderAdmi{
+    display: flex;
+    justify-content: center; /* Alinea los botones horizontalmente */
+    align-items: center;
+    gap: 10px; /* Espacio entre los botones */
+    margin-top: -110px;
+
+  }
+  /* Contenedor del Navbar */
+  .NavbarAdmi {
+      display: grid;
+      grid-template-columns: repeat(5, auto); 
+      gap: 10px;
+      justify-content: flex-end; 
+      padding: 0 5rem; /* Espacio a los lados */
+    }
+    .logo {
+      height: 90px;
+      
+    }
+    /* Estilos del ícono hamburguesa */
+  .icono-hamburguesaAdmi {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .icono-hamburguesaAdmi  span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+  .BtnCerrarSesionAdmi{
+    font-family: "Century Gothic", Arial, sans-serif;
+    border: none;
+    outline: none;
+    width: 150px;
+    padding: 9px 0;
+    font-size: 18px;
+    border-radius: 40px;
+    cursor: pointer;
+    background: #c88594 ;
+    color: white;
+    margin-left: 30px;
+    font-weight: bold;
+    height: 50px;
+    
+  }
+  .BtnCerrarSesionAdmi:hover{
+    background: black; /* Efecto hover en el botón */
+      color: rgba(255, 255, 255, 1) !important;
+      box-shadow: 0 4px 16px rgba(245, 176, 65, 1);
+      transition: all 0.2s ease;
+  }
+  
+.NuevoAdministrador {
+    color: white;
+    font-family: "Century Gothic", Arial, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 13px 15px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-weight: bold;
+    background-color: black;
+    border-radius: 50px;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 10px;
+  
+  }
+  
+  /* Efecto hover */
+  .NuevoAdministrador:hover {
+    color:#f5b041; /* Cambiar a un color vibrante */
+    background-color: white; /* Fondo blanco al pasar el mouse */
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño */
+  }
+  
+  /* Efecto activo (cuando se presiona) */
+  .NuevoAdministrador:active {
+    transform: scale(1); /* Restablecer el tamaño al hacer clic */
+    background-color: #ffcc00;
+    color: white;
+  }
+
+
+  /* RESPONSIVIDAD */
+@media (max-width: 768px) {
+  
+  .HeaderAdmi {
+    height: auto; /* Permite que el header se ajuste dinámicamente */
+    padding: 10px 20px; /* Reduce el padding para pantallas pequeñas */
+    grid-template-columns: 1fr; /* Asegura que el layout sea una sola columna */
+  }
+
+  .logo {
+    height: 60px; /* Reduce el tamaño del logo para dispositivos más pequeños */
+    padding-left: 10px; /* Añade espacio lateral */
+  }
+
+  .NavbarAdmi {
+    display: none; /* Oculta el navbar por defecto en pantallas pequeñas */
+    flex-direction: column; /* Coloca los enlaces en una columna */
+    position: absolute;
+    top: 100px;
+    left: 0;
+    background-color: #020003;
+    width: 100%;
+    height: auto; /* Ajusta la altura en función del contenido */
+    padding: 20px 0;
+    z-index: 999;
+    justify-content: center;
+    align-items: center; /* Centra los elementos del navbar */
+  }
+
+  .NavbarAdmi.activo {
+    display: flex; /* Muestra el navbar cuando se activa */
+  }
+
+  .nav-linkAdmi {
+    margin: 10px 0;
+    font-size: 1.2rem; /* Aumenta el tamaño de la fuente para mejor legibilidad */
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-linkPrincipalAdmi:hover {
+    background-color: #C88594;
+    color: white;
+  }
+
+  .icono-hamburguesaAdmi {
+    display: flex; /* Muestra el icono hamburguesa en pantallas pequeñas */
+    justify-content: flex-end;
+    padding-right: 20px;
+    cursor: pointer; /* Asegura que el cursor cambie a pointer */
+  }
+
+  .icono-hamburguesaAdmi span {
+    width: 30px;
+    height: 4px; /* Aumenta ligeramente el tamaño de las líneas del icono */
+  }
+
+  .BtnCerrarSesionAdmi, .NuevoAdministrador {
+    width: 100%; /* Asegura que los botones ocupen el 100% del ancho del contenedor */
+    margin: 5px 0; /* Añade espaciado vertical entre los botones */
+    font-size: 1rem; /* Reduce un poco el tamaño del texto */
+  }
+
+  .BtnCerrarSesionAdmi {
+    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+    text-align: center; /* Centra el texto del botón */
+    padding: 12px 0; /* Ajusta el padding para un mejor ajuste en pantallas pequeñas */
+  }
+
+  .NuevoAdministrador {
+    margin-left: 0; /* Elimina el margen izquierdo */
+    margin-top: -120px; /* Añade un pequeño margen superior */
+    text-align: center; /* Centra el texto */
+    padding: 2px 0; /* Ajusta el padding */
+  }
+
+  .BotonesHeaderAdmi {
+    flex-direction: column; /* Coloca los botones en una columna */
+    gap: 20px; /* Añade más espacio entre los botones */
+    margin-top: 0; /* Ajusta el margen superior */
+  }
+}
